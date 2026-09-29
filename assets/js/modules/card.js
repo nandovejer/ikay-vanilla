@@ -191,6 +191,11 @@ const card = {
           article.dataset.state = state;
           article.setAttribute("aria-busy", String(state === "pending"));
         }
+        // protected: only the protected sentence remains as the heading, the
+        // "shared" sentence (and any fallback text in it) leaves the page
+        if (state === "blocked") {
+          article.querySelectorAll(".card__sentence").forEach((el) => el.remove());
+        }
         const status = article.classList.contains("card--win") ? "blocked" : state;
         const label = article.querySelector(".js-card-status");
         if (label && label.dataset.status !== status) {

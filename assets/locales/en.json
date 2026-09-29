@@ -81,7 +81,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Internet_geolocation'>More info about Geolocation</a>"
     },
     "plain": "Any website can place you on a map from your IP, roughly down to your city, without asking.",
-    "sentence": "Your IP places you in {0}."
+    "sentence": "Your IP places you in {0}.",
+    "protected": "Your IP {0} where you are.",
+    "protectedVerb": "doesn't give away"
   },
   "device": {
     "title": "The device you are using",
@@ -101,7 +103,9 @@
       "moreinfo": ""
     },
     "plain": "Websites adapt what they show you, and sometimes their prices, to the device you use.",
-    "sentence": "The device you're browsing on is {0}."
+    "sentence": "The device you're browsing on is {0}.",
+    "protected": "Your browser {0} which device you use.",
+    "protectedVerb": "doesn't reveal"
   },
   "screen": {
     "title": "Your screen size",
@@ -111,7 +115,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Display_resolution'>More info about display resolution</a>"
     },
     "plain": "Your screen size narrows down which device model you have.",
-    "sentence": "Your screen measures {0} pixels."
+    "sentence": "Your screen measures {0} pixels.",
+    "protected": "Your browser {0} the size of your screen.",
+    "protectedVerb": "hides"
   },
   "orientation": {
     "title": "How you hold your device",
@@ -126,7 +132,9 @@
       "moreinfo": ""
     },
     "plain": "It tells whether you are holding a phone or tablet, and how.",
-    "sentence": "You're holding your device in {0} position."
+    "sentence": "You're holding your device in {0} position.",
+    "protected": "{0} how you hold your device: it didn't want to tell me which one it is.",
+    "protectedVerb": "I can't tell"
   },
   "darkmode": {
     "title": "Light or dark look",
@@ -141,7 +149,9 @@
     },
     "plain": "A small detail, but one more thing that sets you apart from other visitors.",
     "sentence": "Your system prefers {0}.",
-    "systemNote": "This is your system setting. You can still pick another look for this page in the menu."
+    "systemNote": "This is your system setting. You can still pick another look for this page in the menu.",
+    "protected": "Your browser {0} about whether you prefer light or dark.",
+    "protectedVerb": "keeps quiet"
   },
   "lang": {
     "title": "Your language",
@@ -151,7 +161,9 @@
       "moreinfo": ""
     },
     "plain": "Websites use it to guess your country and which language to show you.",
-    "sentence": "Your browser is set to {0}."
+    "sentence": "Your browser is set to {0}.",
+    "protected": "Your browser {0} which language you speak.",
+    "protectedVerb": "doesn't say"
   },
   "exit": {
     "title": "You left the page...",
@@ -168,7 +180,9 @@
     "times": {
       "one": "{0} time",
       "other": "{0} times"
-    }
+    },
+    "protected": "This page {0} your visits.",
+    "protectedVerb": "can't remember"
   },
   "os": {
     "title": "Your device's system",
@@ -178,7 +192,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Operating_system'>More info about Operating Systems</a>"
     },
     "plain": "Websites can tailor offers, and even some attacks, to the system you use.",
-    "sentence": "Your device runs {0}."
+    "sentence": "Your device runs {0}.",
+    "protected": "Your browser {0} which system your device runs.",
+    "protectedVerb": "doesn't say"
   },
   "browser": {
     "title": "The program you browse with",
@@ -188,7 +204,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Web_browser'>More info about Browser</a>"
     },
     "plain": "Outdated versions can be targeted by attacks, and the exact version helps recognise you.",
-    "sentence": "You use {0} to browse."
+    "sentence": "You use {0} to browse.",
+    "protected": "Your browser {0} its name or its version.",
+    "protectedVerb": "doesn't give"
   },
   "connection": {
     "title": "Your internet speed",
@@ -204,7 +222,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Bandwidth_(computing)'>More info about connection speed</a>"
     },
     "plain": "A website can tell whether you are on fast fibre or on slow mobile data.",
-    "sentence": "Your connection downloads at about {0}."
+    "sentence": "Your connection downloads at about {0}.",
+    "protected": "{0} your internet speed this time.",
+    "protectedVerb": "I couldn't measure"
   },
   "telco": {
     "title": "Your internet company",
@@ -214,7 +234,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Telephone_company'>More info about telephone company</a>"
     },
     "plain": "It reveals your internet company, and whether you connect from home, from work or on mobile data.",
-    "sentence": "Your internet comes from {0}."
+    "sentence": "Your internet comes from {0}.",
+    "protected": "{0} which company connects you to the internet.",
+    "protectedVerb": "I couldn't find out"
   },
   "ip": {
     "title": "Your internet address (IP)",
@@ -224,7 +246,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/IP_address'>More info about IP</a>"
     },
     "plain": "It works like a postal address: it roughly locates you and can link your visits together.",
-    "sentence": "Your address on the internet is {0}."
+    "sentence": "Your address on the internet is {0}.",
+    "protected": "{0} your address on the internet.",
+    "protectedVerb": "I couldn't read"
   },
   "ram": {
     "title": "Your device's memory",
@@ -234,7 +258,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Random-access_memory'>More info about RAM Memory</a>"
     },
     "plain": "It hints at how powerful and expensive your device is; some shops have been accused of adjusting prices to that.",
-    "sentence": "Your device has about {0} of RAM."
+    "sentence": "Your device has about {0} of RAM.",
+    "protected": "Your browser {0} how much memory your device has.",
+    "protectedVerb": "doesn't say"
   },
   "cpu": {
     "title": "Your device's processor",
@@ -244,7 +270,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Microprocessor'>More info about the Processor</a>"
     },
     "plain": "More cores usually means a newer, pricier device, and one more detail that tells you apart.",
-    "sentence": "Your processor reports {0}."
+    "sentence": "Your processor reports {0}.",
+    "protected": "Your browser {0} which processor you have.",
+    "protectedVerb": "doesn't say"
   },
   "gpu": {
     "title": "Your graphics card",
@@ -254,7 +282,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Graphics_card'>More info about the graphics card</a>"
     },
     "plain": "The exact name of your graphics card is rare enough to help recognise your device.",
-    "sentence": "Your graphics card introduces itself as {0}."
+    "sentence": "Your graphics card introduces itself as {0}.",
+    "protected": "Your browser {0} your graphics card.",
+    "protectedVerb": "hides"
   },
   "battery": {
     "title": "Your battery",
@@ -274,7 +304,9 @@
     "plain": "Your battery level can help recognise you across websites for a few minutes.",
     "sentence": "Your battery is at {0}.",
     "afterCharging": " and charging.",
-    "afterIdle": "."
+    "afterIdle": ".",
+    "protected": "Your browser {0} your battery level.",
+    "protectedVerb": "doesn't share"
   },
   "fingerprint": {
     "title": "Your invisible ID code",
@@ -288,7 +320,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Device_fingerprint'>More info about fingerprinting</a>"
     },
     "plain": "Mix everything below and you get a code that recognises you on every visit, even without cookies.",
-    "sentence": "Your invisible code is {0}"
+    "sentence": "Your invisible code is {0}",
+    "protected": "Your browser {0} build your invisible code.",
+    "protectedVerb": "didn't let me"
   },
   "timezone": {
     "title": "Your time zone",
@@ -302,7 +336,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Time_zone'>More info about time zones</a>"
     },
     "plain": "Your clock reveals roughly where you live, even if you hide your IP.",
-    "sentence": "Your browser places you in the {0} time zone."
+    "sentence": "Your browser places you in the {0} time zone.",
+    "protected": "Your browser {0} your time zone.",
+    "protectedVerb": "hides"
   },
   "locale": {
     "title": "How you write dates and numbers",
@@ -316,7 +352,9 @@
       "languages": "Your preferred languages: {0}",
       "example": "For example: {0}."
     },
-    "sentence": "You write dates and numbers the {0} way."
+    "sentence": "You write dates and numbers the {0} way.",
+    "protected": "Your browser {0} how you write dates and numbers.",
+    "protectedVerb": "doesn't show"
   },
   "display": {
     "title": "Your browser window",
@@ -329,7 +367,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Pixel_density'>More info about pixel density</a>"
     },
     "plain": "Window size, pixel density, colours: small details that together tell devices apart.",
-    "sentence": "Your browser window measures {0} pixels."
+    "sentence": "Your browser window measures {0} pixels.",
+    "protected": "Your browser {0} the size of its window.",
+    "protectedVerb": "hides"
   },
   "preferences": {
     "title": "Your accessibility settings",
@@ -343,7 +383,9 @@
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion'>More info about user preferences</a>"
     },
     "plain": "If you changed any of them, you become easier to tell apart from everyone else.",
-    "sentence": "You have {0} in your accessibility settings."
+    "sentence": "You have {0} in your accessibility settings.",
+    "protected": "Your browser {0} your accessibility settings.",
+    "protectedVerb": "keeps quiet about"
   },
   "input": {
     "title": "Mouse or touch screen",
@@ -359,7 +401,9 @@
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer'>More info about the pointer media query</a>"
     },
     "plain": "It gives away whether you are on a phone, a tablet or a computer.",
-    "sentence": "You get around the web with {0}."
+    "sentence": "You get around the web with {0}.",
+    "protected": "Your browser {0} whether you use a mouse or a touch screen.",
+    "protectedVerb": "doesn't say"
   },
   "keyboard": {
     "title": "Your keyboard",
@@ -372,7 +416,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Keyboard_layout'>More info about keyboard layouts</a>"
     },
     "plain": "Your keyboard layout is one more hint about your country.",
-    "sentence": "Your keyboard uses the {0} layout."
+    "sentence": "Your keyboard uses the {0} layout.",
+    "protected": "Your browser {0} your keyboard layout.",
+    "protectedVerb": "doesn't reveal"
   },
   "canvas": {
     "title": "A hidden drawing test",
@@ -385,7 +431,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Canvas_fingerprinting'>More info about canvas fingerprinting</a>"
     },
     "plain": "Your computer draws images in its own tiny, unique way. That is enough to recognise you.",
-    "sentence": "Your browser's hidden drawing boils down to {0}."
+    "sentence": "Your browser's hidden drawing boils down to {0}.",
+    "protected": "Your browser {0} the hidden drawing test.",
+    "protectedVerb": "didn't fall for"
   },
   "audio": {
     "title": "A silent sound test",
@@ -395,7 +443,9 @@
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext'>More info about OfflineAudioContext</a>"
     },
     "plain": "Your device processes sound in its own tiny way, which also helps recognise it.",
-    "sentence": "Your device turned the silent sound into {0}."
+    "sentence": "Your device turned the silent sound into {0}.",
+    "protected": "Your browser {0} the silent sound test.",
+    "protectedVerb": "didn't fall for"
   },
   "fonts": {
     "title": "Typefaces on your computer",
@@ -425,7 +475,9 @@
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices'>More info about getVoices</a>"
     },
     "plain": "The voices on your system reveal it, and the languages you have installed.",
-    "sentence": "Your system offers {0}."
+    "sentence": "Your system offers {0}.",
+    "protected": "Your browser {0} which reading voices you have.",
+    "protectedVerb": "doesn't list"
   },
   "incognito": {
     "title": "Private browsing",
@@ -440,7 +492,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Private_browsing'>More info about private browsing</a>"
     },
     "plain": "Websites can often tell when you browse privately.",
-    "sentence": "This page thinks {0}."
+    "sentence": "This page thinks {0}.",
+    "protected": "{0} whether you are browsing privately.",
+    "protectedVerb": "I can't tell"
   },
   "adblock": {
     "title": "Ad blocker",
@@ -456,7 +510,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Ad_blocking'>More info about ad blocking</a>"
     },
     "plain": "Websites can nag you, hide content or simply note it down as one more trait.",
-    "sentence": "This page noticed that {0}."
+    "sentence": "This page noticed that {0}.",
+    "protected": "{0} whether you use an ad blocker.",
+    "protectedVerb": "I can't tell"
   },
   "signals": {
     "title": "“Don't track me” requests",
@@ -471,7 +527,9 @@
       "moreinfo": "<a target='_blank' href='https://globalprivacycontrol.org/'>More info about Global Privacy Control</a>"
     },
     "plain": "Respecting “do not track” is optional for websites, and turning it on makes you a bit more unique.",
-    "sentence": "Your browser sends these “don't track me” requests: {0}."
+    "sentence": "Your browser sends these “don't track me” requests: {0}.",
+    "protected": "Your browser {0} its privacy requests.",
+    "protectedVerb": "doesn't show"
   },
   "navigation": {
     "title": "How you got here",
@@ -485,7 +543,9 @@
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/History/length'>More info about history.length</a>"
     },
     "plain": "A website can see which page sent you here and how you move around.",
-    "sentence": "This tab has already seen {0}."
+    "sentence": "This tab has already seen {0}.",
+    "protected": "Your browser {0} how you got here.",
+    "protectedVerb": "doesn't tell"
   },
   "behaviour": {
     "title": "What you do on this page",
@@ -504,7 +564,9 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Session_replay'>More info about session replay</a>"
     },
     "plain": "Any website can record your mouse, clicks and scroll, and even replay your visit later.",
-    "sentence": "So far you have moved your mouse {0} times here."
+    "sentence": "So far you have moved your mouse {0} times here.",
+    "protected": "{0} what you do on this page.",
+    "protectedVerb": "I can't see"
   },
   "summary": {
     "eyebrow": "No permissions asked. None needed.",

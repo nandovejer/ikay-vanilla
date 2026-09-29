@@ -78,8 +78,13 @@ const detectMotion = {
   async init() {
     const hasMotion = typeof DeviceMotionEvent !== "undefined";
     if (!hasMotion && typeof DeviceOrientationEvent === "undefined") return undefined;
-    // Apple asks for permission first: we do not ask, so it stays private
-    if (typeof DeviceMotionEvent?.requestPermission === "function") {
+    // Apple asks for permission first: we do not ask, so it stays private.
+    // (Some Chromium builds also expose requestPermission: only Apple
+    // devices are treated as "asks first"; elsewhere we just listen.)
+    const apple =
+      /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    if (apple && typeof DeviceMotionEvent?.requestPermission === "function") {
       paintIos();
       return undefined;
     }
@@ -118,6 +123,8 @@ const detectMotion = {
     let motion = first.motion;
     let orientation = first.orientation;
     let visible = true;
+    // first words right away, then calm updates while visible
+    levelEl.textContent = t(`motion.level.${levelOf(speedOf(first.motion))}`);
     let lastText = 0;
     let queued = false;
 
