@@ -430,7 +430,7 @@
       "description": "<p>The website secretly draws the same image in every browser. Your GPU, its drivers, your system and your fonts paint it with differences you cannot see, but the hash of the image changes from one device to another.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Canvas_fingerprinting'>More info about canvas fingerprinting</a>"
     },
-    "plain": "Your computer draws images in its own tiny, unique way. That is enough to recognise you.",
+    "plain": "Your device draws images in its own tiny, unique way. That is enough to recognise you.",
     "sentence": "Your browser's hidden drawing boils down to {0}.",
     "protected": "Your browser {0} the hidden drawing test.",
     "protectedVerb": "didn't fall for"
@@ -448,17 +448,17 @@
     "protectedVerb": "didn't fall for"
   },
   "fonts": {
-    "title": "Typefaces on your computer",
+    "title": "Typefaces on your device",
     "type": {
       "count": "{0} typefaces"
     },
     "modalinfo": {
-      "title": "Typefaces on your computer",
+      "title": "Typefaces on your device",
       "description": "<p>By measuring the width of a text with each typeface (techies call them fonts), the website finds out which ones you have installed without asking. It reveals your operating system and programs like Office or Adobe.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Device_fingerprint'>More info about fingerprinting</a>"
     },
     "plain": "The typefaces you installed hint at your job and your apps (Office, Adobe…).",
-    "sentence": "We found {0} installed on your computer.",
+    "sentence": "We found {0} installed on your device.",
     "protected": "Your browser {0} which typefaces you have installed.",
     "protectedVerb": "doesn't reveal",
     "listLabel": "Here they are, each in its own lettering (techies call them fonts):"

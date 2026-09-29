@@ -430,7 +430,7 @@
       "description": "<p>La web dibuja en secreto la misma imagen en todos los navegadores. Tu GPU, sus drivers, tu sistema y tus fuentes la pintan con diferencias invisibles a simple vista, pero el hash de la imagen cambia de un equipo a otro.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Canvas_fingerprinting'>Más info sobre canvas fingerprinting</a>"
     },
-    "plain": "Tu ordenador dibuja las imágenes a su manera, con diferencias mínimas y únicas. Basta para reconocerte.",
+    "plain": "Tu dispositivo dibuja las imágenes a su manera, con diferencias mínimas y únicas. Basta para reconocerte.",
     "sentence": "El dibujo oculto de tu navegador se resume en {0}.",
     "protected": "Tu navegador {0} en la prueba de dibujo oculta.",
     "protectedVerb": "no ha caído"
@@ -458,7 +458,7 @@
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Device_fingerprint'>Más info sobre fingerprinting</a>"
     },
     "plain": "Los tipos de letra que tienes instalados dan pistas de tu trabajo y tus programas (Office, Adobe…).",
-    "sentence": "Hemos encontrado {0} instalados en tu ordenador.",
+    "sentence": "Hemos encontrado {0} instalados en tu dispositivo.",
     "protected": "Tu navegador {0} qué tipos de letra tienes instalados.",
     "protectedVerb": "no deja ver",
     "listLabel": "Aquí los tienes, cada uno con su propia letra (los informáticos las llaman fuentes):"
