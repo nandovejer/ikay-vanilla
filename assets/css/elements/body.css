@@ -1,44 +1,124 @@
-/* OBJECTS AND COMPONENTS */
-html,
-body {
+/* ELEMENTS */
+html {
   scroll-behavior: smooth;
+  scroll-padding-block-start: calc(var(--header-h) + var(--space-s));
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  accent-color: var(--gold-strong);
 }
 
 body {
+  min-block-size: 100dvh;
   font-family: var(--font-body);
-  background-color: #fafafa;
-  color: #000;
+  font-size: var(--step-0);
+  line-height: var(--leading);
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
+  line-height: var(--leading-tight);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
-h2 {
-  font-size: var(--fontsize-xl);
+p,
+li,
+dd {
+  text-wrap: pretty;
 }
 
-h3 {
-  font-size: var(--fontsize-l);
+a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color var(--dur) var(--ease), text-decoration-color var(--dur) var(--ease);
+
+  &:hover {
+    text-decoration-thickness: 2px;
+  }
 }
 
-h4 {
-  font-size: var(--fontsize-m);
+code,
+kbd,
+samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
 }
 
-a,
-a:hover,
-a:focus {
-  font-weight: bold;
+/* One focus style for everything, visible on any surface */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-s);
 }
 
-p {
-  line-height: 1.5em;
+/* Headings reached from the menu: no ring, but a gold mark */
+[tabindex="-1"]:focus {
+  outline: none;
 }
 
-html[lang="ar"] {
-  direction: rtl;
+::selection {
+  background-color: var(--gold);
+  color: var(--on-gold);
+}
+
+/* Small reusable bits */
+.eyebrow {
+  font-size: var(--step--1);
+  font-weight: 650;
+  color: var(--accent);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.1em 0.6em;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--accent-line);
+  background-color: var(--accent-soft);
+  color: var(--text);
+  font-size: var(--step--2);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  vertical-align: 0.1em;
+}
+
+.skiplink {
+  position: fixed;
+  inset-block-start: var(--space-2xs);
+  inset-inline-start: var(--space-2xs);
+  z-index: 100;
+  padding: var(--space-2xs) var(--space-s);
+  border-radius: var(--radius-m);
+  background-color: var(--gold);
+  color: var(--on-gold);
+  translate: 0 -200%;
+
+  &:focus-visible {
+    translate: 0;
+  }
+}
+
+#nojs {
+  display: block;
+  max-inline-size: var(--measure);
+  margin: var(--space-xl) auto;
+  padding: var(--space-m);
+  font-size: var(--step-1);
+}
+
+/* Arabic is a joined script: tracking would break the letters apart */
+:root:lang(ar) * {
+  letter-spacing: normal !important;
 }

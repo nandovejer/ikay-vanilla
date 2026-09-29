@@ -39,6 +39,7 @@ const detectIncognito = {
 
     return {
       value: t(isPrivate ? "incognito.type.likely" : "incognito.type.unlikely"),
+      win: isPrivate,
       detail,
     };
   },

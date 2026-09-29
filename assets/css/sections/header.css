@@ -1,94 +1,104 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 72;
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 40;
+}
+
+/* The blur lives here, not on .header: a backdrop-filter would become the
+   containing block of the fixed sidebar */
+.header__bar {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  padding: var(--space-m) 8px;
-  width: 100%;
-  height: 100px;
-  background-image: linear-gradient(
-    to bottom,
-    rgb(250 250 250 / 0.9) 90%,
-    transparent
-  );
-  background-color: transparent;
+  gap: var(--space-s);
+  block-size: var(--header-h);
+  padding-inline: var(--gutter);
+  border-block-end: 1px solid var(--border);
+  background-color: color-mix(in oklch, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(1.4) blur(14px);
 }
 
 .header__linkHome {
-  color: black;
-  text-decoration: none;
   display: flex;
   align-items: center;
-
-  @media (min-width: 980px) {
-    width: var(--container-width);
-    max-width: var(--container-width);
-    margin: 0 auto;
-  }
+  gap: 0.7rem;
+  min-inline-size: 0;
+  min-block-size: var(--target);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: var(--radius-m);
 }
 
 .header__logo {
-  width: 60px;
-  min-width: 60px;
-  height: 60px;
-  margin-right: var(--space-xs);
-  padding: var(--space-m);
-  background-color: var(--color-warning);
-  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  flex: none;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--gold);
+  color: var(--on-gold);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--on-gold) 12%, transparent);
+
+  .iconbg {
+    inline-size: 1.55rem;
+    block-size: 1.55rem;
+  }
 }
 
 .header__info {
-  padding-right: var(--space-m);
+  display: grid;
+  min-inline-size: 0;
+  line-height: 1.15;
 }
 
 .header__h1 {
-  font-size: var(--fontsize-m);
-  margin-bottom: 0;
-  margin-top: 0;
-  width: 100%;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .header__description {
-  font-size: var(--fontsize-xs);
-  margin-top: 0;
-  margin-bottom: 8px;
+  overflow: hidden;
+  font-size: var(--step--2);
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .header__btnMenu {
-  border: 0;
+  display: grid;
+  place-items: center;
+  flex: none;
+  inline-size: var(--target);
+  block-size: var(--target);
   padding: 0;
-  background: none;
-  box-shadow: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  background-color: var(--surface);
+  color: var(--text);
   cursor: pointer;
-  margin-top: 8px;
-  z-index: 8;
+  transition: background-color var(--dur) var(--ease);
 
-  /* JS - navMenu.js */
-  &.openMenu {
-    display: none;
-  }
-
-  @media (min-width: 1624px) {
-    display: none;
-  }
-
-  &:hover,
-  &:focus {
-    background: none;
-  }
-
+  /* three lines drawn in css: the classic, most recognisable menu icon */
   .iconbg-menu {
-    display: block;
-    width: 30px;
-    height: 30px;
-    background-size: 95%;
+    inline-size: 1.15rem;
+    block-size: 0.9rem;
+    background:
+      linear-gradient(currentColor 0 0) top / 100% 2px no-repeat,
+      linear-gradient(currentColor 0 0) center / 100% 2px no-repeat,
+      linear-gradient(currentColor 0 0) bottom / 100% 2px no-repeat;
+    -webkit-mask: none;
+    mask: none;
+  }
 
-    &:hover,
-    &:focus {
-      background-size: 100%;
-    }
+  &:hover {
+    background-color: var(--surface-2);
+  }
+
+  @media (min-width: 70em) {
+    display: none;
   }
 }

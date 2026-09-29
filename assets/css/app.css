@@ -1,32 +1,33 @@
 /*
  * IKAY - styles
- * Plain CSS, no preprocessor: custom properties + native nesting.
- * The files keep the original ITCSS order.
+ * Plain CSS, no preprocessor: custom properties, native nesting,
+ * cascade layers and container queries. ITCSS order kept as layers.
  */
+@layer settings, generic, elements, objects, components, sections, utilities;
 
 /* SETTINGS */
-@import url("settings/variables.css");
+@import url("settings/variables.css") layer(settings);
 
 /* GENERIC */
-@import url("generic/normalize.css");
-@import url("generic/reset.css");
+@import url("generic/normalize.css") layer(generic);
+@import url("generic/reset.css") layer(generic);
 
 /* ELEMENTS */
-@import url("elements/body.css");
-@import url("elements/animation.css");
+@import url("elements/body.css") layer(elements);
+@import url("elements/animation.css") layer(elements);
 
 /* OBJECTS */
-@import url("objects/icon.css");
+@import url("objects/icon.css") layer(objects);
 
 /* COMPONENTS */
-@import url("components/sharetime.css");
-@import url("components/caimodal.css");
-@import url("components/battery.css");
-@import url("components/card.css");
-@import url("components/nav.css");
+@import url("components/card.css") layer(components);
+@import url("components/battery.css") layer(components);
+@import url("components/caimodal.css") layer(components);
+@import url("components/nav.css") layer(components);
+@import url("components/sharetime.css") layer(components);
 
 /* SECTIONS */
-@import url("sections/loadingPage.css");
-@import url("sections/header.css");
-@import url("sections/main.css");
-@import url("sections/footer.css");
+@import url("sections/loadingPage.css") layer(sections);
+@import url("sections/header.css") layer(sections);
+@import url("sections/main.css") layer(sections);
+@import url("sections/footer.css") layer(sections);

@@ -2,7 +2,7 @@
  * Speech synthesis voices: they come from the operating system and from
  * the language packs you installed.
  */
-import { t } from "../i18n.js";
+import { t, langLabel } from "../i18n.js";
 
 const getVoices = () =>
   new Promise((resolve) => {
@@ -25,13 +25,15 @@ const detectVoices = {
     if (!("speechSynthesis" in window)) return undefined;
     const voices = await getVoices();
     const local = voices.filter((voice) => voice.localService).length;
+    // raw names feed "Your ID"; the list shows the language in plain words
     const names = voices.map((voice) => `${voice.name} (${voice.lang})`);
+    const labels = voices.map((voice) => `${voice.name} (${langLabel(voice.lang)})`);
 
     return {
       value: voices.length
         ? t("voices.type.count", voices.length, local)
         : t("voices.type.none"),
-      list: names,
+      list: labels,
       fingerprint: names.join(","),
     };
   },

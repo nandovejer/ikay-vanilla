@@ -1,161 +1,253 @@
+/*
+ * NAV
+ * < 70em : off-canvas panel on the Popover API (light dismiss, Esc),
+ *          sliding in from the inline end (right in LTR, left in RTL).
+ * >= 70em: the same element is a fixed sidebar with scroll spy.
+ * Only :popover-open (or .openMenu without popover support) shows it.
+ */
 .nav {
-  height: 100vh;
-  width: 300px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  transform: translateX(300px);
-  z-index: 32;
-  box-shadow: 0 2px 1px -1px rgb(0 0 0 / 0.2), 0 1px 1px 0 rgb(0 0 0 / 0.14),
-    0 1px 3px 0 rgb(0 0 0 / 0.12);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background-color: var(--white);
-  transition: transform 0.5s linear;
+  --off: 100%;
 
-  @media (min-width: 1624px) {
-    transform: translateX(0);
-    box-shadow: none;
+  position: fixed;
+  inset-block: 0;
+  inset-inline: auto 0;
+  z-index: 50;
+  flex-direction: column;
+  gap: var(--space-s);
+  inline-size: min(21rem, 100vw - 3rem);
+  block-size: 100dvh;
+  max-block-size: none;
+  margin: 0;
+  padding: var(--space-s);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 0;
+  border-inline-start: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-3);
+  translate: var(--off) 0;
+  transition:
+    translate 260ms var(--ease),
+    overlay 260ms allow-discrete,
+    display 260ms allow-discrete;
+
+  &:dir(rtl) {
+    --off: -100%;
   }
 
-  /* JS - navMenu.js */
+  &:popover-open,
   &.openMenu {
-    transform: translateX(0);
-    transition: transform 0.5s linear;
+    display: flex;
+    translate: 0 0;
+  }
 
-    .nav__btnMenuClose {
-      display: block;
+  &::backdrop {
+    background-color: oklch(0.18 0.01 80 / 0);
+    transition:
+      background-color 260ms var(--ease),
+      overlay 260ms allow-discrete,
+      display 260ms allow-discrete;
+  }
+
+  &:popover-open::backdrop {
+    background-color: oklch(0.18 0.01 80 / 0.4);
+  }
+}
+
+@starting-style {
+  .nav:popover-open {
+    translate: var(--off) 0;
+  }
+
+  .nav:popover-open::backdrop {
+    background-color: oklch(0.18 0.01 80 / 0);
+  }
+}
+
+/* No popover support: plain class toggle */
+.nav:not([popover]):not(.openMenu) {
+  display: none;
+}
+
+.nav__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s);
+  padding-inline-start: 0.75rem;
+}
+
+.nav__heading {
+  font-size: var(--step-0);
+  font-weight: 700;
+}
+
+.nav__btnMenuClose {
+  display: grid;
+  place-items: center;
+  inline-size: var(--target);
+  block-size: var(--target);
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background-color: var(--surface-2);
+  cursor: pointer;
+
+  .iconbg {
+    inline-size: 0.9rem;
+    block-size: 0.9rem;
+  }
+
+  &:hover {
+    background-color: var(--surface-3);
+  }
+}
+
+.nav__list {
+  display: grid;
+  gap: 2px;
+}
+
+.nav__list--secondary {
+  padding-block-start: var(--space-s);
+  border-block-start: 1px solid var(--border);
+}
+
+.nav__list__item .link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  inline-size: 100%;
+  min-block-size: var(--target);
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: var(--radius-m);
+  background: none;
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  font-weight: 550;
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+
+  &:hover {
+    background-color: var(--surface-2);
+    color: var(--text);
+  }
+
+  &[aria-current] {
+    background-color: var(--accent-soft);
+    color: var(--text);
+    font-weight: 650;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block: 0.65rem;
+      inline-size: 3px;
+      border-radius: 3px;
+      background-color: var(--gold-strong);
+    }
+
+    .nav__icon {
+      color: var(--accent);
     }
   }
 }
 
 .nav__icon {
-  width: 20px;
-  height: 20px;
-  display: block;
-  margin-right: var(--space-xs);
+  inline-size: 1.15rem;
+  block-size: 1.15rem;
 }
 
-.nav__btnMenuClose {
-  border: 0;
-  background: none;
-  padding: 0;
-  cursor: pointer;
-  position: absolute;
-  top: 40px;
-  left: var(--space-m);
-
-  @media (min-width: 1624px) {
-    display: none;
-  }
-
-  .iconbg-close {
-    width: 24px;
-    height: 24px;
-    background-size: 85%;
-
-    &:hover,
-    &:focus {
-      background-size: 100%;
-    }
-  }
-}
-
+/* LANGUAGE: segmented control */
 .nav__lang {
-  width: 100%;
-  height: 100px;
-  padding-left: 42px;
-  padding-right: var(--space-xs);
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  gap: 0.5rem;
+  margin-block-start: auto;
+  padding-block-start: var(--space-s);
+  border-block-start: 1px solid var(--border);
+}
+
+.nav__lang__label {
+  padding-inline-start: 0.75rem;
+  font-size: var(--step--1);
+  font-weight: 650;
+  color: var(--text-muted);
+}
+
+.nav__lang__options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--radius-m);
+  background-color: var(--surface-2);
 }
 
 .nav__lang__btn {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  min-block-size: var(--target);
+  padding: 0.3rem 0.25rem;
   border: 0;
+  border-radius: var(--radius-s);
   background: none;
-  outline: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  color: var(--text-muted);
   cursor: pointer;
-  font-weight: bold;
-  color: silver;
-  min-width: 48px;
+  line-height: 1.2;
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
 
-  &:hover,
-  &:focus,
-  &.active {
-    color: var(--black);
+  &:hover {
+    color: var(--text);
   }
 
-  &::after {
-    content: attr(data-name);
-    font-size: 10px;
-    font-weight: normal;
+  &[aria-pressed="true"] {
+    background-color: var(--surface);
+    color: var(--text);
+    box-shadow: var(--shadow-1);
   }
 }
 
-.nav__list {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 40px;
-  font-size: var(--fontsize-s);
+.nav__lang__code {
+  font-size: var(--step--1);
+  font-weight: 700;
 }
 
-.nav__list__item {
-  width: 100%;
+.nav__lang__name {
+  font-size: var(--step--2);
+}
 
-  .link {
-    width: 100%;
+/* SIDEBAR */
+@media (min-width: 70em) {
+  .nav,
+  .nav:popover-open {
     display: flex;
-    justify-content: left;
-    align-items: center;
-    min-height: 40px;
-    color: var(--black);
-    text-decoration: none;
-    padding-left: var(--space-m);
-    padding-right: var(--space-m);
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: #eee;
-    }
-  }
-}
-
-html[lang="ar"] {
-  direction: rtl;
-
-  .nav {
-    left: 0;
-    right: initial;
-    transform: translateX(-300px);
-
-    @media (min-width: 1624px) {
-      left: 300px;
-    }
-
-    &.openMenu {
-      transform: translateX(0);
-    }
+    inset-block: var(--header-h) 0;
+    inset-inline: 0 auto;
+    z-index: 20;
+    inline-size: var(--sidebar-w);
+    block-size: auto;
+    padding: var(--space-m) var(--space-s);
+    border-inline-start: 0;
+    border-inline-end: 1px solid var(--border);
+    background-color: var(--bg);
+    box-shadow: none;
+    translate: none;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
   }
 
-  .nav__lang {
-    padding-left: 0;
-  }
-
-  .nav__btnMenuClose {
-    right: var(--space-m);
-    left: initial;
-  }
-
-  .nav__icon {
-    margin-left: 8px;
-    margin-right: 0;
+  .nav__top {
+    display: none;
   }
 }

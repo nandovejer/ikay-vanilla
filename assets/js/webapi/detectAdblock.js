@@ -24,6 +24,9 @@ const detectAdblock = {
 
     return {
       value: t(blocked ? "adblock.type.detected" : "adblock.type.none"),
+      // having one is good news for you
+      win: blocked,
+      note: t(blocked ? "adblock.type.win" : "adblock.type.nudge"),
       detail: [['<div class="adsbox ad-banner">', blocked ? "display: none" : "visible"]],
       fingerprint: String(blocked),
     };

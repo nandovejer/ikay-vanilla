@@ -3,6 +3,14 @@ import caimodal from "./caimodal.js";
 import { t } from "../i18n.js";
 
 const SOCIAL = ["facebook", "twitter", "linkedin", "whatsapp", "reddit", "mail"];
+/** Brand names are not translated; "mail" is */
+const NAMES = {
+  facebook: "Facebook",
+  twitter: "X / Twitter",
+  linkedin: "LinkedIn",
+  whatsapp: "WhatsApp",
+  reddit: "Reddit",
+};
 
 const sharetime = {
   init() {
@@ -46,10 +54,12 @@ const sharetime = {
     SOCIAL.forEach((socialNetwork) => {
       const item = template("tpl-share-item");
       const link = item.querySelector("a");
-      // TODO - CHANGE ICON MAIL SVG WITH A EDITOR
       const icon = socialNetwork === "mail" ? "contact" : socialNetwork;
-      link.classList.add(`iconbg-${icon}`, `js-sharetime-${socialNetwork}`);
-      link.title = t("global.shareIn", socialNetwork);
+      const name = NAMES[socialNetwork] ?? t("global.email");
+      link.classList.add(`js-sharetime-${socialNetwork}`);
+      link.querySelector(".iconbg").classList.add(`iconbg-${icon}`);
+      link.querySelector(".shareTimeList__label").textContent = name;
+      link.title = t("global.shareIn", name);
       link.href = urls[socialNetwork];
       list.append(item);
     });

@@ -1,211 +1,218 @@
+/*
+ * ICONS
+ * Monochrome SVGs used as masks painted with currentColor, so the same
+ * files work in light and dark mode and inherit the text colour.
+ * .iconbg-{name} -> --bgurl-{name} (settings/variables.css)
+ */
 .iconbg {
-  display: block;
-  width: 128px;
-  height: 128px;
+  display: inline-block;
+  flex: none;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
 }
 
-/* Shared by every .iconbg-* class (former bgimage() mixin) */
+/* Shared by every .iconbg-* class */
 [class*="iconbg-"] {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
 }
 
-/* SOCIAL MEDIA */
+@media (forced-colors: active) {
+  [class*="iconbg-"] {
+    background-color: CanvasText;
+    forced-color-adjust: none;
+  }
+}
+
 .iconbg-facebook {
-  background-image: var(--bgurl-facebook);
+  --icon: var(--bgurl-facebook);
 }
 
 .iconbg-twitter {
-  background-image: var(--bgurl-twitter);
+  --icon: var(--bgurl-twitter);
 }
 
 .iconbg-linkedin {
-  background-image: var(--bgurl-linkedin);
+  --icon: var(--bgurl-linkedin);
 }
 
 .iconbg-whatsapp {
-  background-image: var(--bgurl-whatsapp);
+  --icon: var(--bgurl-whatsapp);
 }
 
 .iconbg-reddit {
-  background-image: var(--bgurl-reddit);
+  --icon: var(--bgurl-reddit);
 }
 
 .iconbg-contact {
-  background-image: var(--bgurl-contact);
+  --icon: var(--bgurl-contact);
 }
 
-/* GLOBAL */
 .iconbg-logo {
-  background-image: var(--bgurl-logo);
+  --icon: var(--bgurl-logo);
 }
 
 .iconbg-battery {
-  background-image: var(--bgurl-battery);
+  --icon: var(--bgurl-battery);
 }
 
 .iconbg-close {
-  background-image: var(--bgurl-close);
+  --icon: var(--bgurl-close);
 }
 
 .iconbg-connection {
-  background-image: var(--bgurl-connection);
+  --icon: var(--bgurl-connection);
 }
 
 .iconbg-hardware {
-  background-image: var(--bgurl-hardware);
+  --icon: var(--bgurl-hardware);
 }
 
 .iconbg-info {
-  background-image: var(--bgurl-info);
+  --icon: var(--bgurl-info);
 }
 
 .iconbg-location {
-  background-image: var(--bgurl-location);
+  --icon: var(--bgurl-location);
 }
 
 .iconbg-menu {
-  background-image: var(--bgurl-menu);
+  --icon: var(--bgurl-menu);
 }
 
 .iconbg-project {
-  background-image: var(--bgurl-project);
+  --icon: var(--bgurl-project);
 }
 
 .iconbg-share {
-  background-image: var(--bgurl-share);
+  --icon: var(--bgurl-share);
 }
 
 .iconbg-resolution {
-  background-image: var(--bgurl-resolution);
+  --icon: var(--bgurl-resolution);
 }
 
 .iconbg-orientation {
-  background-image: var(--bgurl-orientation);
+  --icon: var(--bgurl-orientation);
 }
 
 .iconbg-darkmode {
-  background-image: var(--bgurl-darkmode);
+  --icon: var(--bgurl-darkmode);
 }
 
 .iconbg-lang {
-  background-image: var(--bgurl-lang);
+  --icon: var(--bgurl-lang);
 }
 
 .iconbg-ram {
-  background-image: var(--bgurl-ram);
+  --icon: var(--bgurl-ram);
 }
 
 .iconbg-cpu {
-  background-image: var(--bgurl-cpu);
+  --icon: var(--bgurl-cpu);
 }
 
 .iconbg-gpu {
-  background-image: var(--bgurl-gpu);
+  --icon: var(--bgurl-gpu);
 }
 
 .iconbg-ip {
-  background-image: var(--bgurl-ip);
+  --icon: var(--bgurl-ip);
 }
 
 .iconbg-telco {
-  background-image: var(--bgurl-telco);
+  --icon: var(--bgurl-telco);
 }
 
 .iconbg-exit {
-  background-image: var(--bgurl-exit);
+  --icon: var(--bgurl-exit);
 }
 
-/* DEVICES */
 .iconbg-devices {
-  background-image: var(--bgurl-devices);
+  --icon: var(--bgurl-devices);
 }
 
 .iconbg-mobileAndroid {
-  background-image: var(--bgurl-mobileAndroid);
+  --icon: var(--bgurl-mobileAndroid);
 }
 
-/* OS */
 .iconbg-os {
-  background-image: var(--bgurl-os);
+  --icon: var(--bgurl-os);
 }
 
 .iconbg-windows {
-  background-image: var(--bgurl-windows);
+  --icon: var(--bgurl-windows);
 }
 
-/* BROWSER */
 .iconbg-browser {
-  background-image: var(--bgurl-browser);
+  --icon: var(--bgurl-browser);
 }
 
 .iconbg-firefox {
-  background-image: var(--bgurl-firefox);
+  --icon: var(--bgurl-firefox);
 }
 
-
-/* FINGERPRINTING CARDS */
 .iconbg-fingerprint {
-  background-image: var(--bgurl-fingerprint);
+  --icon: var(--bgurl-fingerprint);
 }
 
 .iconbg-timezone {
-  background-image: var(--bgurl-timezone);
+  --icon: var(--bgurl-timezone);
 }
 
 .iconbg-locale {
-  background-image: var(--bgurl-locale);
+  --icon: var(--bgurl-locale);
 }
 
 .iconbg-display {
-  background-image: var(--bgurl-display);
+  --icon: var(--bgurl-display);
 }
 
 .iconbg-preferences {
-  background-image: var(--bgurl-preferences);
+  --icon: var(--bgurl-preferences);
 }
 
 .iconbg-input {
-  background-image: var(--bgurl-input);
+  --icon: var(--bgurl-input);
 }
 
 .iconbg-keyboard {
-  background-image: var(--bgurl-keyboard);
+  --icon: var(--bgurl-keyboard);
 }
 
 .iconbg-canvas {
-  background-image: var(--bgurl-canvas);
+  --icon: var(--bgurl-canvas);
 }
 
 .iconbg-audio {
-  background-image: var(--bgurl-audio);
+  --icon: var(--bgurl-audio);
 }
 
 .iconbg-fonts {
-  background-image: var(--bgurl-fonts);
+  --icon: var(--bgurl-fonts);
 }
 
 .iconbg-voices {
-  background-image: var(--bgurl-voices);
+  --icon: var(--bgurl-voices);
 }
 
 .iconbg-incognito {
-  background-image: var(--bgurl-incognito);
+  --icon: var(--bgurl-incognito);
 }
 
 .iconbg-adblock {
-  background-image: var(--bgurl-adblock);
+  --icon: var(--bgurl-adblock);
 }
 
 .iconbg-signals {
-  background-image: var(--bgurl-signals);
+  --icon: var(--bgurl-signals);
 }
 
 .iconbg-navigation {
-  background-image: var(--bgurl-navigation);
+  --icon: var(--bgurl-navigation);
 }
 
 .iconbg-behaviour {
-  background-image: var(--bgurl-behaviour);
+  --icon: var(--bgurl-behaviour);
 }

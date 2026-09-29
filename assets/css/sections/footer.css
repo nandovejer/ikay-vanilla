@@ -1,31 +1,77 @@
+/* FOOTER: ink band, dark in both themes */
 .footer {
-  background-color: var(--black);
-  color: var(--white);
-  padding: calc(var(--space-m) * 2) var(--space-m);
+  padding: var(--space-xl) var(--gutter) calc(var(--space-xl) + 4rem);
+  border-block-start: 1px solid var(--border);
+  background-color: var(--ink);
+  color: var(--on-ink);
+  color-scheme: dark;
 
-  a,
-  a:hover,
-  a:focus {
-    color: var(--white);
+  a {
+    color: var(--gold);
+  }
+
+  .eyebrow {
+    color: var(--gold);
+  }
+
+  p {
+    max-inline-size: var(--measure);
+    margin-block-end: 0.75em;
+    color: var(--on-ink-muted);
+  }
+
+  @media (min-width: 70em) {
+    margin-inline-start: var(--sidebar-w);
   }
 }
 
-.footer__title,
-.footer__article {
-  max-width: var(--container-width);
-  margin: 0 auto;
+.footer__inner {
+  display: grid;
+  gap: var(--space-l);
+  max-inline-size: var(--content-max);
+  margin-inline: auto;
+
+  @media (min-width: 60em) {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    align-items: end;
+  }
 }
 
-.footer__article.footer__article--legal {
-  font-size: var(--fontsize-xs);
-  text-align: center;
-  padding-top: var(--space-m);
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    silver 60%,
-    transparent
-  );
-  background-size: 100% 2px;
-  background-repeat: no-repeat;
+.footer__title {
+  margin-block: 0.25rem 0.75rem;
+  font-size: var(--step-3);
+  color: var(--on-ink);
+}
+
+.footer__article--legal {
+  display: grid;
+  gap: var(--space-2xs);
+  padding: var(--space-m);
+  border: 1px solid oklch(1 0 0 / 0.12);
+  border-radius: var(--radius-l);
+  font-size: var(--step--1);
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    overflow-wrap: anywhere;
+  }
+}
+
+.footer__logo {
+  display: grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  margin-block-end: var(--space-2xs);
+  border-radius: 50%;
+  background-color: var(--gold);
+  color: var(--on-gold);
+
+  .iconbg {
+    inline-size: 1.6rem;
+    block-size: 1.6rem;
+  }
 }

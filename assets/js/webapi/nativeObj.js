@@ -11,6 +11,7 @@ import detectCPU from "./detectCPU.js";
 import detectGPU from "./detectGPU.js";
 import detectExit from "./detectExit.js";
 import { escapeHTML } from "../modules/dom.js";
+import { t, langLabel } from "../i18n.js";
 // import detectPlugins from "./detectPlugins.js";
 
 /**
@@ -21,15 +22,25 @@ import { escapeHTML } from "../modules/dom.js";
 const nativeObj = async () => {
   const ua = await parseUserAgent();
   const device = detectDevice.init(ua);
+  const orientation = detectOrientation.init(device);
   const safe = (value) => (value === undefined ? undefined : escapeHTML(value));
+
+  // Not even the type of device could be worked out: a privacy win, and so
+  // is the orientation that depends on it
+  const deviceUnknown = !ua.device.model && device === escapeHTML(t("device.type.unknownDevice"));
+  const kept = deviceUnknown
+    ? ["device", ...(orientation === t("orientation.type.undefined", device) ? ["orientation"] : [])]
+    : [];
 
   return {
     os: safe(detectOs.init(ua)),
     browser: safe(detectBrowser.init(ua)),
     device,
-    lang: safe(navigator.language),
+    // in plain words; the raw code stays for "Your ID" and the details
+    lang: safe(langLabel(navigator.language)),
+    langCode: navigator.language,
     screen: `${screen.width}x${screen.height}px ${screen.colorDepth}bits/pixel`,
-    orientation: detectOrientation.init(device),
+    orientation,
     datetime: new Date().toLocaleTimeString(),
     datetoday: date.today("longDate"),
     speed: detectSpeedInternet.init(),
@@ -39,6 +50,7 @@ const nativeObj = async () => {
     gpu: safe(detectGPU.init()),
     exit: detectExit.init(),
     // plugins: detectPlugins(), // TODO - Plugins not work
+    kept,
   };
 };
 

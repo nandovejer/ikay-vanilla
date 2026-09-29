@@ -1,54 +1,122 @@
 /*
- * SETTINGS
- * Former SCSS variables, now native custom properties.
+ * SETTINGS - design tokens
  *
- * Media queries cannot read custom properties, so breakpoints are written
- * literally where they are used:
- *   --media-sm     980px
- *   --media-lg     1280px
- *   --media-lgplus 1624px
+ * Concept: "the file a website keeps on you". An editorial dossier:
+ * paper and ink, numbered chapters and entries, the IKAY gold used as a
+ * highlighter marker (never as big boxes), a rubber stamp for the wins.
+ * - Type: Fraunces (display, headings), Inter Tight (reading),
+ *   Fira Code (the data: every value found about you).
+ * - Colour restraint: warm paper + near-black ink, ONE accent (gold),
+ *   ONE success tone for wins. No decorative gradients, no glass.
+ * - Light and dark are first class: light-dark() pairs, dark = dark paper.
+ *
+ * Breakpoints (media queries cannot read custom properties):
+ *   40em   bigger header / share label
+ *   70em   the menu becomes a fixed sidebar
+ * Components adapt to their own width with container queries.
  *
  * Every css file lives one folder below css/, so the image paths
  * below resolve the same wherever the var() is used.
  */
 :root {
+  color-scheme: light dark;
+
   /* # TYPOGRAPHY */
-  /* ## Typography - font-family */
-  --font-body: Arial, Helvetica, sans-serif;
-  --font-heading: "Fira Code", monospace, "Roboto", Helvetica;
+  --font-body: "Inter Tight", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  --font-display: "Fraunces", "Noto Sans Arabic", Georgia, "Times New Roman", serif;
+  --font-mono: "Fira Code", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
-  /* ## Typography - font-size */
-  --fontsize-xs: 12px;
-  --fontsize-s: 16px;
-  --fontsize-m: 20px;
-  --fontsize-l: 24px;
-  --fontsize-xl: 28px;
+  /* Fluid scale: 360px -> 1280px */
+  /* Body is 17-18px: written for everyone, not only for techies */
+  --step--2: clamp(0.8125rem, 0.8rem + 0.08vw, 0.875rem);
+  --step--1: clamp(0.9375rem, 0.92rem + 0.1vw, 1rem);
+  --step-0: clamp(1.0625rem, 1.03rem + 0.15vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.35vw, 1.4rem);
+  --step-2: clamp(1.45rem, 1.3rem + 0.65vw, 1.85rem);
+  --step-3: clamp(1.75rem, 1.5rem + 1.1vw, 2.4rem);
+  --step-4: clamp(2.2rem, 1.8rem + 2vw, 3.4rem);
 
-  /* # COLORS */
-  /* ## Colors - Palette */
-  --black: #333;
-  --white: #fafafa;
-  --whitepure: #fff;
-  --blackpure: #000;
-
-  /* ## Colors - Function */
-  --color-info: lightblue;
-  --color-error: red;
-  --color-success: green;
-  --color-warning: gold;
+  --leading: 1.6;
+  --leading-tight: 1.2;
+  --measure: 62ch;
 
   /* # SPACING */
-  --space-xs: 8px;
-  --space-s: 16px;
-  --space-m: 20px;
-  --space-l: 24px;
-  --space-xl: 28px;
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+  --space-l: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+  --space-xl: clamp(2.5rem, 1.9rem + 2.6vw, 4.5rem);
+  --space-2xl: clamp(3.5rem, 2.6rem + 3.6vw, 6rem);
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2rem);
 
-  /* # BORDER RADIUS */
-  --radius: 20px;
+  /* # SHAPE */
+  --radius-s: 0.5rem;
+  --radius-m: 0.75rem;
+  --radius-l: 1.125rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 999px;
 
-  /* # CONTAINER */
-  --container-width: 980px;
+  /* # LAYOUT */
+  --header-h: 4rem;
+  --sidebar-w: 17rem;
+  /* one comfortable reading column */
+  --content-max: 46rem;
+  --target: 2.75rem; /* 44px */
+
+  /* # MOTION */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 180ms;
+
+  /* # COLOURS (oklch) */
+  --gold: oklch(0.86 0.165 90);
+  --gold-strong: oklch(0.8 0.165 82);
+  --on-gold: oklch(0.22 0.03 75);
+
+  /* paper and ink */
+  --bg: light-dark(oklch(0.972 0.012 88), oklch(0.185 0.01 75));
+  --surface: light-dark(oklch(0.99 0.006 88), oklch(0.215 0.011 75));
+  --surface-2: light-dark(oklch(0.945 0.014 88), oklch(0.25 0.012 75));
+  --surface-3: light-dark(oklch(0.91 0.016 88), oklch(0.3 0.013 75));
+  --border: light-dark(oklch(0.87 0.014 85), oklch(0.33 0.012 75));
+  --border-strong: light-dark(oklch(0.75 0.016 80), oklch(0.45 0.014 75));
+  --rule: light-dark(oklch(0.22 0.015 70), oklch(0.9 0.01 85));
+
+  --text: light-dark(oklch(0.21 0.015 70), oklch(0.94 0.008 88));
+  --text-muted: light-dark(oklch(0.44 0.016 70), oklch(0.77 0.012 85));
+
+  /* gold as text needs a darker ink on paper (>= 4.5:1) */
+  --accent: light-dark(oklch(0.49 0.1 72), oklch(0.86 0.15 90));
+  --accent-soft: light-dark(oklch(0.94 0.06 95), oklch(0.3 0.05 85));
+  --accent-line: light-dark(oklch(0.8 0.12 88), oklch(0.52 0.1 86));
+  --icon-tile: light-dark(oklch(0.93 0.07 95), oklch(0.3 0.05 85));
+  --icon-ink: light-dark(oklch(0.3 0.03 75), oklch(0.88 0.14 90));
+
+  /* the highlighter: behind dark ink in light, softer under light ink in dark */
+  --marker: light-dark(oklch(0.88 0.16 92), oklch(0.55 0.12 85 / 0.75));
+
+  --success: light-dark(oklch(0.46 0.1 158), oklch(0.8 0.12 158));
+  --success-soft: light-dark(oklch(0.95 0.035 158), oklch(0.27 0.04 160));
+  --success-marker: light-dark(oklch(0.87 0.1 158), oklch(0.45 0.09 160 / 0.8));
+  --warning: light-dark(oklch(0.5 0.13 60), oklch(0.83 0.13 70));
+
+  --focus: light-dark(oklch(0.3 0.03 70), oklch(0.88 0.16 90));
+
+  /* ink band (footer), dark in both themes */
+  --ink: oklch(0.2 0.012 72);
+  --on-ink: oklch(0.94 0.008 88);
+  --on-ink-muted: oklch(0.79 0.01 85);
+
+  /* # DEPTH: paper does not float; only overlays get shadows */
+  --shadow-1: none;
+  --shadow-2: 0 1px 0 oklch(0.2 0.02 70 / 0.06);
+  --shadow-3: 0 2px 6px oklch(0.1 0.02 70 / 0.12), 0 30px 60px -20px oklch(0.1 0.02 70 / 0.35);
+
+  /* Live behaviour map (read by behaviour.js, plain values on purpose) */
+  --behaviour-move: oklch(0.3 0.02 70 / 0.4);
+  --behaviour-click: oklch(0.72 0.18 60 / 0.9);
 
   /* # BACKGROUND URL - Default */
   --bgurl-logo: url("../../images/svg/logo.svg");
@@ -74,7 +142,6 @@
   --bgurl-ip: url("../../images/svg/ip.svg");
   --bgurl-telco: url("../../images/svg/telco.svg");
   --bgurl-exit: url("../../images/svg/exit.svg");
-  --bgurl-hourglass: url("../../images/svg/hourglass.svg");
 
   /* # BACKGROUND URL - Social Media */
   --bgurl-facebook: url("../../images/svg/facebook.svg");
@@ -112,20 +179,11 @@
   --bgurl-signals: url("../../images/svg/signals.svg");
   --bgurl-navigation: url("../../images/svg/navigation.svg");
   --bgurl-behaviour: url("../../images/svg/behaviour.svg");
+}
 
-  /* # SHADOWS */
-  --header-shadow: 0 2px 1px -1px rgb(192 192 192 / 0.2),
-    0 1px 1px 0 rgb(192 192 192 / 0.14), 0 1px 3px 0 rgb(192 192 192 / 0.12);
-
-  /* # CARD */
-  --card-minHeight: 180px;
-  --card-bgColor: gold;
-  --card-color: var(--black);
-  --card_icon-width: 64px;
-  --card_title-fontSize: 20px;
-  --card-border: 1px solid #f3f3f3;
-  --card-shadow: 0 2px 1px -1px rgb(51 51 51 / 0.2),
-    0 1px 1px 0 rgb(51 51 51 / 0.14), 0 1px 3px 0 rgb(51 51 51 / 0.12);
-  --card-shadow--error: 0 0 1px -1px rgb(255 0 0 / 0.2),
-    0 0 1px 0 rgb(255 0 0 / 0.14), 0 1px 3px 0 rgb(255 0 0 / 0.12);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --behaviour-move: oklch(0.9 0.01 90 / 0.35);
+    --behaviour-click: oklch(0.86 0.165 90 / 0.9);
+  }
 }

@@ -24,20 +24,28 @@
       "content3": ""
     },
     "cardmore": "Saber más sobre este dato",
-    "noSupport": "Tu navegador no admite esta funcionalidad. Bueno para tu privacidad, puede ser :D"
+    "noSupport": "Esta página no ha podido leerlo: tu navegador, o sus protecciones, se lo han guardado. Una pista menos sobre ti.",
+    "cardmoreFor": "¿Qué es «{0}»?",
+    "proof": "Para curiosos: cómo lo sabemos",
+    "noSupportTitle": "Protegido",
+    "estimate": "Estimación",
+    "meaning": "Qué significa para ti",
+    "win": "Bien por ti"
   },
   "aboutme": {
     "heading": "Sobre Mi",
-    "content1": "<p>Frontend Senior enfocado en el área de ecommerce con más de 7 años de experiencia en plataformas como <a href='https://www.sap.com/spain/acquired-brands/what-is-hybris.html'>Hybris</a> y <a href='https://www.salesforce.com/es/products/commerce-cloud/ecommerce/'>Salesforce Commerce Cloud</a>. Ejerciendo labores de desarrollo y tareas de coordinación como líder de un equipo de Frontend internacional. Además apasionado en materia de diseño y UX.</p>",
+    "content1": "<p>Soy <a href='https://soynando.com'>Nando Muñoz</a> y llevo más de diez años construyendo productos para grandes marcas como tech lead de frontend. Llegué al oficio antes que la IA, y he creado equipos de frontend en <a href='https://business.adobe.com/products/experience-manager/adobe-experience-manager.html'>Adobe Experience Manager</a> y <a href='https://www.salesforce.com/commerce/'>Salesforce Commerce Cloud</a>.</p>",
     "content2": "<p class=''>Puedes contactar conmigo vía <a href='https://github.com/Silencespainter'>Github</a>,<a href='https://twitter.com/silencespainter'>Twitter</a> o <a href='https://www.linkedin.com/in/silencespainter'>Linkedin</a></p>",
-    "content3": ""
+    "content3": "",
+    "eyebrow": "Quién lo ha hecho"
   },
   "footer": {
     "title": "Estado de tus datos",
     "content1": "<p>Todos los datos que aparecen en esta web permanecen almacenados solamente en tu dispositivo, en ningún momento son enviados a ningún servidor externo, ¿por qué? porque no me interesan tus datos, me interesa tu concienciación.</p>",
     "content2": "<p>No obstante, desconozco si GitHub (el servidor donde se aloja esta web) o ipapi.co (API externa que utilizo para determinar tu ciudad, país y compañía de telefonía a partir de tu IP) generan algún tipo de almacenamiento de datos similar o ajeno al mostrado en esta web. Pero bueno, si no te preocupa compartir en facebook cada cena, momento, recuerdo o sentimiento, tampoco te preocupará la información (similar a esta) que almacenará sobre ti esa web maravillosa donde te han dicho que ves películas online de pago, pero gratis:D Permíteme un poco de ironía :)</p>",
     "thanks": "<p>Quiero dar las gracias a <a href='https://github.com/RobinLinus'>Robin Linus</a> por su inspiración y a <a href='https://www.flaticon.com'>Flaticon</a> por aportar sus iconos</p>",
-    "license": "<p><a href='https://opensource.org/licenses/MIT'>LICENCIA MIT - https://opensource.org/licenses/MIT</a>.</p>"
+    "license": "<p><a href='https://opensource.org/licenses/MIT'>LICENCIA MIT - https://opensource.org/licenses/MIT</a>.</p>",
+    "eyebrow": "Tus datos"
   },
   "global": {
     "spanish": "español",
@@ -46,18 +54,27 @@
     "contact": "Contacto",
     "shareSocialMedia": "Compartir en RRSS",
     "share": "Compartir",
-    "shareIn": "Comparte en {0}"
+    "shareIn": "Comparte en {0}",
+    "language": "Idioma",
+    "menu": "Abrir menú",
+    "close": "Cerrar",
+    "skip": "Saltar al contenido",
+    "loading": "Leyendo tu navegador…",
+    "github": "Código en GitHub",
+    "sections": "Secciones",
+    "email": "Correo"
   },
   "location": {
-    "title": "Geolocalización",
+    "title": "Dónde estás, más o menos",
     "modalinfo": {
       "title": "Geolocalización",
       "description": "<p>Con la geolocalización IP es posible realizar un seguimiento de la ubicación de los visitantes, utilizando la base de datos de geolocalización IP, o una API. Los visitantes podrán ser geolocalizados en cualquier ciudad, región o país.</p>",
       "moreinfo": "<a target='_blank' href='https://es.wikipedia.org/wiki/Geolocalizaci%C3%B3n#Geolocalizaci%C3%B3n_de_los_visitantes_en_Internet'>Más información sobre Geolocalización</a>"
-    }
+    },
+    "plain": "Cualquier web puede situarte en el mapa a partir de tu IP, más o menos hasta tu ciudad, sin preguntarte."
   },
   "device": {
-    "title": "Dispositivo",
+    "title": "El aparato que estás usando",
     "type": {
       "mobileAndroid": "Móvil Android",
       "tabletAndroid": "Tablet Android",
@@ -72,18 +89,20 @@
       "title": "Dispositivo",
       "description": "<p>Identificación del tipo de dispositivo desde el que te estás conectando (Móvil Android, Tablet Android, iPad, iPhone, Portátil Windows, Macbook, iMac o Mac Mini, Una Tele u otro tipo).</p>",
       "moreinfo": ""
-    }
+    },
+    "plain": "Las webs adaptan lo que te enseñan, y a veces sus precios, al dispositivo que usas."
   },
   "screen": {
-    "title": "Resolución",
+    "title": "El tamaño de tu pantalla",
     "modalinfo": {
       "title": "Resolución",
       "description": "<p>La resolución de pantalla es el número de píxeles que puede ser mostrado en la pantalla. Viene dada por el producto del ancho por el alto con el cual se obtiene una relación llamada 'relación de aspecto'. En esta relación de aspecto, puede haber variaciones, de acuerdo con la forma del monitor y de la tarjeta gráfica.</p>",
       "moreinfo": "<a target='_blank' href='https://es.wikipedia.org/wiki/Resoluci%C3%B3n_de_pantalla'>Más información sobre Resolución de pantalla</a>"
-    }
+    },
+    "plain": "El tamaño de tu pantalla reduce mucho la lista de modelos que puedes tener."
   },
   "orientation": {
-    "title": "Orientación",
+    "title": "Cómo sujetas el aparato",
     "type": {
       "portrait": "vertical",
       "landscape": "horizontal",
@@ -93,10 +112,11 @@
       "title": "Orientación",
       "description": "<p>Define la orientación de tu dispositivo, siempre que sea un móvil o una tablet</p>",
       "moreinfo": ""
-    }
+    },
+    "plain": "Dice si estás con un móvil o una tablet en la mano, y cómo lo sujetas."
   },
   "darkmode": {
-    "title": "Modo Oscuro",
+    "title": "Aspecto claro u oscuro",
     "type": {
       "enable": "Modo Oscuro activado",
       "disable": "Modo Claro activado"
@@ -105,15 +125,17 @@
       "title": "El Modo Oscuro",
       "description": "<p>Este modo permite reducir de forma notable la fatiga visual. Consiste en definir el fondo a un tono oscuro (negro o gris).</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Light-on-dark_color_scheme'>Más información sobre el Modo Oscuro</a>"
-    }
+    },
+    "plain": "Es un detalle pequeño, pero te distingue un poco más del resto de visitantes."
   },
   "lang": {
-    "title": "Idioma",
+    "title": "Tu idioma",
     "modalinfo": {
       "title": "Idioma",
       "description": "<p>El idioma que tienes definido en tu navegador y probablemente en tu dispositivo.</p>",
       "moreinfo": ""
-    }
+    },
+    "plain": "Las webs lo usan para adivinar tu país y en qué idioma hablarte."
   },
   "exit": {
     "title": "Dejaste la página...",
@@ -123,26 +145,30 @@
       "title": "Analítica Web",
       "description": "<p>La analítica web es la recopilación, medición, análisis y reporte de datos web con el propósito de comprender y optimizar el uso de la web. Sin embargo, la analítica Web (Web Analytics) no es sólo un proceso para medir el tráfico web, sino que se utiliza como una herramienta para evaluar y mejorar la eficacia de un sitio web.</p>",
       "moreinfo": "<a target='_blank' href='https://es.wikipedia.org/wiki/Anal%C3%ADtica_web#Concepto'>Más información sobre Analítica Web</a>"
-    }
+    },
+    "eyebrow": "Tus visitas a esta página",
+    "plain": "Una web puede apuntar en silencio cada vez que vuelves."
   },
   "os": {
-    "title": "Sistema Operativo",
+    "title": "El sistema de tu aparato",
     "modalinfo": {
       "title": "El Sistema Operativo",
       "description": "<p>Un sistema operativo (SO o, frecuentemente, OS —del inglés operating system—) es el software principal o conjunto de programas de un sistema informático que gestiona los recursos de hardware y provee servicios a los programas de aplicación de software, ejecutándose en modo privilegiado respecto de los restantes.</p>",
       "moreinfo": "<a target='_blank' href='https://es.wikipedia.org/wiki/Sistema_operativo'>Más información sobre Sistema Operativo</a>"
-    }
+    },
+    "plain": "Las webs pueden ajustar ofertas, e incluso algunos ataques, al sistema que usas."
   },
   "browser": {
-    "title": "Navegador",
+    "title": "El programa con el que navegas",
     "modalinfo": {
       "title": "Navegador",
       "description": "<p>Un navegador web (en inglés, web browser) es un software, aplicación o programa que permite el acceso a la Web, interpretando la información de distintos tipos de archivos y sitios web para que estos puedan ser vistos.</p>",
       "moreinfo": "<a target='_blank' href='https://es.wikipedia.org/wiki/Navegador_web'>Más información sobre Navegador</a>"
-    }
+    },
+    "plain": "Las versiones antiguas pueden ser blanco de ataques, y la versión exacta ayuda a reconocerte."
   },
   "connection": {
-    "title": "Velocidad de Descarga",
+    "title": "Tu velocidad de internet",
     "type": {
       "lower2g": "Muy Lenta (2G)",
       "low2g": "Lenta (2G)",
@@ -153,50 +179,56 @@
       "title": "Velocidad de descarga",
       "description": "<p>La velocidad de conexión es el promedio de información que se transmite entre dos dispositivos por unidad de tiempo, en un sistema de transmisión. Normalmente las unidades en las que se mide la velocidad de conexión dependen del campo en el que se esté estudiando. En Telecomunicaciones se utiliza la unidad de bits por segundo (bit/s). Es bastante frecuente la utilización de diferentes magnitudes como kbit/s (a veces abreviado 'kbps').</p>",
       "moreinfo": "<a target='_blank' href='https://es.wikipedia.org/wiki/Velocidad_de_conexi%C3%B3n'>Más información sobre Velocidad de conexión</a>"
-    }
+    },
+    "plain": "Una web sabe si navegas con fibra rápida o con datos móviles lentos."
   },
   "telco": {
-    "title": "Compañía de Telefonía",
+    "title": "Tu compañía de internet",
     "modalinfo": {
       "title": "Compañía de Telefonía",
       "description": "<p>Una compañía telefónica, también conocida como telco, proveedor de servicios de telefonía, u operador de telecomunicaciones, es un tipo de proveedor de servicios de comunicaciones (CSP) (más precisamente, un proveedor de servicios de telecomunicaciones o TSP) que proporciona servicios de telecomunicaciones tales como telefonía y acceso a comunicaciones de datos. Muchas compañías telefónicas fueron en su momento agencias gubernamentales, o monopolios de propiedad privada regulados por el Estado. Las agencias gubernamentales se refieren a menudo, sobre todo en Europa, como PTT (servicios de correo, telégrafo y teléfono).</p>",
       "moreinfo": "<a target='_blank' href='https://es.wikipedia.org/wiki/Compa%C3%B1%C3%ADa_telef%C3%B3nica'>Más información sobre Compañía de Telefonía</a>"
-    }
+    },
+    "plain": "Revela tu compañía de internet, y si te conectas desde casa, desde el trabajo o con datos móviles."
   },
   "ip": {
-    "title": "IP",
+    "title": "Tu dirección en internet (IP)",
     "modalinfo": {
       "title": "IP",
       "description": "<p>La dirección IP es un conjunto de números que identifica a tu conexión a internet de un dispositivo (computadora, laptop, teléfono inteligente).</p>",
       "moreinfo": "<a target='_blank' href='https://es.wikipedia.org/wiki/Direcci%C3%B3n_IP'>Más información sobre IP</a>"
-    }
+    },
+    "plain": "Funciona como una dirección postal: te sitúa más o menos y permite enlazar tus visitas."
   },
   "ram": {
-    "title": "Memoria RAM",
+    "title": "La memoria de tu aparato",
     "modalinfo": {
       "title": "Memoria RAM",
       "description": "<p>La memoria de acceso aleatorio (Random Access Memory, RAM) se utiliza como memoria de trabajo de computadoras y otros dispositivos para el sistema operativo, los programas y la mayor parte del software. En la RAM se cargan todas las instrucciones que ejecuta la unidad central de procesamiento (procesador) y otras unidades del computador, además de contener los datos que manipulan los distintos programas.</p>",
       "moreinfo": "<a target='_blank' href='https://es.wikipedia.org/wiki/Memoria_de_acceso_aleatorio'>Más información sobre Memoria RAM</a>"
-    }
+    },
+    "plain": "Da una idea de lo potente y caro que es tu dispositivo; a algunas tiendas se las ha acusado de ajustar precios según eso."
   },
   "cpu": {
-    "title": "Microprocesador",
+    "title": "El procesador de tu aparato",
     "modalinfo": {
       "title": "Microprocesador",
       "description": "<p>El microprocesador (o simplemente procesador) es el circuito integrado central más complejo de un sistema informático; a modo de ilustración, se le suele llamar por analogía el «cerebro» de un ordenador.</p>",
       "moreinfo": "<a target='_blank' href='https://es.wikipedia.org/wiki/Microprocesador'>Más información sobre Microprocesador</a>"
-    }
+    },
+    "plain": "Más núcleos suele significar un dispositivo más nuevo y caro, y otro detalle que te distingue."
   },
   "gpu": {
-    "title": "La Tarjeta Gráfica",
+    "title": "Tu tarjeta gráfica",
     "modalinfo": {
       "title": "La Tarjeta Gráfica",
       "description": "<p>Una tarjeta gráfica es una tarjeta de expansión de la placa base del ordenador que se encarga de procesar los datos provenientes de la unidad central de procesamiento (CPU) y transformarlos en información comprensible y representable en el dispositivo de salida (por ejemplo: monitor, televisor o proyector). Estas tarjetas utilizan una unidad de procesamiento gráfico o GPU, que muchas veces se usa erróneamente para referirse a la tarjeta gráfica en sí.</p>",
       "moreinfo": "<a target='_blank' href='https://es.wikipedia.org/wiki/Tarjeta_gr%C3%A1fica'>Más información sobre la tarjeta gráfica</a>"
-    }
+    },
+    "plain": "El nombre exacto de tu tarjeta gráfica es lo bastante raro como para ayudar a reconocer tu dispositivo."
   },
   "battery": {
-    "title": "Batería",
+    "title": "Tu batería",
     "type": {
       "mode": "Modo",
       "level": "Nivel",
@@ -208,10 +240,11 @@
       "title": "API Batería",
       "description": "<p>La API de Estado de Batería, también conocida como 'Battery API', provee información acerca del sistema de carga de la batería y permite notificar mediante eventos que son enviados cuando el nivel de la batería cambia. Este puede ser usado para ajustar el uso de recursos por parte de una aplicación y evitar un gasto innecesario de energía cuando la batería está baja o para guardar cambios en un archivo antes de que la batería se agote y así prevenir pérdida de información.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/es/docs/WebAPI/Estado_de_Bateria'>Más información sobre API Batería</a>"
-    }
+    },
+    "plain": "El nivel de tu batería puede ayudar a reconocerte entre webs durante unos minutos."
   },
   "fingerprint": {
-    "title": "Tu huella sin cookies",
+    "title": "Tu código de identificación invisible",
     "type": {
       "components": "Datos combinados ({0})",
       "note": "Este código sale de mezclar los datos estables de esta página. No lo guardo en ningún sitio: se recalcula en cada visita y sale igual. Ese es el problema."
@@ -220,10 +253,11 @@
       "title": "Tu huella sin cookies",
       "description": "<p>Browser fingerprinting: juntando datos que tu navegador entrega sin pedir permiso (pantalla, fuentes, GPU, zona horaria, cómo pinta un canvas...) sale un identificador casi único. No usa cookies, así que borrarlas o abrir el modo incógnito no lo cambia. Así te pueden seguir entre webs sin que lo notes.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Device_fingerprint'>Más info sobre fingerprinting</a>"
-    }
+    },
+    "plain": "Mezcla todo lo de abajo y sale un código que te reconoce en cada visita, incluso sin cookies."
   },
   "timezone": {
-    "title": "Zona horaria",
+    "title": "Tu zona horaria",
     "type": {
       "match": "Coincide con la zona horaria de tu IP ({0})",
       "mismatch": "No coincide con la de tu IP ({0}): ¿usas una VPN o un proxy?"
@@ -232,18 +266,23 @@
       "title": "Zona horaria",
       "description": "<p>La zona horaria viene de tu sistema operativo. Si no coincide con la que corresponde a tu IP, es una pista clara de que usas una VPN o un proxy, algo que muchas webs vigilan.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Time_zone'>Más info sobre zonas horarias</a>"
-    }
+    },
+    "plain": "Tu reloj revela más o menos dónde vives, aunque escondas tu IP."
   },
   "locale": {
-    "title": "Formato regional",
+    "title": "Cómo escribes fechas y números",
     "modalinfo": {
       "title": "Formato regional",
       "description": "<p>Cómo escribes números, fechas y horas (1.234,5 o 1,234.5; 24 h o AM/PM; calendario) depende de la configuración regional de tu sistema. Junto con tus idiomas preferidos, dice bastante de dónde eres.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Locale_(computer_software)'>Más info sobre la configuración regional</a>"
+    },
+    "plain": "Da pistas sobre el país del que eres, aunque estés de viaje.",
+    "type": {
+      "languages": "Tus idiomas preferidos: {0}"
     }
   },
   "display": {
-    "title": "Ventana y pantalla",
+    "title": "La ventana de tu navegador",
     "type": {
       "window": "Ventana de {0}x{1}px"
     },
@@ -251,10 +290,11 @@
       "title": "Ventana y pantalla",
       "description": "<p>Además de la resolución, la web ve la densidad de píxeles, el tamaño de tu ventana, lo que ocupa la barra de tareas o el dock, la gama de color, si tu pantalla es HDR y, en algunos navegadores, si tienes más de un monitor.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Pixel_density'>Más info sobre la densidad de píxeles</a>"
-    }
+    },
+    "plain": "Tamaño de ventana, densidad de píxeles, colores: detalles que juntos distinguen dispositivos."
   },
   "preferences": {
-    "title": "Accesibilidad",
+    "title": "Tus ajustes de accesibilidad",
     "type": {
       "none": "Todo por defecto",
       "some": "{0} preferencias personalizadas"
@@ -263,10 +303,11 @@
       "title": "Accesibilidad",
       "description": "<p>Tus preferencias de accesibilidad (menos animaciones, más contraste, colores forzados...) están disponibles para cualquier web mediante CSS. Son útiles para adaptar el diseño, pero cada una que no está por defecto te hace más fácil de distinguir.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion'>Más info sobre las preferencias de usuario</a>"
-    }
+    },
+    "plain": "Si has cambiado alguno, eres más fácil de distinguir del resto."
   },
   "input": {
-    "title": "Forma de interactuar",
+    "title": "Ratón o pantalla táctil",
     "type": {
       "mouse": "Ratón o trackpad",
       "touch": "Pantalla táctil",
@@ -277,10 +318,11 @@
       "title": "Forma de interactuar",
       "description": "<p>La web sabe si usas ratón o trackpad, pantalla táctil o ambos, si puedes pasar el cursor por encima de las cosas y cuántos dedos detecta tu pantalla a la vez.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer'>Más info sobre la media query pointer</a>"
-    }
+    },
+    "plain": "Delata si estás en un móvil, una tablet o un ordenador."
   },
   "keyboard": {
-    "title": "Distribución del teclado",
+    "title": "Tu teclado",
     "type": {
       "unknown": "Distribución propia ({0})"
     },
@@ -288,29 +330,32 @@
       "title": "Distribución del teclado",
       "description": "<p>En navegadores basados en Chromium, la Keyboard API dice qué carácter produce cada tecla física. Así se sabe si tu teclado es QWERTY, AZERTY, QWERTZ... una pista más sobre tu país.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Keyboard_layout'>Más info sobre las distribuciones de teclado</a>"
-    }
+    },
+    "plain": "La distribución de tu teclado es otra pista sobre tu país."
   },
   "canvas": {
-    "title": "Huella de canvas",
+    "title": "Una prueba de dibujo oculta",
     "type": {
-      "caption": "Esta imagen la acaba de dibujar tu navegador. El código de arriba es su hash."
+      "caption": "Tu navegador acaba de dibujar esta imagen sin que la vieras. El código de arriba resume cómo le ha salido exactamente."
     },
     "modalinfo": {
       "title": "Huella de canvas",
       "description": "<p>La web dibuja en secreto la misma imagen en todos los navegadores. Tu GPU, sus drivers, tu sistema y tus fuentes la pintan con diferencias invisibles a simple vista, pero el hash de la imagen cambia de un equipo a otro.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Canvas_fingerprinting'>Más info sobre canvas fingerprinting</a>"
-    }
+    },
+    "plain": "Tu ordenador dibuja las imágenes a su manera, con diferencias mínimas y únicas. Basta para reconocerte."
   },
   "audio": {
-    "title": "Huella de audio",
+    "title": "Una prueba de sonido silenciosa",
     "modalinfo": {
       "title": "Huella de audio",
       "description": "<p>Sin reproducir nada, la web genera un sonido en memoria (OfflineAudioContext) y suma sus muestras. Cada combinación de navegador, sistema y hardware redondea de forma distinta, así que el número final sirve para distinguirte.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext'>Más info sobre OfflineAudioContext</a>"
-    }
+    },
+    "plain": "Tu dispositivo procesa el sonido a su manera, y eso también ayuda a reconocerlo."
   },
   "fonts": {
-    "title": "Fuentes instaladas",
+    "title": "Las fuentes de tu ordenador",
     "type": {
       "count": "{0} de {1} fuentes comprobadas"
     },
@@ -318,10 +363,11 @@
       "title": "Fuentes instaladas",
       "description": "<p>Midiendo el ancho de un texto con cada fuente, la web averigua cuáles tienes instaladas sin pedir permiso. Revela tu sistema operativo y programas como Office o Adobe.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Device_fingerprint'>Más info sobre fingerprinting</a>"
-    }
+    },
+    "plain": "Las fuentes que tienes instaladas dan pistas de tu trabajo y tus programas (Office, Adobe…)."
   },
   "voices": {
-    "title": "Voces de síntesis",
+    "title": "Voces de lectura en voz alta",
     "type": {
       "count": "{0} voces ({1} locales)",
       "none": "Ninguna voz disponible"
@@ -330,10 +376,11 @@
       "title": "Voces de síntesis",
       "description": "<p>La lista de voces para leer texto en voz alta viene de tu sistema operativo y de los paquetes de idioma que instalaste. Es muy distinta de un equipo a otro.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices'>Más info sobre getVoices</a>"
-    }
+    },
+    "plain": "Las voces de tu sistema lo delatan, y también los idiomas que tienes instalados."
   },
   "incognito": {
-    "title": "Modo incógnito",
+    "title": "Navegación privada",
     "type": {
       "likely": "Probablemente estás en modo incógnito",
       "unlikely": "No parece modo incógnito",
@@ -343,22 +390,26 @@
       "title": "Modo incógnito",
       "description": "<p>El espacio de almacenamiento que el navegador da a cada web es distinto en modo incógnito. Comparándolo, una web puede adivinar si navegas en privado. En Chromium, además, deja entrever el tamaño de tu disco.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Private_browsing'>Más info sobre la navegación privada</a>"
-    }
+    },
+    "plain": "Las webs a menudo saben cuándo navegas en privado."
   },
   "adblock": {
     "title": "Bloqueador de anuncios",
     "type": {
       "detected": "Bloqueador detectado",
-      "none": "No detecto ningún bloqueador"
+      "none": "No detecto ningún bloqueador",
+      "win": "¡Bien! Tienes un bloqueador de anuncios: menos anuncios y menos rastreadores siguiéndote.",
+      "nudge": "No detecto bloqueador. Instalar uno reduce los rastreadores que te siguen."
     },
     "modalinfo": {
       "title": "Bloqueador de anuncios",
       "description": "<p>La web crea un elemento vacío con clases que parecen de un anuncio. Si un bloqueador lo oculta, la página lo nota. Útil para ti, pero también es un dato más sobre ti.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Ad_blocking'>Más info sobre los bloqueadores</a>"
-    }
+    },
+    "plain": "Las webs pueden insistirte, ocultarte contenido o simplemente apuntarlo como un rasgo más."
   },
   "signals": {
-    "title": "Señales de privacidad",
+    "title": "Peticiones de «no me rastrees»",
     "type": {
       "summary": "Do Not Track: {0} · GPC: {1}",
       "yes": "sí",
@@ -368,10 +419,11 @@
       "title": "Señales de privacidad",
       "description": "<p>Do Not Track y Global Privacy Control piden a las webs que no te rastreen, pero cumplirlas es voluntario. La ironía: activarlas te hace un poco más fácil de distinguir. También se ve si aceptas cookies, si tienes visor de PDF y si el navegador está automatizado.</p>",
       "moreinfo": "<a target='_blank' href='https://globalprivacycontrol.org/'>Más info sobre Global Privacy Control</a>"
-    }
+    },
+    "plain": "Respetar el «no me rastrees» es opcional para las webs, y activarlo te hace un poco más único."
   },
   "navigation": {
-    "title": "Tu navegación",
+    "title": "Cómo has llegado aquí",
     "type": {
       "pages": "{0} páginas en esta pestaña",
       "direct": "Has llegado directamente"
@@ -380,10 +432,11 @@
       "title": "Tu navegación",
       "description": "<p>La web sabe cuántas páginas has visitado en esta pestaña, desde qué web llegaste y si has recargado o vuelto atrás.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/History/length'>Más info sobre history.length</a>"
-    }
+    },
+    "plain": "Una web ve desde qué página llegaste y cómo te mueves."
   },
   "behaviour": {
-    "title": "Lo que haces aquí",
+    "title": "Lo que haces en esta página",
     "type": {
       "moves": "Movimientos del ratón",
       "clicks": "Clics",
@@ -397,6 +450,33 @@
       "title": "Lo que haces aquí",
       "description": "<p>Cualquier web puede registrar tus movimientos de ratón, clics, scroll, teclas y cuándo cambias de pestaña, sin pedir permiso. Algunas graban la sesión entera para verla después (session replay).</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Session_replay'>Más info sobre session replay</a>"
-    }
+    },
+    "plain": "Cualquier web puede grabar tu ratón, tus clics y tu scroll, e incluso reproducir tu visita después."
+  },
+  "summary": {
+    "eyebrow": "Sin pedir permisos. No hacen falta.",
+    "title": "Tu expediente, hasta ahora",
+    "points": "datos que tu navegador ha contado",
+    "of": "de {0}",
+    "permissions": "permisos pedidos",
+    "blocked": "Bien hecho: {0} puntos a favor de tu privacidad.",
+    "highlights": "Lo más jugoso",
+    "count": "{0} de {1} encontrados",
+    "countLabel": "{0} de {1} datos leídos",
+    "note": "Todo se calcula dentro de tu navegador. Solo tu IP viaja a ipapi.co (para la ubicación) y el mapa se carga desde Google.",
+    "private": "puntos a favor de tu privacidad"
+  },
+  "sections": {
+    "id": "Un código construido con todo lo de abajo. Sin cookies.",
+    "location": "Deducido de tu conexión a internet, sin preguntarte.",
+    "info": "Lo que tu navegador le cuenta a cada web antes de que digas hola.",
+    "environment": "Tus ajustes dicen mucho de dónde y cómo vives.",
+    "software": "Tus herramientas, anunciadas a cada web que visitas.",
+    "connection": "Tu conexión a internet, tal y como la ven las webs.",
+    "hardware": "La máquina detrás de la pantalla, y más o menos lo que costó.",
+    "battery": "Sí, también la batería.",
+    "fingerprints": "Pruebas ocultas que distinguen tu aparato entre millones.",
+    "privacy": "Hasta lo que te protege deja rastro.",
+    "behaviour": "Sonríe: esta página está viendo lo que haces. En directo."
   }
 }

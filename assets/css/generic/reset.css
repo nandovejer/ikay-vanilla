@@ -1,6 +1,29 @@
 /* Hard reset */
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   box-sizing: border-box;
+}
+
+:where(h1, h2, h3, h4, p, ul, ol, dl, dd, figure) {
+  margin: 0;
+}
+
+:where(ul[class], ol[class]) {
+  padding: 0;
+  list-style: none;
+}
+
+:where(img, canvas, iframe, svg) {
+  display: block;
+  max-inline-size: 100%;
+}
+
+:where(button) {
+  font: inherit;
+  color: inherit;
+}
+
+[hidden] {
+  display: none !important;
 }

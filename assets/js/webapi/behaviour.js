@@ -32,11 +32,16 @@ const behaviour = {
     };
     new ResizeObserver(resize).observe(canvas);
 
+    // Dot colours come from the css (--behaviour-move / --behaviour-click),
+    // so the map follows the light or dark theme
+    const color = (name, fallback) =>
+      getComputedStyle(canvas).getPropertyValue(name).trim() || fallback;
+
     // Your screen in miniature: the position inside the viewport
-    const dot = (event, radius, color) => {
+    const dot = (event, radius, fill) => {
       const x = (event.clientX / innerWidth) * canvas.width;
       const y = (event.clientY / innerHeight) * canvas.height;
-      ctx.fillStyle = color;
+      ctx.fillStyle = fill;
       ctx.beginPath();
       ctx.arc(x, y, radius * devicePixelRatio, 0, Math.PI * 2);
       ctx.fill();
@@ -50,7 +55,7 @@ const behaviour = {
         if (pending) return;
         pending = true;
         requestAnimationFrame(() => {
-          dot(event, 3, "rgb(51 51 51 / 0.35)");
+          dot(event, 3, color("--behaviour-move", "rgb(51 51 51 / 0.35)"));
           pending = false;
         });
       },
@@ -58,7 +63,7 @@ const behaviour = {
     );
     window.addEventListener("pointerdown", (event) => {
       state.clicks++;
-      dot(event, 6, "rgb(255 140 0 / 0.8)");
+      dot(event, 6, color("--behaviour-click", "rgb(255 140 0 / 0.8)"));
     });
     window.addEventListener("keydown", () => state.keys++);
     document.addEventListener("visibilitychange", () => {

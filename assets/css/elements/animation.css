@@ -1,12 +1,37 @@
-/* GLOBAL */
+/* GLOBAL KEYFRAMES */
 
-/* rotate360: 0 to 360 deg */
-@keyframes rotate360 {
-  0% {
-    transform: rotate(0deg);
+/* Skeleton shimmer, moves along the inline axis */
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
   }
 
-  100% {
-    transform: rotate(360deg);
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    translate: 0 0.75rem;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* Motion is decoration here: turn it off when asked */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

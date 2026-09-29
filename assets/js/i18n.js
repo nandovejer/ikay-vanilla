@@ -83,6 +83,32 @@ export const langName = (code) => {
   return name.charAt(0).toLocaleUpperCase(code) + name.slice(1);
 };
 
+/**
+ * A language or locale code in plain words, in the language of the page:
+ * "es-US" -> "Spanish (United States)" | "Español (Estados Unidos)".
+ * Falls back to the code itself.
+ */
+export const langLabel = (code) => {
+  try {
+    const name = new Intl.DisplayNames([lang], {
+      type: "language",
+      languageDisplay: "standard",
+    }).of(code);
+    return name ? name.charAt(0).toLocaleUpperCase(lang) + name.slice(1) : code;
+  } catch {
+    return code;
+  }
+};
+
+/** "Spanish (United States) and English": a readable list */
+export const listLabel = (items) => {
+  try {
+    return new Intl.ListFormat(lang, { type: "conjunction" }).format(items);
+  } catch {
+    return items.join(", ");
+  }
+};
+
 /** "rtl" | "ltr" */
 export const langDir = (code) => {
   const locale = new Intl.Locale(code);

@@ -1,19 +1,50 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# IKAY is a static site with no build and no dependencies:
+# everything in the repo is published, so keep local noise out.
 
-# Mac OS X
+# macOS
 .DS_Store
-._.*
 ._*
-
-# Ignore local editor
-.project
-.settings
-.idea
-*.swp
-tags
-nbproject/*
+.AppleDouble
+.Spotlight-V100
+.Trashes
 
 # Windows
 Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-debug.log
+# Linux
+*~
+.directory
+
+# Editors and IDEs
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.project
+.settings/
+nbproject/
+*.swp
+*.swo
+*.sublime-workspace
+tags
+
+# Claude Code: shared agents are versioned, personal settings are not
+.claude/*
+!.claude/agents/
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Local servers, logs and temporary files
+*.log
+.cache/
+tmp/
+*.tmp
+
+# Just in case someone runs npx/npm tools locally
+node_modules/
+package-lock.json
+
+# Local secrets
+.env
+.env.*

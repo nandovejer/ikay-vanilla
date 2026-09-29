@@ -42,7 +42,9 @@ const NATIVE_STABLE = ["os", "browser", "device", "lang", "screen", "darkmode", 
 /**
  * Detectors with the same contract:
  * async init() -> { value, detail?: [api, value][], list?: string[],
+ *                   note?: string, win?: boolean,
  *                   fingerprint?: string, render?(article) } | undefined
+ * win: the result is good news for the visitor (painted as .card--win)
  */
 const DETECTORS = {
   timezone: detectTimezone,
@@ -92,7 +94,7 @@ const webapi = {
     ]);
     const components = {};
     NATIVE_STABLE.forEach((key) => {
-      components[key] = nativeData[key];
+      components[key] = key === "lang" ? nativeData.langCode : nativeData[key];
     });
     Object.keys(DETECTORS).forEach((type, index) => {
       if (results[index]?.fingerprint) components[type] = results[index].fingerprint;
@@ -119,6 +121,8 @@ const webapi = {
       return;
     }
     setText(`.js-apiValue-${type}`, result.value);
+    if (result.note) setText(`.js-apiDetail-${type}`, result.note);
+    article.classList.toggle("card--win", Boolean(result.win));
     const list = article.querySelector(".js-card-detail");
     if (result.detail) renderDetail(list, result.detail);
     if (result.list) renderList(list, result.list);
@@ -132,6 +136,13 @@ const webapi = {
         setHTML(`.js-apiValue-${key}`, data[key]);
       }
     });
+    // Values that could not be worked out are shown as protected
+    noSupport(...(data.kept ?? []));
+    // The raw language codes, for the curious
+    renderDetail(document.querySelector(".js-card-lang .js-card-detail"), [
+      ["navigator.language", data.langCode],
+      ["navigator.languages", (navigator.languages ?? []).join(", ")],
+    ]);
   },
 };
 

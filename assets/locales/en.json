@@ -24,20 +24,28 @@
       "content3": ""
     },
     "cardmore": "Learn more about this data",
-    "noSupport": "Your browser does not support this feature. Good for your privacy, maybe :D"
+    "noSupport": "This page couldn't get this one: your browser, or its protections, kept it to itself. One less clue about you.",
+    "cardmoreFor": "What is “{0}”?",
+    "proof": "For the curious: how we know",
+    "noSupportTitle": "Protected",
+    "estimate": "Estimate",
+    "meaning": "What it means for you",
+    "win": "Good for you"
   },
   "aboutme": {
     "heading": "About me",
-    "content1": "<p>Senior Frontend developer focused on ecommerce, with more than 7 years of experience on platforms such as <a href='https://www.sap.com/spain/acquired-brands/what-is-hybris.html'>Hybris</a> and <a href='https://www.salesforce.com/es/products/commerce-cloud/ecommerce/'>Salesforce Commerce Cloud</a>. Working as a developer and coordinating an international Frontend team as its lead. Also passionate about design and UX.</p>",
+    "content1": "<p>I'm <a href='https://soynando.com'>Nando Muñoz</a>, and I've spent more than ten years building products for big brands as a frontend tech lead. I came to the craft before AI, and I've built frontend teams on <a href='https://business.adobe.com/products/experience-manager/adobe-experience-manager.html'>Adobe Experience Manager</a> and <a href='https://www.salesforce.com/commerce/'>Salesforce Commerce Cloud</a>.</p>",
     "content2": "<p class=''>You can reach me on <a href='https://github.com/Silencespainter'>Github</a>, <a href='https://twitter.com/silencespainter'>Twitter</a> or <a href='https://www.linkedin.com/in/silencespainter'>Linkedin</a></p>",
-    "content3": ""
+    "content3": "",
+    "eyebrow": "Who made this"
   },
   "footer": {
     "title": "The state of your data",
     "content1": "<p>All the data shown on this website is stored on your device only, and is never sent to any external server. Why? Because I'm not interested in your data, I'm interested in your awareness.</p>",
     "content2": "<p>That said, I don't know whether GitHub (the server hosting this website) or ipapi.co (the external API I use to work out your city, country and telecom operator from your IP) store data similar to the one shown here, or any other kind. But hey, if you don't mind sharing every dinner, moment, memory or feeling on Facebook, you probably won't mind the information (much like this) collected about you by that wonderful website where they told you that you can watch paid movies online, but for free :D Allow me a little irony :)</p>",
     "thanks": "<p>I want to thank <a href='https://github.com/RobinLinus'>Robin Linus</a> for the inspiration, and <a href='https://www.flaticon.com'>Flaticon</a> for their icons</p>",
-    "license": "<p><a href='https://opensource.org/licenses/MIT'>MIT LICENSE - https://opensource.org/licenses/MIT</a>.</p>"
+    "license": "<p><a href='https://opensource.org/licenses/MIT'>MIT LICENSE - https://opensource.org/licenses/MIT</a>.</p>",
+    "eyebrow": "Your data"
   },
   "global": {
     "spanish": "Spanish",
@@ -46,18 +54,27 @@
     "contact": "Contact",
     "shareSocialMedia": "Share on social media",
     "share": "Share",
-    "shareIn": "Share on {0}"
+    "shareIn": "Share on {0}",
+    "language": "Language",
+    "menu": "Open menu",
+    "close": "Close",
+    "skip": "Skip to content",
+    "loading": "Reading your browser…",
+    "github": "Code on GitHub",
+    "sections": "Sections",
+    "email": "Email"
   },
   "location": {
-    "title": "Geolocation",
+    "title": "Where you are, roughly",
     "modalinfo": {
       "title": "Geolocation",
       "description": "<p>IP geolocation makes it possible to track a visitor's location using an IP geolocation database or an API. Visitors can be located down to a city, region or country.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Internet_geolocation'>More info about Geolocation</a>"
-    }
+    },
+    "plain": "Any website can place you on a map from your IP, roughly down to your city, without asking."
   },
   "device": {
-    "title": "Device",
+    "title": "The device you are using",
     "type": {
       "mobileAndroid": "Android Mobile",
       "tabletAndroid": "Android Tablet",
@@ -72,18 +89,20 @@
       "title": "Device",
       "description": "<p>Identifies the type of device you are connecting from (Android Mobile, Android Tablet, iPad, iPhone, Windows Laptop, Macbook, iMac or Mac Mini, a TV or some other type).</p>",
       "moreinfo": ""
-    }
+    },
+    "plain": "Websites adapt what they show you, and sometimes their prices, to the device you use."
   },
   "screen": {
-    "title": "Display Resolution",
+    "title": "Your screen size",
     "modalinfo": {
       "title": "Display Resolution",
       "description": "<p>The display resolution is the number of distinct pixels that can be shown on the screen. It is given by the width multiplied by the height, which yields a ratio known as the 'aspect ratio'. This aspect ratio can vary depending on the shape of the monitor and on the graphics card.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Display_resolution'>More info about display resolution</a>"
-    }
+    },
+    "plain": "Your screen size narrows down which device model you have."
   },
   "orientation": {
-    "title": "Orientation",
+    "title": "How you hold your device",
     "type": {
       "portrait": "portrait",
       "landscape": "landscape",
@@ -93,10 +112,11 @@
       "title": "Orientation",
       "description": "<p>Tells the orientation of your device, as long as it is a mobile phone or a tablet.</p>",
       "moreinfo": ""
-    }
+    },
+    "plain": "It tells whether you are holding a phone or tablet, and how."
   },
   "darkmode": {
-    "title": "Dark Mode",
+    "title": "Light or dark look",
     "type": {
       "enable": "Dark Mode enabled",
       "disable": "Light Mode enabled"
@@ -105,15 +125,17 @@
       "title": "Dark Mode",
       "description": "<p>This mode noticeably reduces eye strain. It consists of setting the background to a dark shade (black or grey).</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Light-on-dark_color_scheme'>More info about Dark Mode</a>"
-    }
+    },
+    "plain": "A small detail, but one more thing that sets you apart from other visitors."
   },
   "lang": {
-    "title": "Language",
+    "title": "Your language",
     "modalinfo": {
       "title": "Language",
       "description": "<p>The language you have set in your browser, and probably on your device too.</p>",
       "moreinfo": ""
-    }
+    },
+    "plain": "Websites use it to guess your country and which language to show you."
   },
   "exit": {
     "title": "You left the page...",
@@ -123,26 +145,30 @@
       "title": "Web Analytics",
       "description": "<p>Web analytics is the collection, measurement, analysis and reporting of web data in order to understand and optimise web usage. Web analytics is not just a process for measuring web traffic, though: it is also used to assess and improve the effectiveness of a website.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Web_analytics'>More info about Web Analytics</a>"
-    }
+    },
+    "eyebrow": "Your visits to this page",
+    "plain": "A website can quietly keep a record of every time you come back."
   },
   "os": {
-    "title": "Operating System",
+    "title": "Your device's system",
     "modalinfo": {
       "title": "The Operating System",
       "description": "<p>An operating system (OS) is the main software, or set of programs, of a computer system. It manages the hardware resources and provides services to application software, running in a privileged mode with respect to all the rest.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Operating_system'>More info about Operating Systems</a>"
-    }
+    },
+    "plain": "Websites can tailor offers, and even some attacks, to the system you use."
   },
   "browser": {
-    "title": "Browser",
+    "title": "The program you browse with",
     "modalinfo": {
       "title": "Browser",
       "description": "<p>A web browser is a piece of software, an application or a program that gives you access to the Web, interpreting the information in different kinds of files and websites so that they can be displayed.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Web_browser'>More info about Browser</a>"
-    }
+    },
+    "plain": "Outdated versions can be targeted by attacks, and the exact version helps recognise you."
   },
   "connection": {
-    "title": "Download speed",
+    "title": "Your internet speed",
     "type": {
       "lower2g": "Very Slow (2G)",
       "low2g": "Slow (2G)",
@@ -153,50 +179,56 @@
       "title": "Download speed",
       "description": "<p>Connection speed is the average amount of information transmitted between two devices per unit of time in a transmission system. The units used to measure it usually depend on the field being studied. In telecommunications the unit is bits per second (bit/s), and it is quite common to use different magnitudes such as kbit/s (sometimes abbreviated as 'kbps').</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Bandwidth_(computing)'>More info about connection speed</a>"
-    }
+    },
+    "plain": "A website can tell whether you are on fast fibre or on slow mobile data."
   },
   "telco": {
-    "title": "Your Internet provider",
+    "title": "Your internet company",
     "modalinfo": {
       "title": "Your Internet provider",
       "description": "<p>A telephone company, also known as a telco, telephone service provider, or telecommunications operator, is a kind of communications service provider (CSP), more precisely a telecommunications service provider (TSP), that provides telecommunications services such as telephony and data communications access. Many telephone companies were at one time government agencies or privately owned but state-regulated monopolies. The government agencies are often referred to, primarily in Europe, as PTTs (postal, telegraph and telephone services).</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Telephone_company'>More info about telephone company</a>"
-    }
+    },
+    "plain": "It reveals your internet company, and whether you connect from home, from work or on mobile data."
   },
   "ip": {
-    "title": "IP",
+    "title": "Your internet address (IP)",
     "modalinfo": {
       "title": "IP",
       "description": "<p>An Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication. An IP address serves two main functions: host or network interface identification, and location addressing.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/IP_address'>More info about IP</a>"
-    }
+    },
+    "plain": "It works like a postal address: it roughly locates you and can link your visits together."
   },
   "ram": {
-    "title": "RAM Memory",
+    "title": "Your device's memory",
     "modalinfo": {
       "title": "RAM Memory",
       "description": "<p>Random-access memory (RAM) is used as the working memory of computers and other devices, for the operating system, the programs and most of the software. Every instruction executed by the central processing unit and by other units of the computer is loaded into RAM, which also holds the data those programs work with.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Random-access_memory'>More info about RAM Memory</a>"
-    }
+    },
+    "plain": "It hints at how powerful and expensive your device is; some shops have been accused of adjusting prices to that."
   },
   "cpu": {
-    "title": "Processor",
+    "title": "Your device's processor",
     "modalinfo": {
       "title": "Processor",
       "description": "<p>The microprocessor (or simply the processor) is the most complex central integrated circuit of a computer system. By way of illustration, it is often called, by analogy, the 'brain' of a computer.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Microprocessor'>More info about the Processor</a>"
-    }
+    },
+    "plain": "More cores usually means a newer, pricier device, and one more detail that tells you apart."
   },
   "gpu": {
-    "title": "The Graphics Card",
+    "title": "Your graphics card",
     "modalinfo": {
       "title": "The Graphics Card",
       "description": "<p>A graphics card is an expansion card on the computer's motherboard which processes the data coming from the central processing unit (CPU) and turns it into information that can be understood and displayed on the output device (for example: a monitor, a television or a projector). These cards use a graphics processing unit, or GPU, a term often used incorrectly to refer to the graphics card itself.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Graphics_card'>More info about the graphics card</a>"
-    }
+    },
+    "plain": "The exact name of your graphics card is rare enough to help recognise your device."
   },
   "battery": {
-    "title": "Battery",
+    "title": "Your battery",
     "type": {
       "mode": "Mode",
       "level": "Level",
@@ -208,10 +240,11 @@
       "title": "Battery API",
       "description": "<p>The Battery Status API, more often referred to as the Battery API, provides information about the system's battery charge level and lets you be notified by events that are sent when the battery level or charging status change. This can be used to adjust your app's resource usage to reduce battery drain when the battery is low, or to save changes before the battery runs out in order to prevent data loss.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API'>More info about Battery API</a>"
-    }
+    },
+    "plain": "Your battery level can help recognise you across websites for a few minutes."
   },
   "fingerprint": {
-    "title": "Your cookieless fingerprint",
+    "title": "Your invisible ID code",
     "type": {
       "components": "Combined data ({0})",
       "note": "This code comes from mixing the stable data on this page. I don't store it anywhere: it is computed again on every visit and it comes out the same. That is the problem."
@@ -220,10 +253,11 @@
       "title": "Your cookieless fingerprint",
       "description": "<p>Browser fingerprinting: by putting together data your browser hands over without asking (screen, fonts, GPU, time zone, how it paints a canvas...) you get an almost unique identifier. It uses no cookies, so deleting them or opening incognito mode does not change it. That is how you can be followed across websites without noticing.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Device_fingerprint'>More info about fingerprinting</a>"
-    }
+    },
+    "plain": "Mix everything below and you get a code that recognises you on every visit, even without cookies."
   },
   "timezone": {
-    "title": "Time zone",
+    "title": "Your time zone",
     "type": {
       "match": "Matches the time zone of your IP ({0})",
       "mismatch": "Does not match the one of your IP ({0}): are you using a VPN or a proxy?"
@@ -232,18 +266,23 @@
       "title": "Time zone",
       "description": "<p>The time zone comes from your operating system. If it does not match the one of your IP, that is a clear hint that you are using a VPN or a proxy, something many websites look for.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Time_zone'>More info about time zones</a>"
-    }
+    },
+    "plain": "Your clock reveals roughly where you live, even if you hide your IP."
   },
   "locale": {
-    "title": "Regional format",
+    "title": "How you write dates and numbers",
     "modalinfo": {
       "title": "Regional format",
       "description": "<p>How you write numbers, dates and times (1,234.5 or 1.234,5; 24h or AM/PM; calendar) depends on the regional settings of your system. Together with your preferred languages, it says a lot about where you are from.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Locale_(computer_software)'>More info about locales</a>"
+    },
+    "plain": "It hints at the country you come from, even when you travel.",
+    "type": {
+      "languages": "Your preferred languages: {0}"
     }
   },
   "display": {
-    "title": "Window and screen",
+    "title": "Your browser window",
     "type": {
       "window": "{0}x{1}px window"
     },
@@ -251,10 +290,11 @@
       "title": "Window and screen",
       "description": "<p>Besides the resolution, the website sees the pixel density, the size of your window, the space taken by the taskbar or the dock, the color gamut, whether your screen is HDR and, in some browsers, whether you have more than one monitor.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Pixel_density'>More info about pixel density</a>"
-    }
+    },
+    "plain": "Window size, pixel density, colours: small details that together tell devices apart."
   },
   "preferences": {
-    "title": "Accessibility",
+    "title": "Your accessibility settings",
     "type": {
       "none": "Everything by default",
       "some": "{0} custom preferences"
@@ -263,10 +303,11 @@
       "title": "Accessibility",
       "description": "<p>Your accessibility preferences (less motion, more contrast, forced colors...) are available to any website through CSS. They help adapt the design, but each one that is not the default makes you easier to tell apart.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion'>More info about user preferences</a>"
-    }
+    },
+    "plain": "If you changed any of them, you become easier to tell apart from everyone else."
   },
   "input": {
-    "title": "How you interact",
+    "title": "Mouse or touch screen",
     "type": {
       "mouse": "Mouse or trackpad",
       "touch": "Touch screen",
@@ -277,10 +318,11 @@
       "title": "How you interact",
       "description": "<p>The website knows whether you use a mouse or trackpad, a touch screen or both, whether you can hover over things and how many fingers your screen detects at once.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer'>More info about the pointer media query</a>"
-    }
+    },
+    "plain": "It gives away whether you are on a phone, a tablet or a computer."
   },
   "keyboard": {
-    "title": "Keyboard layout",
+    "title": "Your keyboard",
     "type": {
       "unknown": "Custom layout ({0})"
     },
@@ -288,29 +330,32 @@
       "title": "Keyboard layout",
       "description": "<p>In Chromium-based browsers, the Keyboard API tells which character each physical key produces. That reveals whether your keyboard is QWERTY, AZERTY, QWERTZ... one more hint about your country.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Keyboard_layout'>More info about keyboard layouts</a>"
-    }
+    },
+    "plain": "Your keyboard layout is one more hint about your country."
   },
   "canvas": {
-    "title": "Canvas fingerprint",
+    "title": "A hidden drawing test",
     "type": {
-      "caption": "Your browser has just drawn this image. The code above is its hash."
+      "caption": "Your browser has just drawn this image without you seeing it. The code above sums up exactly how it came out."
     },
     "modalinfo": {
       "title": "Canvas fingerprint",
       "description": "<p>The website secretly draws the same image in every browser. Your GPU, its drivers, your system and your fonts paint it with differences you cannot see, but the hash of the image changes from one device to another.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Canvas_fingerprinting'>More info about canvas fingerprinting</a>"
-    }
+    },
+    "plain": "Your computer draws images in its own tiny, unique way. That is enough to recognise you."
   },
   "audio": {
-    "title": "Audio fingerprint",
+    "title": "A silent sound test",
     "modalinfo": {
       "title": "Audio fingerprint",
       "description": "<p>Without playing anything, the website generates a sound in memory (OfflineAudioContext) and adds up its samples. Every combination of browser, system and hardware rounds differently, so the final number helps tell you apart.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext'>More info about OfflineAudioContext</a>"
-    }
+    },
+    "plain": "Your device processes sound in its own tiny way, which also helps recognise it."
   },
   "fonts": {
-    "title": "Installed fonts",
+    "title": "Fonts on your computer",
     "type": {
       "count": "{0} of {1} fonts checked"
     },
@@ -318,10 +363,11 @@
       "title": "Installed fonts",
       "description": "<p>By measuring the width of a text with each font, the website finds out which ones you have installed without asking. It reveals your operating system and programs like Office or Adobe.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Device_fingerprint'>More info about fingerprinting</a>"
-    }
+    },
+    "plain": "The fonts you installed hint at your job and your apps (Office, Adobe…)."
   },
   "voices": {
-    "title": "Speech voices",
+    "title": "Reading-aloud voices",
     "type": {
       "count": "{0} voices ({1} local)",
       "none": "No voices available"
@@ -330,10 +376,11 @@
       "title": "Speech voices",
       "description": "<p>The list of voices to read text aloud comes from your operating system and from the language packs you installed. It is very different from one device to another.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices'>More info about getVoices</a>"
-    }
+    },
+    "plain": "The voices on your system reveal it, and the languages you have installed."
   },
   "incognito": {
-    "title": "Incognito mode",
+    "title": "Private browsing",
     "type": {
       "likely": "You are probably in incognito mode",
       "unlikely": "It does not look like incognito mode",
@@ -343,22 +390,26 @@
       "title": "Incognito mode",
       "description": "<p>The storage space the browser gives each website is different in incognito mode. By comparing it, a website can guess whether you browse privately. In Chromium it also hints at the size of your disk.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Private_browsing'>More info about private browsing</a>"
-    }
+    },
+    "plain": "Websites can often tell when you browse privately."
   },
   "adblock": {
     "title": "Ad blocker",
     "type": {
       "detected": "Ad blocker detected",
-      "none": "No ad blocker detected"
+      "none": "No ad blocker detected",
+      "win": "Nice! You have an ad blocker: fewer ads and fewer trackers following you.",
+      "nudge": "No ad blocker here. Installing one cuts down the trackers that follow you around."
     },
     "modalinfo": {
       "title": "Ad blocker",
       "description": "<p>The website creates an empty element with classes that look like an ad. If a blocker hides it, the page notices. Useful for you, but also one more piece of data about you.</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Ad_blocking'>More info about ad blocking</a>"
-    }
+    },
+    "plain": "Websites can nag you, hide content or simply note it down as one more trait."
   },
   "signals": {
-    "title": "Privacy signals",
+    "title": "“Don't track me” requests",
     "type": {
       "summary": "Do Not Track: {0} · GPC: {1}",
       "yes": "yes",
@@ -368,10 +419,11 @@
       "title": "Privacy signals",
       "description": "<p>Do Not Track and Global Privacy Control ask websites not to track you, but honouring them is voluntary. The irony: turning them on makes you a little easier to tell apart. It also shows whether you accept cookies, have a PDF viewer and whether the browser is automated.</p>",
       "moreinfo": "<a target='_blank' href='https://globalprivacycontrol.org/'>More info about Global Privacy Control</a>"
-    }
+    },
+    "plain": "Respecting “do not track” is optional for websites, and turning it on makes you a bit more unique."
   },
   "navigation": {
-    "title": "Your browsing",
+    "title": "How you got here",
     "type": {
       "pages": "{0} pages in this tab",
       "direct": "You came directly"
@@ -380,10 +432,11 @@
       "title": "Your browsing",
       "description": "<p>The website knows how many pages you visited in this tab, which website you came from and whether you reloaded or went back.</p>",
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/History/length'>More info about history.length</a>"
-    }
+    },
+    "plain": "A website can see which page sent you here and how you move around."
   },
   "behaviour": {
-    "title": "What you do here",
+    "title": "What you do on this page",
     "type": {
       "moves": "Mouse movements",
       "clicks": "Clicks",
@@ -397,6 +450,33 @@
       "title": "What you do here",
       "description": "<p>Any website can record your mouse movements, clicks, scroll, keys and when you switch tabs, without asking. Some record the whole session to watch it later (session replay).</p>",
       "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Session_replay'>More info about session replay</a>"
-    }
+    },
+    "plain": "Any website can record your mouse, clicks and scroll, and even replay your visit later."
+  },
+  "summary": {
+    "eyebrow": "No permissions asked. None needed.",
+    "title": "Your file, so far",
+    "points": "data points your browser gave away",
+    "of": "of {0}",
+    "permissions": "permissions asked",
+    "blocked": "Well done: {0} points in favour of your privacy.",
+    "highlights": "The headlines",
+    "count": "{0} of {1} found",
+    "countLabel": "{0} of {1} data points read",
+    "note": "Everything is worked out inside your browser. Only your IP goes to ipapi.co (for the location), and the map is loaded from Google.",
+    "private": "points in favour of your privacy"
+  },
+  "sections": {
+    "id": "One code built from everything below. No cookies involved.",
+    "location": "Guessed from your internet connection, without asking you.",
+    "info": "What your browser tells every website, before you even say hello.",
+    "environment": "Your settings say a lot about where and how you live.",
+    "software": "Your tools, announced to every website you visit.",
+    "connection": "Your internet connection, as websites see it.",
+    "hardware": "The machine behind the screen, and roughly what it cost.",
+    "battery": "Yes, the battery too.",
+    "fingerprints": "Hidden tests that tell your device apart from millions of others.",
+    "privacy": "Even the tools that protect you leave a trace.",
+    "behaviour": "Smile: this page is watching what you do. Live."
   }
 }

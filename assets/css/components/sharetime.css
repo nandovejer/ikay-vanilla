@@ -1,40 +1,88 @@
-/* The button also carries .iconbg .iconbg-share (see sharetime.js) */
+/* SHARE: floating action + fallback list (inside the modal) */
 .sharetime__btn {
-  --share-native-size: 40px;
-
-  display: block;
-  width: var(--share-native-size);
-  height: var(--share-native-size);
-  border-radius: 100%;
-  background-color: white;
   position: fixed;
-  bottom: var(--space-m);
-  right: var(--space-m);
-  border: 0;
-  background-size: calc(var(--share-native-size) / 1.6);
-  box-shadow: 0 2px 1px -1px rgb(51 51 51 / 0.2),
-    0 1px 1px 0 rgb(51 51 51 / 0.14), 0 1px 3px 0 rgb(51 51 51 / 0.12);
-  filter: drop-shadow(16px 16px 20px var(--color-warning));
+  inset-block-end: max(var(--space-s), env(safe-area-inset-bottom));
+  inset-inline-end: max(var(--space-s), env(safe-area-inset-right));
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-inline-size: 3.25rem;
+  min-block-size: 3.25rem;
+  padding-inline: 1rem;
+  border: 1px solid color-mix(in oklch, var(--on-gold) 12%, transparent);
+  border-radius: var(--radius-full);
+  background-color: var(--gold);
+  color: var(--on-gold);
+  font-weight: 650;
+  box-shadow: var(--shadow-2);
   cursor: pointer;
+  transition:
+    background-color var(--dur) var(--ease),
+    translate var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+
+  .iconbg {
+    inline-size: 1.15rem;
+    block-size: 1.15rem;
+  }
+
+  &:hover {
+    background-color: var(--gold-strong);
+    translate: 0 -2px;
+    box-shadow: var(--shadow-3);
+  }
+}
+
+/* icon only on phones, the name stays for screen readers */
+.sharetime__label {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (min-width: 40em) {
+  .sharetime__btn {
+    padding-inline: 1.1rem 1.35rem;
+  }
+
+  .sharetime__label {
+    position: static;
+    inline-size: auto;
+    block-size: auto;
+    clip-path: none;
+  }
 }
 
 .shareTimeList {
-  margin: var(--space-m) 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-}
-
-.shareTimeList__item {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  margin-right: var(--space-xs);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 0.5rem;
 }
 
 .shareTimeList__item__link {
-  width: 40px;
-  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-block-size: var(--target);
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+
+  .iconbg {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+  }
+
+  &:hover {
+    background-color: var(--surface-2);
+    border-color: var(--border-strong);
+  }
 }

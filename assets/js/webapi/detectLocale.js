@@ -1,6 +1,8 @@
 /**
  * Regional formats: they depend on the language and region of your system.
  */
+import { t, langLabel, listLabel } from "../i18n.js";
+
 const detectLocale = {
   async init() {
     const date = Intl.DateTimeFormat().resolvedOptions();
@@ -8,10 +10,12 @@ const detectLocale = {
     const example = new Intl.NumberFormat().format(1234567.89);
     const hourCycle = new Intl.DateTimeFormat(undefined, { hour: "numeric" })
       .resolvedOptions().hourCycle;
-    const languages = (navigator.languages ?? [navigator.language]).join(", ");
+    const preferred = navigator.languages ?? [navigator.language];
+    const languages = preferred.join(", ");
 
     return {
-      value: `${date.locale} · ${example}`,
+      value: `${langLabel(date.locale)} · ${example}`,
+      note: t("locale.type.languages", listLabel(preferred.map(langLabel))),
       detail: [
         ["navigator.languages", languages],
         ["resolvedOptions().locale", date.locale],

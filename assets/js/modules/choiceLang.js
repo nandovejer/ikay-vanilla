@@ -8,11 +8,17 @@ const choiceLang = {
     const current = properties.lang();
     const buttons = LANGS.map((lang) => {
       const button = template("tpl-lang-btn").firstElementChild;
-      button.textContent = lang.toUpperCase();
+      const name = langName(lang);
+      button.querySelector(".nav__lang__code").textContent = lang.toUpperCase();
+      button.querySelector(".nav__lang__name").textContent = name;
       button.lang = lang;
-      button.dataset.name = langName(lang);
+      button.dataset.name = name;
+      button.setAttribute("aria-label", name);
+      button.setAttribute("aria-pressed", String(lang === current));
       button.classList.toggle("active", lang === current);
-      button.addEventListener("click", () => choiceLang.changeLang(lang));
+      button.addEventListener("click", () => {
+        if (lang !== current) choiceLang.changeLang(lang);
+      });
       return button;
     });
     document.querySelector(".js-choiceLang").replaceChildren(...buttons);
@@ -21,7 +27,7 @@ const choiceLang = {
     storage.set("sessionLang", strLang);
     location.reload();
   },
-  /** <html lang dir>: the css reads html[lang="ar"] for the rtl layout */
+  /** <html lang dir>: logical properties in the css do the rest for rtl */
   htmlLang() {
     const lang = properties.lang();
     document.documentElement.lang = lang;

@@ -1,5 +1,6 @@
 /**
- * BASIC MODAL JS
+ * BASIC MODAL JS, on a native <dialog> (showModal): focus trap, Esc,
+ * top layer and ::backdrop come from the browser.
  * One modal for the whole page (<template id="tpl-caimodal">), filled on demand:
  *
  * caimodal.open({
@@ -26,17 +27,22 @@ const caimodal = {
     scope = container.querySelector(".js-caimodal");
 
     scope.addEventListener("click", (event) => {
-      if (event.target.closest("[data-caimodal-action='close']")) {
+      // event.target === dialog only when clicking the ::backdrop
+      if (event.target === scope || event.target.closest("[data-caimodal-action='close']")) {
         caimodal.close();
       }
     });
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && caimodal.isOpen()) caimodal.close();
+    // Esc (cancel) and close() end here
+    scope.addEventListener("close", () => {
+      document.body.dataset.caimodalStatus = "";
+      scope.dataset.caimodalStatus = "";
+      lastFocus?.focus?.();
+      current.callbackClose?.();
     });
     return scope;
   },
   isOpen() {
-    return scope?.dataset.caimodalStatus === "open";
+    return Boolean(scope?.open);
   },
   open(options = {}) {
     caimodal.init();
@@ -50,17 +56,14 @@ const caimodal = {
     }
     scope.querySelector(".js-caimodal-footer").innerHTML = options.tplFooter ?? "";
 
-    lastFocus = document.activeElement;
+    if (!scope.open) lastFocus = document.activeElement;
     document.body.dataset.caimodalStatus = "open";
     scope.dataset.caimodalStatus = "open";
-    scope.querySelector(".caimodalBox").focus();
+    if (!scope.open) scope.showModal();
     current.callbackOpen?.();
   },
   close() {
-    document.body.dataset.caimodalStatus = "";
-    scope.dataset.caimodalStatus = "";
-    lastFocus?.focus?.();
-    current.callbackClose?.();
+    if (scope?.open) scope.close();
   },
 };
 

@@ -12,6 +12,7 @@ const detectSignals = {
 
     return {
       value: t("signals.type.summary", yesNo(dnt), yesNo(gpc)),
+      win: dnt || gpc,
       detail: [
         ["navigator.doNotTrack", navigator.doNotTrack ?? "null"],
         ["navigator.globalPrivacyControl", navigator.globalPrivacyControl],
