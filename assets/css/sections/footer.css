@@ -1,0 +1,31 @@
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: calc(var(--space-m) * 2) var(--space-m);
+
+  a,
+  a:hover,
+  a:focus {
+    color: var(--white);
+  }
+}
+
+.footer__title,
+.footer__article {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.footer__article.footer__article--legal {
+  font-size: var(--fontsize-xs);
+  text-align: center;
+  padding-top: var(--space-m);
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    silver 60%,
+    transparent
+  );
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+}

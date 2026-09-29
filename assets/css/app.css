@@ -1,0 +1,32 @@
+/*
+ * IKAY - styles
+ * Plain CSS, no preprocessor: custom properties + native nesting.
+ * The files keep the original ITCSS order.
+ */
+
+/* SETTINGS */
+@import url("settings/variables.css");
+
+/* GENERIC */
+@import url("generic/normalize.css");
+@import url("generic/reset.css");
+
+/* ELEMENTS */
+@import url("elements/body.css");
+@import url("elements/animation.css");
+
+/* OBJECTS */
+@import url("objects/icon.css");
+
+/* COMPONENTS */
+@import url("components/sharetime.css");
+@import url("components/caimodal.css");
+@import url("components/battery.css");
+@import url("components/card.css");
+@import url("components/nav.css");
+
+/* SECTIONS */
+@import url("sections/loadingPage.css");
+@import url("sections/header.css");
+@import url("sections/main.css");
+@import url("sections/footer.css");

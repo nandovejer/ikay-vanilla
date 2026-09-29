@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="IKAY: dashboard about your digital fingerprint" />
+    <title>Tu navegador dice...</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/app.css" />
+    <link rel="modulepreload" href="assets/js/i18n.js" />
+    <script type="module" src="assets/js/app.js"></script>
+  </head>
+
+  <body class="loadingEnable">
+    <!-- NO JS -->
+    <noscript id="nojs">
+      <p lang="en">
+        The javascript of your browser is disabled, you are safe :D
+      </p>
+      <p lang="es">
+        El javascript de su navegador está deshabilitado, estás a salvo :D
+      </p>
+      <p lang="ar" dir="rtl">تم تعطيل جافا سكريبت في متصفحك، أنت في أمان :D</p>
+    </noscript>
+
+    <!-- APP CONTENT -->
+    <header id="appHeader" class="header"></header>
+    <main id="appMain" class="main"></main>
+    <footer id="appFooter" class="footer"></footer>
+
+    <!-- LOADING -->
+    <div id="loadingPage" class="js-loadingPage"></div>
+
+    <!-- CARD MODAL -->
+    <div id="caimodal"></div>
+
+    <!-- SHARE -->
+    <aside id="shareTime" class="sharetime"></aside>
+
+    <!--
+      ===================================================================
+      TEMPLATES
+      Inert markup cloned by assets/js/modules/template.js.
+      Texts come from assets/locales/*.json through the data-i18n attributes:
+        data-i18n="a.b"                 -> textContent
+        data-i18n-html="a.b"            -> innerHTML (trusted translations)
+        data-i18n-attr="title:a.b;..."  -> attributes
+      ===================================================================
+    -->
+
+    <!-- HEADER -->
+    <template id="tpl-header">
+      <a class="header__linkHome" href="#">
+        <span class="header__logo iconbg iconbg-logo"></span>
+        <div class="header__info">
+          <h1 class="header__h1" data-i18n="header.h1"></h1>
+          <p class="header__description" data-i18n="header.description"></p>
+        </div>
+      </a>
+      <button
+        type="button"
+        class="header__btnMenu js-bntMenu"
+        data-label="Menu"
+        aria-label="Menu"
+        aria-expanded="false">
+        <span class="iconbg iconbg-menu"></span>
+      </button>
+
+      <nav class="nav js-navMenu">
+        <button
+          type="button"
+          class="nav__btnMenuClose js-bntMenuClose"
+          aria-label="Close">
+          <span class="iconbg iconbg-close"></span>
+        </button>
+
+        <!-- CHOICE LANG: filled by choiceLang.js -->
+        <aside class="nav__lang js-choiceLang"></aside>
+
+        <ul class="nav__list">
+          <li class="nav__list__item">
+            <a href="#areaId" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-fingerprint"></span>
+              <span class="text" data-i18n="header.id"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="#areaLocation" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-location"></span>
+              <span class="text" data-i18n="header.location"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="#areaInfo" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-info"></span>
+              <span class="text" data-i18n="header.info"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="#areaEnvironment" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-timezone"></span>
+              <span class="text" data-i18n="header.environment"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="#areaSoftware" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-os"></span>
+              <span class="text" data-i18n="header.software"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="#areaHardware" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-hardware"></span>
+              <span class="text" data-i18n="header.hardware"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="#areaConnection" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-connection"></span>
+              <span class="text" data-i18n="header.connection"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="#areaBattery" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-battery"></span>
+              <span class="text" data-i18n="header.battery"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="#areaFingerprints" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-canvas"></span>
+              <span class="text" data-i18n="header.fingerprints"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="#areaPrivacy" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-incognito"></span>
+              <span class="text" data-i18n="header.privacy"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="#areaBehaviour" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-behaviour"></span>
+              <span class="text" data-i18n="header.behaviour"></span>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav__list">
+          <li class="nav__list__item">
+            <a href="#areaAbout" class="link js-navMenu-link">
+              <span class="nav__icon iconbg iconbg-project"></span>
+              <span class="text" data-i18n="header.aboutme"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="#" class="link js-share-native">
+              <span class="nav__icon iconbg iconbg-share"></span>
+              <span class="text" data-i18n="header.share"></span>
+            </a>
+          </li>
+          <li class="nav__list__item">
+            <a href="https://github.com/nandovejer/ikay-vanilla" class="link">
+              <span class="text">Github Repo</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </template>
+
+    <template id="tpl-lang-btn">
+      <button type="button" class="nav__lang__btn js-choiceLang-btn"></button>
+    </template>
+
+    <!-- MAIN -->
+    <template id="tpl-main">
+      <!-- INTRO -->
+      <section class="area area--full">
+        <article class="area__article">
+          <h2 class="article__title" data-i18n="main.intro.heading"></h2>
+          <div data-i18n-html="main.intro.content1"></div>
+          <div data-i18n-html="main.intro.content2"></div>
+          <div data-i18n-html="main.intro.content3"></div>
+        </article>
+      </section>
+
+      <!-- CARDS: data-cards lists the cards painted by card.js -->
+      <section class="area area--id" data-cards="fingerprint">
+        <h3 tabindex="-1" id="areaId" class="area__title" data-i18n="header.id"></h3>
+      </section>
+
+      <section class="area area--location" data-cards="location">
+        <h3 tabindex="-1" id="areaLocation" class="area__title" data-i18n="location.title"></h3>
+      </section>
+
+      <section
+        class="area area--info"
+        data-cards="device screen orientation darkmode lang exit">
+        <h3 tabindex="-1" id="areaInfo" class="area__title" data-i18n="header.info"></h3>
+      </section>
+
+      <section
+        class="area area--environment area--grid"
+        data-cards="timezone locale display preferences input keyboard">
+        <h3 tabindex="-1" id="areaEnvironment" class="area__title" data-i18n="header.environment"></h3>
+      </section>
+
+      <section class="area area--software" data-cards="os browser">
+        <h3 tabindex="-1" id="areaSoftware" class="area__title" data-i18n="header.software"></h3>
+      </section>
+
+      <section class="area area--connection" data-cards="connection telco ip">
+        <h3 tabindex="-1" id="areaConnection" class="area__title" data-i18n="connection.title"></h3>
+      </section>
+
+      <section class="area area--hardware" data-cards="ram cpu gpu">
+        <h3 tabindex="-1" id="areaHardware" class="area__title" data-i18n="header.hardware"></h3>
+      </section>
+
+      <section class="area area--foo" data-cards="battery">
+        <h3 tabindex="-1" id="areaBattery" class="area__title" data-i18n="battery.title"></h3>
+      </section>
+
+      <section class="area area--fingerprints" data-cards="canvas audio fonts voices">
+        <h3 tabindex="-1" id="areaFingerprints" class="area__title" data-i18n="header.fingerprints"></h3>
+      </section>
+
+      <section
+        class="area area--privacy area--grid"
+        data-cards="incognito adblock signals navigation">
+        <h3 tabindex="-1" id="areaPrivacy" class="area__title" data-i18n="header.privacy"></h3>
+      </section>
+
+      <section class="area area--behaviour" data-cards="behaviour">
+        <h3 tabindex="-1" id="areaBehaviour" class="area__title" data-i18n="header.behaviour"></h3>
+      </section>
+
+      <!-- ABOUT ME -->
+      <section class="area area--full area--typeinfo">
+        <article class="area__article">
+          <h2 tabindex="-1" id="areaAbout" class="aboutme__title" data-i18n="aboutme.heading"></h2>
+          <div data-i18n-html="aboutme.content1"></div>
+          <div data-i18n-html="aboutme.content2"></div>
+        </article>
+      </section>
+    </template>
+
+    <!-- FOOTER -->
+    <template id="tpl-footer">
+      <article class="footer__article">
+        <h3 data-i18n="footer.title"></h3>
+        <div data-i18n-html="footer.content1"></div>
+        <div data-i18n-html="footer.content2"></div>
+      </article>
+      <article class="footer__article footer__article--legal">
+        <div data-i18n-html="footer.thanks"></div>
+        <div data-i18n-html="footer.license"></div>
+      </article>
+    </template>
+
+    <!--
+      CARD (generic). card.js sets:
+        article  -> js-card-{type} card--{type}
+        icon     -> iconbg-{icon}
+        value    -> js-apiValue-{type}
+        text     -> js-apiDetail-{type}
+        list     -> filled by webapi.js ([api, value] pairs or plain items)
+        [data-i18n-card] -> {type}.title
+    -->
+    <template id="tpl-card">
+      <article class="js-card card">
+        <button
+          type="button"
+          class="card__more js-card-more"
+          data-i18n-attr="title:main.cardmore;aria-label:main.cardmore"></button>
+        <span class="card__icon icon"></span>
+        <div class="card__info">
+          <span class="card__info__type" data-i18n-card></span>
+          <h3 class="card__info__title js-card-value">...</h3>
+          <p class="card__info__description js-card-description"></p>
+          <ul class="card__info__api js-card-detail"></ul>
+        </div>
+        <div class="card__noSupport">
+          <span class="card__noSupport__type" data-i18n-card></span>
+          <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
+        </div>
+      </article>
+    </template>
+
+    <!-- CARD LOCATION -->
+    <template id="tpl-card-location">
+      <article class="js-card js-card-location card card--vertical card--location">
+        <div class="card__map js-card-map"></div>
+        <button
+          type="button"
+          class="card__more js-card-more"
+          data-i18n-attr="title:main.cardmore;aria-label:main.cardmore"></button>
+        <div class="card__info">
+          <span class="card__info__type js-apiValue-country">...</span>
+          <h3 class="card__info__title js-apiValue-city">...</h3>
+        </div>
+        <div class="card__noSupport">
+          <span class="card__noSupport__type" data-i18n="location.title"></span>
+          <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
+        </div>
+      </article>
+    </template>
+
+    <!-- CARD EXIT -->
+    <template id="tpl-card-exit">
+      <article class="js-card js-card-exit card card--exit">
+        <button
+          type="button"
+          class="card__more js-card-more"
+          data-i18n-attr="title:main.cardmore;aria-label:main.cardmore"></button>
+        <span class="card__icon icon iconbg-exit"></span>
+        <div class="card__info">
+          <span class="card__info__type js-apiValue-exitTitle" data-i18n="exit.severaltimes"></span>
+          <ul class="card__info__list js-apiValue-exit"></ul>
+        </div>
+        <div class="card__noSupport">
+          <span class="card__noSupport__type" data-i18n="exit.severaltimes"></span>
+          <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
+        </div>
+      </article>
+    </template>
+
+    <!-- CARD CONNECTION -->
+    <template id="tpl-card-connection">
+      <article class="js-card js-card-connection card card--vertical card--connection">
+        <button
+          type="button"
+          class="card__more js-card-more"
+          data-i18n-attr="title:main.cardmore;aria-label:main.cardmore"></button>
+        <span class="card__icon icon iconbg-connection"></span>
+        <div class="card__info">
+          <span class="card__info__type" data-i18n="connection.title"></span>
+          <h3 class="card__info__title js-apiValue-connection-mbps">...</h3>
+          <p class="card__info__description js-apiValue-connection-type">...</p>
+        </div>
+        <div class="card__noSupport">
+          <span class="card__noSupport__type" data-i18n="header.connection"></span>
+          <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
+        </div>
+      </article>
+    </template>
+
+    <!-- CARD BATTERY -->
+    <template id="tpl-card-battery">
+      <article class="js-card js-card-battery card card--vertical card--battery">
+        <button
+          type="button"
+          class="card__more js-card-more"
+          data-i18n-attr="title:main.cardmore;aria-label:main.cardmore"></button>
+        <span class="card__icon icon iconbg-battery"></span>
+        <div class="card__info">
+          <span class="card__info__type" data-i18n="battery.title"></span>
+          <!-- WIDGET BATTERY -->
+          <div class="battery">
+            <div class="battery__icon" data-level="0%"></div>
+            <aside class="battery__info">
+              <ul class="battery__info__list">
+                <li class="battery__info__item">
+                  <span class="battery__info__title" data-i18n="battery.type.mode"></span>
+                  <span class="battery__info__value battery__info__value--mode js-battery-mode">-</span>
+                </li>
+                <li class="battery__info__item">
+                  <span class="battery__info__title" data-i18n="battery.type.level"></span>
+                  <span class="battery__info__value js-battery-level">-</span>
+                </li>
+                <li class="battery__info__item">
+                  <span class="battery__info__title" data-i18n="battery.type.charged"></span>
+                  <span class="battery__info__value js-battery-chargedtimme">-</span>
+                </li>
+                <li class="battery__info__item">
+                  <span class="battery__info__title" data-i18n="battery.type.remaining"></span>
+                  <span class="battery__info__value js-battery-dischargingtime">-</span>
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+        <div class="card__noSupport">
+          <span class="card__noSupport__type" data-i18n="battery.title"></span>
+          <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
+        </div>
+      </article>
+    </template>
+
+    <!-- CARD FINGERPRINT (Your ID) -->
+    <template id="tpl-card-fingerprint">
+      <article class="js-card js-card-fingerprint card card--vertical card--fingerprint">
+        <button
+          type="button"
+          class="card__more js-card-more"
+          data-i18n-attr="title:main.cardmore;aria-label:main.cardmore"></button>
+        <span class="card__icon icon iconbg-fingerprint"></span>
+        <div class="card__info">
+          <span class="card__info__type" data-i18n="fingerprint.title"></span>
+          <h3 class="card__info__title card__info__title--hash js-apiValue-fingerprint">…</h3>
+          <p class="card__info__description" data-i18n="fingerprint.type.note"></p>
+          <ul class="card__info__api js-card-detail"></ul>
+        </div>
+        <div class="card__noSupport">
+          <span class="card__noSupport__type" data-i18n="fingerprint.title"></span>
+          <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
+        </div>
+      </article>
+    </template>
+
+    <!-- CARD CANVAS -->
+    <template id="tpl-card-canvas">
+      <article class="js-card js-card-canvas card card--vertical card--canvas">
+        <button
+          type="button"
+          class="card__more js-card-more"
+          data-i18n-attr="title:main.cardmore;aria-label:main.cardmore"></button>
+        <span class="card__icon icon iconbg-canvas"></span>
+        <div class="card__info">
+          <span class="card__info__type" data-i18n="canvas.title"></span>
+          <img class="card__canvas js-canvas-image" alt="" width="280" height="64" />
+          <h3 class="card__info__title card__info__title--hash js-apiValue-canvas">…</h3>
+          <p class="card__info__description" data-i18n="canvas.type.caption"></p>
+        </div>
+        <div class="card__noSupport">
+          <span class="card__noSupport__type" data-i18n="canvas.title"></span>
+          <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
+        </div>
+      </article>
+    </template>
+
+    <!-- CARD BEHAVIOUR -->
+    <template id="tpl-card-behaviour">
+      <article class="js-card js-card-behaviour card card--vertical card--behaviour">
+        <button
+          type="button"
+          class="card__more js-card-more"
+          data-i18n-attr="title:main.cardmore;aria-label:main.cardmore"></button>
+        <span class="card__icon icon iconbg-behaviour"></span>
+        <div class="card__info">
+          <span class="card__info__type" data-i18n="behaviour.title"></span>
+          <canvas class="behaviour__map js-behaviour-map" aria-hidden="true"></canvas>
+          <ul class="behaviour__stats">
+            <li><span data-i18n="behaviour.type.moves"></span><b class="js-behaviour-moves">0</b></li>
+            <li><span data-i18n="behaviour.type.clicks"></span><b class="js-behaviour-clicks">0</b></li>
+            <li><span data-i18n="behaviour.type.scroll"></span><b class="js-behaviour-scroll">0%</b></li>
+            <li><span data-i18n="behaviour.type.keys"></span><b class="js-behaviour-keys">0</b></li>
+            <li><span data-i18n="behaviour.type.hidden"></span><b class="js-behaviour-hidden">0</b></li>
+            <li><span data-i18n="behaviour.type.time"></span><b class="js-behaviour-time">0:00</b></li>
+          </ul>
+          <p class="card__info__description" data-i18n="behaviour.type.caption"></p>
+        </div>
+        <div class="card__noSupport">
+          <span class="card__noSupport__type" data-i18n="behaviour.title"></span>
+          <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
+        </div>
+      </article>
+    </template>
+
+    <!-- MODAL -->
+    <template id="tpl-caimodal">
+      <div class="caimodal js-caimodal">
+        <div class="caimodalBox" role="dialog" aria-modal="true" tabindex="-1">
+          <button
+            class="caimodalBox__btnClose iconbg iconbg-close"
+            type="button"
+            aria-label="Close"
+            data-caimodal-action="close"></button>
+          <header class="caimodalBox__header">
+            <h3 class="caimodalBox__header__title js-caimodal-title"></h3>
+          </header>
+          <main class="caimodalBox__main js-caimodal-main"></main>
+          <footer class="caimodalBox__footer js-caimodal-footer"></footer>
+        </div>
+        <div class="caimodalOverlay" data-caimodal-action="close"></div>
+      </div>
+    </template>
+
+    <!-- SHARE -->
+    <template id="tpl-share-btn">
+      <button
+        type="button"
+        class="sharetime__btn iconbg iconbg-share js-share-native"
+        data-i18n-attr="title:global.share;aria-label:global.share"></button>
+    </template>
+
+    <template id="tpl-share-item">
+      <li class="shareTimeList__item">
+        <a
+          class="shareTimeList__item__link iconbg"
+          target="_blank"
+          rel="noopener noreferrer"></a>
+      </li>
+    </template>
+
+    <!-- LOADING -->
+    <template id="tpl-loading">
+      <span class="loadingPage__icon" data-title="Loading"></span>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+/* The button also carries .iconbg .iconbg-share (see sharetime.js) */
+.sharetime__btn {
+  --share-native-size: 40px;
+
+  display: block;
+  width: var(--share-native-size);
+  height: var(--share-native-size);
+  border-radius: 100%;
+  background-color: white;
+  position: fixed;
+  bottom: var(--space-m);
+  right: var(--space-m);
+  border: 0;
+  background-size: calc(var(--share-native-size) / 1.6);
+  box-shadow: 0 2px 1px -1px rgb(51 51 51 / 0.2),
+    0 1px 1px 0 rgb(51 51 51 / 0.14), 0 1px 3px 0 rgb(51 51 51 / 0.12);
+  filter: drop-shadow(16px 16px 20px var(--color-warning));
+  cursor: pointer;
+}
+
+.shareTimeList {
+  margin: var(--space-m) 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+.shareTimeList__item {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: var(--space-xs);
+}
+
+.shareTimeList__item__link {
+  width: 40px;
+  height: 40px;
+}

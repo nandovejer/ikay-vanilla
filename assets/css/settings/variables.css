@@ -1,0 +1,131 @@
+/*
+ * SETTINGS
+ * Former SCSS variables, now native custom properties.
+ *
+ * Media queries cannot read custom properties, so breakpoints are written
+ * literally where they are used:
+ *   --media-sm     980px
+ *   --media-lg     1280px
+ *   --media-lgplus 1624px
+ *
+ * Every css file lives one folder below css/, so the image paths
+ * below resolve the same wherever the var() is used.
+ */
+:root {
+  /* # TYPOGRAPHY */
+  /* ## Typography - font-family */
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-heading: "Fira Code", monospace, "Roboto", Helvetica;
+
+  /* ## Typography - font-size */
+  --fontsize-xs: 12px;
+  --fontsize-s: 16px;
+  --fontsize-m: 20px;
+  --fontsize-l: 24px;
+  --fontsize-xl: 28px;
+
+  /* # COLORS */
+  /* ## Colors - Palette */
+  --black: #333;
+  --white: #fafafa;
+  --whitepure: #fff;
+  --blackpure: #000;
+
+  /* ## Colors - Function */
+  --color-info: lightblue;
+  --color-error: red;
+  --color-success: green;
+  --color-warning: gold;
+
+  /* # SPACING */
+  --space-xs: 8px;
+  --space-s: 16px;
+  --space-m: 20px;
+  --space-l: 24px;
+  --space-xl: 28px;
+
+  /* # BORDER RADIUS */
+  --radius: 20px;
+
+  /* # CONTAINER */
+  --container-width: 980px;
+
+  /* # BACKGROUND URL - Default */
+  --bgurl-logo: url("../../images/svg/logo.svg");
+
+  /* # BACKGROUND URL - Icons */
+  --bgurl-battery: url("../../images/svg/battery.svg");
+  --bgurl-close: url("../../images/svg/close.svg");
+  --bgurl-connection: url("../../images/svg/connection.svg");
+  --bgurl-contact: url("../../images/svg/contact.svg");
+  --bgurl-hardware: url("../../images/svg/hardware.svg");
+  --bgurl-info: url("../../images/svg/info.svg");
+  --bgurl-location: url("../../images/svg/location.svg");
+  --bgurl-menu: url("../../images/svg/menu.svg");
+  --bgurl-project: url("../../images/svg/project.svg");
+  --bgurl-share: url("../../images/svg/share.svg");
+  --bgurl-resolution: url("../../images/svg/resolution.svg");
+  --bgurl-orientation: url("../../images/svg/orientation.svg");
+  --bgurl-darkmode: url("../../images/svg/darkmode.svg");
+  --bgurl-lang: url("../../images/svg/lang.svg");
+  --bgurl-ram: url("../../images/svg/ram.svg");
+  --bgurl-cpu: url("../../images/svg/cpu.svg");
+  --bgurl-gpu: url("../../images/svg/gpu.svg");
+  --bgurl-ip: url("../../images/svg/ip.svg");
+  --bgurl-telco: url("../../images/svg/telco.svg");
+  --bgurl-exit: url("../../images/svg/exit.svg");
+  --bgurl-hourglass: url("../../images/svg/hourglass.svg");
+
+  /* # BACKGROUND URL - Social Media */
+  --bgurl-facebook: url("../../images/svg/facebook.svg");
+  --bgurl-twitter: url("../../images/svg/twitter.svg");
+  --bgurl-linkedin: url("../../images/svg/linkedin.svg");
+  --bgurl-whatsapp: url("../../images/svg/whatsapp.svg");
+  --bgurl-reddit: url("../../images/svg/reddit.svg");
+
+  /* # BACKGROUND URL - Icons devices */
+  --bgurl-devices: url("../../images/svg/devices.svg");
+  --bgurl-mobileAndroid: url("../../images/svg/mobileAndroid.svg");
+
+  /* # BACKGROUND URL - Icons OS */
+  --bgurl-os: url("../../images/svg/os.svg");
+  --bgurl-windows: url("../../images/svg/windows.svg");
+
+  /* # BACKGROUND URL - Icons Browser */
+  --bgurl-browser: url("../../images/svg/browser.svg");
+  --bgurl-firefox: url("../../images/svg/firefox.svg");
+
+  /* # BACKGROUND URL - Fingerprinting cards */
+  --bgurl-fingerprint: url("../../images/svg/fingerprint.svg");
+  --bgurl-timezone: url("../../images/svg/timezone.svg");
+  --bgurl-locale: url("../../images/svg/locale.svg");
+  --bgurl-display: url("../../images/svg/display.svg");
+  --bgurl-preferences: url("../../images/svg/preferences.svg");
+  --bgurl-input: url("../../images/svg/input.svg");
+  --bgurl-keyboard: url("../../images/svg/keyboard.svg");
+  --bgurl-canvas: url("../../images/svg/canvas.svg");
+  --bgurl-audio: url("../../images/svg/audio.svg");
+  --bgurl-fonts: url("../../images/svg/fonts.svg");
+  --bgurl-voices: url("../../images/svg/voices.svg");
+  --bgurl-incognito: url("../../images/svg/incognito.svg");
+  --bgurl-adblock: url("../../images/svg/adblock.svg");
+  --bgurl-signals: url("../../images/svg/signals.svg");
+  --bgurl-navigation: url("../../images/svg/navigation.svg");
+  --bgurl-behaviour: url("../../images/svg/behaviour.svg");
+
+  /* # SHADOWS */
+  --header-shadow: 0 2px 1px -1px rgb(192 192 192 / 0.2),
+    0 1px 1px 0 rgb(192 192 192 / 0.14), 0 1px 3px 0 rgb(192 192 192 / 0.12);
+
+  /* # CARD */
+  --card-minHeight: 180px;
+  --card-bgColor: gold;
+  --card-color: var(--black);
+  --card_icon-width: 64px;
+  --card_title-fontSize: 20px;
+  --card-border: 1px solid #f3f3f3;
+  --card-shadow: 0 2px 1px -1px rgb(51 51 51 / 0.2),
+    0 1px 1px 0 rgb(51 51 51 / 0.14), 0 1px 3px 0 rgb(51 51 51 / 0.12);
+  --card-shadow--error: 0 0 1px -1px rgb(255 0 0 / 0.2),
+    0 0 1px 0 rgb(255 0 0 / 0.14), 0 1px 3px 0 rgb(255 0 0 / 0.12);
+}

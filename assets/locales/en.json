@@ -1,0 +1,402 @@
+{
+  "header": {
+    "h1": "IKAY",
+    "description": "Dashboard about your digital fingerprint",
+    "location": "Geolocation",
+    "info": "General Information",
+    "software": "Software",
+    "hardware": "Hardware",
+    "connection": "Connection",
+    "battery": "Battery",
+    "aboutme": "About me",
+    "share": "Share",
+    "id": "Your ID",
+    "environment": "Your environment",
+    "fingerprints": "Active fingerprints",
+    "privacy": "Privacy",
+    "behaviour": "Behaviour"
+  },
+  "main": {
+    "intro": {
+      "heading": "IKAY, your digital fingerprint",
+      "content1": "<p>Hi, I'm <a href='https://soynando.com'>Nando Muñoz</a>, and IKAY was born as a tool to help you see, identify and manage your digital fingerprint.</p>",
+      "content2": "<p>Below you will find a dashboard with part of the information you hand over to a website every time you visit it through your browser. If you want to know more, go and read <a href='https://soynando.com/tu-navegador-sabe-sobre-ti-mas-de-lo-que-crees/'>my article on the subject</a> (Spanish only 🙁)</p>",
+      "content3": ""
+    },
+    "cardmore": "Learn more about this data",
+    "noSupport": "Your browser does not support this feature. Good for your privacy, maybe :D"
+  },
+  "aboutme": {
+    "heading": "About me",
+    "content1": "<p>Senior Frontend developer focused on ecommerce, with more than 7 years of experience on platforms such as <a href='https://www.sap.com/spain/acquired-brands/what-is-hybris.html'>Hybris</a> and <a href='https://www.salesforce.com/es/products/commerce-cloud/ecommerce/'>Salesforce Commerce Cloud</a>. Working as a developer and coordinating an international Frontend team as its lead. Also passionate about design and UX.</p>",
+    "content2": "<p class=''>You can reach me on <a href='https://github.com/Silencespainter'>Github</a>, <a href='https://twitter.com/silencespainter'>Twitter</a> or <a href='https://www.linkedin.com/in/silencespainter'>Linkedin</a></p>",
+    "content3": ""
+  },
+  "footer": {
+    "title": "The state of your data",
+    "content1": "<p>All the data shown on this website is stored on your device only, and is never sent to any external server. Why? Because I'm not interested in your data, I'm interested in your awareness.</p>",
+    "content2": "<p>That said, I don't know whether GitHub (the server hosting this website) or ipapi.co (the external API I use to work out your city, country and telecom operator from your IP) store data similar to the one shown here, or any other kind. But hey, if you don't mind sharing every dinner, moment, memory or feeling on Facebook, you probably won't mind the information (much like this) collected about you by that wonderful website where they told you that you can watch paid movies online, but for free :D Allow me a little irony :)</p>",
+    "thanks": "<p>I want to thank <a href='https://github.com/RobinLinus'>Robin Linus</a> for the inspiration, and <a href='https://www.flaticon.com'>Flaticon</a> for their icons</p>",
+    "license": "<p><a href='https://opensource.org/licenses/MIT'>MIT LICENSE - https://opensource.org/licenses/MIT</a>.</p>"
+  },
+  "global": {
+    "spanish": "Spanish",
+    "english": "English",
+    "arabic": "Arabic",
+    "contact": "Contact",
+    "shareSocialMedia": "Share on social media",
+    "share": "Share",
+    "shareIn": "Share on {0}"
+  },
+  "location": {
+    "title": "Geolocation",
+    "modalinfo": {
+      "title": "Geolocation",
+      "description": "<p>IP geolocation makes it possible to track a visitor's location using an IP geolocation database or an API. Visitors can be located down to a city, region or country.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Internet_geolocation'>More info about Geolocation</a>"
+    }
+  },
+  "device": {
+    "title": "Device",
+    "type": {
+      "mobileAndroid": "Android Mobile",
+      "tabletAndroid": "Android Tablet",
+      "ipad": "iPad",
+      "iphone": "iPhone",
+      "laptopWin": "Windows Laptop",
+      "laptopMac": "Macbook, iMac or Mac Mini",
+      "tv": "A TV",
+      "unknownDevice": "Unknown device"
+    },
+    "modalinfo": {
+      "title": "Device",
+      "description": "<p>Identifies the type of device you are connecting from (Android Mobile, Android Tablet, iPad, iPhone, Windows Laptop, Macbook, iMac or Mac Mini, a TV or some other type).</p>",
+      "moreinfo": ""
+    }
+  },
+  "screen": {
+    "title": "Display Resolution",
+    "modalinfo": {
+      "title": "Display Resolution",
+      "description": "<p>The display resolution is the number of distinct pixels that can be shown on the screen. It is given by the width multiplied by the height, which yields a ratio known as the 'aspect ratio'. This aspect ratio can vary depending on the shape of the monitor and on the graphics card.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Display_resolution'>More info about display resolution</a>"
+    }
+  },
+  "orientation": {
+    "title": "Orientation",
+    "type": {
+      "portrait": "portrait",
+      "landscape": "landscape",
+      "undefined": "Since you are using a {0}, I can't tell"
+    },
+    "modalinfo": {
+      "title": "Orientation",
+      "description": "<p>Tells the orientation of your device, as long as it is a mobile phone or a tablet.</p>",
+      "moreinfo": ""
+    }
+  },
+  "darkmode": {
+    "title": "Dark Mode",
+    "type": {
+      "enable": "Dark Mode enabled",
+      "disable": "Light Mode enabled"
+    },
+    "modalinfo": {
+      "title": "Dark Mode",
+      "description": "<p>This mode noticeably reduces eye strain. It consists of setting the background to a dark shade (black or grey).</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Light-on-dark_color_scheme'>More info about Dark Mode</a>"
+    }
+  },
+  "lang": {
+    "title": "Language",
+    "modalinfo": {
+      "title": "Language",
+      "description": "<p>The language you have set in your browser, and probably on your device too.</p>",
+      "moreinfo": ""
+    }
+  },
+  "exit": {
+    "title": "You left the page...",
+    "firsttime": "This is your first time on this page",
+    "severaltimes": "You visited the page...",
+    "modalinfo": {
+      "title": "Web Analytics",
+      "description": "<p>Web analytics is the collection, measurement, analysis and reporting of web data in order to understand and optimise web usage. Web analytics is not just a process for measuring web traffic, though: it is also used to assess and improve the effectiveness of a website.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Web_analytics'>More info about Web Analytics</a>"
+    }
+  },
+  "os": {
+    "title": "Operating System",
+    "modalinfo": {
+      "title": "The Operating System",
+      "description": "<p>An operating system (OS) is the main software, or set of programs, of a computer system. It manages the hardware resources and provides services to application software, running in a privileged mode with respect to all the rest.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Operating_system'>More info about Operating Systems</a>"
+    }
+  },
+  "browser": {
+    "title": "Browser",
+    "modalinfo": {
+      "title": "Browser",
+      "description": "<p>A web browser is a piece of software, an application or a program that gives you access to the Web, interpreting the information in different kinds of files and websites so that they can be displayed.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Web_browser'>More info about Browser</a>"
+    }
+  },
+  "connection": {
+    "title": "Download speed",
+    "type": {
+      "lower2g": "Very Slow (2G)",
+      "low2g": "Slow (2G)",
+      "normal3g": "Normal (3G | WIFI)",
+      "faster4g": "Fast/Very Fast (4G | 5G | WIFI)"
+    },
+    "modalinfo": {
+      "title": "Download speed",
+      "description": "<p>Connection speed is the average amount of information transmitted between two devices per unit of time in a transmission system. The units used to measure it usually depend on the field being studied. In telecommunications the unit is bits per second (bit/s), and it is quite common to use different magnitudes such as kbit/s (sometimes abbreviated as 'kbps').</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Bandwidth_(computing)'>More info about connection speed</a>"
+    }
+  },
+  "telco": {
+    "title": "Your Internet provider",
+    "modalinfo": {
+      "title": "Your Internet provider",
+      "description": "<p>A telephone company, also known as a telco, telephone service provider, or telecommunications operator, is a kind of communications service provider (CSP), more precisely a telecommunications service provider (TSP), that provides telecommunications services such as telephony and data communications access. Many telephone companies were at one time government agencies or privately owned but state-regulated monopolies. The government agencies are often referred to, primarily in Europe, as PTTs (postal, telegraph and telephone services).</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Telephone_company'>More info about telephone company</a>"
+    }
+  },
+  "ip": {
+    "title": "IP",
+    "modalinfo": {
+      "title": "IP",
+      "description": "<p>An Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication. An IP address serves two main functions: host or network interface identification, and location addressing.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/IP_address'>More info about IP</a>"
+    }
+  },
+  "ram": {
+    "title": "RAM Memory",
+    "modalinfo": {
+      "title": "RAM Memory",
+      "description": "<p>Random-access memory (RAM) is used as the working memory of computers and other devices, for the operating system, the programs and most of the software. Every instruction executed by the central processing unit and by other units of the computer is loaded into RAM, which also holds the data those programs work with.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Random-access_memory'>More info about RAM Memory</a>"
+    }
+  },
+  "cpu": {
+    "title": "Processor",
+    "modalinfo": {
+      "title": "Processor",
+      "description": "<p>The microprocessor (or simply the processor) is the most complex central integrated circuit of a computer system. By way of illustration, it is often called, by analogy, the 'brain' of a computer.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Microprocessor'>More info about the Processor</a>"
+    }
+  },
+  "gpu": {
+    "title": "The Graphics Card",
+    "modalinfo": {
+      "title": "The Graphics Card",
+      "description": "<p>A graphics card is an expansion card on the computer's motherboard which processes the data coming from the central processing unit (CPU) and turns it into information that can be understood and displayed on the output device (for example: a monitor, a television or a projector). These cards use a graphics processing unit, or GPU, a term often used incorrectly to refer to the graphics card itself.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Graphics_card'>More info about the graphics card</a>"
+    }
+  },
+  "battery": {
+    "title": "Battery",
+    "type": {
+      "mode": "Mode",
+      "level": "Level",
+      "charged": "Charged",
+      "remaining": "Time remaining",
+      "charging": "Charging..."
+    },
+    "modalinfo": {
+      "title": "Battery API",
+      "description": "<p>The Battery Status API, more often referred to as the Battery API, provides information about the system's battery charge level and lets you be notified by events that are sent when the battery level or charging status change. This can be used to adjust your app's resource usage to reduce battery drain when the battery is low, or to save changes before the battery runs out in order to prevent data loss.</p>",
+      "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API'>More info about Battery API</a>"
+    }
+  },
+  "fingerprint": {
+    "title": "Your cookieless fingerprint",
+    "type": {
+      "components": "Combined data ({0})",
+      "note": "This code comes from mixing the stable data on this page. I don't store it anywhere: it is computed again on every visit and it comes out the same. That is the problem."
+    },
+    "modalinfo": {
+      "title": "Your cookieless fingerprint",
+      "description": "<p>Browser fingerprinting: by putting together data your browser hands over without asking (screen, fonts, GPU, time zone, how it paints a canvas...) you get an almost unique identifier. It uses no cookies, so deleting them or opening incognito mode does not change it. That is how you can be followed across websites without noticing.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Device_fingerprint'>More info about fingerprinting</a>"
+    }
+  },
+  "timezone": {
+    "title": "Time zone",
+    "type": {
+      "match": "Matches the time zone of your IP ({0})",
+      "mismatch": "Does not match the one of your IP ({0}): are you using a VPN or a proxy?"
+    },
+    "modalinfo": {
+      "title": "Time zone",
+      "description": "<p>The time zone comes from your operating system. If it does not match the one of your IP, that is a clear hint that you are using a VPN or a proxy, something many websites look for.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Time_zone'>More info about time zones</a>"
+    }
+  },
+  "locale": {
+    "title": "Regional format",
+    "modalinfo": {
+      "title": "Regional format",
+      "description": "<p>How you write numbers, dates and times (1,234.5 or 1.234,5; 24h or AM/PM; calendar) depends on the regional settings of your system. Together with your preferred languages, it says a lot about where you are from.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Locale_(computer_software)'>More info about locales</a>"
+    }
+  },
+  "display": {
+    "title": "Window and screen",
+    "type": {
+      "window": "{0}x{1}px window"
+    },
+    "modalinfo": {
+      "title": "Window and screen",
+      "description": "<p>Besides the resolution, the website sees the pixel density, the size of your window, the space taken by the taskbar or the dock, the color gamut, whether your screen is HDR and, in some browsers, whether you have more than one monitor.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Pixel_density'>More info about pixel density</a>"
+    }
+  },
+  "preferences": {
+    "title": "Accessibility",
+    "type": {
+      "none": "Everything by default",
+      "some": "{0} custom preferences"
+    },
+    "modalinfo": {
+      "title": "Accessibility",
+      "description": "<p>Your accessibility preferences (less motion, more contrast, forced colors...) are available to any website through CSS. They help adapt the design, but each one that is not the default makes you easier to tell apart.</p>",
+      "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion'>More info about user preferences</a>"
+    }
+  },
+  "input": {
+    "title": "How you interact",
+    "type": {
+      "mouse": "Mouse or trackpad",
+      "touch": "Touch screen",
+      "both": "Mouse and touch screen",
+      "none": "No pointer"
+    },
+    "modalinfo": {
+      "title": "How you interact",
+      "description": "<p>The website knows whether you use a mouse or trackpad, a touch screen or both, whether you can hover over things and how many fingers your screen detects at once.</p>",
+      "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer'>More info about the pointer media query</a>"
+    }
+  },
+  "keyboard": {
+    "title": "Keyboard layout",
+    "type": {
+      "unknown": "Custom layout ({0})"
+    },
+    "modalinfo": {
+      "title": "Keyboard layout",
+      "description": "<p>In Chromium-based browsers, the Keyboard API tells which character each physical key produces. That reveals whether your keyboard is QWERTY, AZERTY, QWERTZ... one more hint about your country.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Keyboard_layout'>More info about keyboard layouts</a>"
+    }
+  },
+  "canvas": {
+    "title": "Canvas fingerprint",
+    "type": {
+      "caption": "Your browser has just drawn this image. The code above is its hash."
+    },
+    "modalinfo": {
+      "title": "Canvas fingerprint",
+      "description": "<p>The website secretly draws the same image in every browser. Your GPU, its drivers, your system and your fonts paint it with differences you cannot see, but the hash of the image changes from one device to another.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Canvas_fingerprinting'>More info about canvas fingerprinting</a>"
+    }
+  },
+  "audio": {
+    "title": "Audio fingerprint",
+    "modalinfo": {
+      "title": "Audio fingerprint",
+      "description": "<p>Without playing anything, the website generates a sound in memory (OfflineAudioContext) and adds up its samples. Every combination of browser, system and hardware rounds differently, so the final number helps tell you apart.</p>",
+      "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext'>More info about OfflineAudioContext</a>"
+    }
+  },
+  "fonts": {
+    "title": "Installed fonts",
+    "type": {
+      "count": "{0} of {1} fonts checked"
+    },
+    "modalinfo": {
+      "title": "Installed fonts",
+      "description": "<p>By measuring the width of a text with each font, the website finds out which ones you have installed without asking. It reveals your operating system and programs like Office or Adobe.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Device_fingerprint'>More info about fingerprinting</a>"
+    }
+  },
+  "voices": {
+    "title": "Speech voices",
+    "type": {
+      "count": "{0} voices ({1} local)",
+      "none": "No voices available"
+    },
+    "modalinfo": {
+      "title": "Speech voices",
+      "description": "<p>The list of voices to read text aloud comes from your operating system and from the language packs you installed. It is very different from one device to another.</p>",
+      "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices'>More info about getVoices</a>"
+    }
+  },
+  "incognito": {
+    "title": "Incognito mode",
+    "type": {
+      "likely": "You are probably in incognito mode",
+      "unlikely": "It does not look like incognito mode",
+      "disk": "Estimated disk"
+    },
+    "modalinfo": {
+      "title": "Incognito mode",
+      "description": "<p>The storage space the browser gives each website is different in incognito mode. By comparing it, a website can guess whether you browse privately. In Chromium it also hints at the size of your disk.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Private_browsing'>More info about private browsing</a>"
+    }
+  },
+  "adblock": {
+    "title": "Ad blocker",
+    "type": {
+      "detected": "Ad blocker detected",
+      "none": "No ad blocker detected"
+    },
+    "modalinfo": {
+      "title": "Ad blocker",
+      "description": "<p>The website creates an empty element with classes that look like an ad. If a blocker hides it, the page notices. Useful for you, but also one more piece of data about you.</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Ad_blocking'>More info about ad blocking</a>"
+    }
+  },
+  "signals": {
+    "title": "Privacy signals",
+    "type": {
+      "summary": "Do Not Track: {0} · GPC: {1}",
+      "yes": "yes",
+      "no": "no"
+    },
+    "modalinfo": {
+      "title": "Privacy signals",
+      "description": "<p>Do Not Track and Global Privacy Control ask websites not to track you, but honouring them is voluntary. The irony: turning them on makes you a little easier to tell apart. It also shows whether you accept cookies, have a PDF viewer and whether the browser is automated.</p>",
+      "moreinfo": "<a target='_blank' href='https://globalprivacycontrol.org/'>More info about Global Privacy Control</a>"
+    }
+  },
+  "navigation": {
+    "title": "Your browsing",
+    "type": {
+      "pages": "{0} pages in this tab",
+      "direct": "You came directly"
+    },
+    "modalinfo": {
+      "title": "Your browsing",
+      "description": "<p>The website knows how many pages you visited in this tab, which website you came from and whether you reloaded or went back.</p>",
+      "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/History/length'>More info about history.length</a>"
+    }
+  },
+  "behaviour": {
+    "title": "What you do here",
+    "type": {
+      "moves": "Mouse movements",
+      "clicks": "Clicks",
+      "scroll": "Max scroll",
+      "keys": "Keys pressed",
+      "hidden": "Tab switches",
+      "time": "Time on page",
+      "caption": "I don't save any of this: I only show you what any website could record. The box is your screen in miniature."
+    },
+    "modalinfo": {
+      "title": "What you do here",
+      "description": "<p>Any website can record your mouse movements, clicks, scroll, keys and when you switch tabs, without asking. Some record the whole session to watch it later (session replay).</p>",
+      "moreinfo": "<a target='_blank' href='https://en.wikipedia.org/wiki/Session_replay'>More info about session replay</a>"
+    }
+  }
+}

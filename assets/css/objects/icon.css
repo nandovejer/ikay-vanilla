@@ -1,0 +1,211 @@
+.iconbg {
+  display: block;
+  width: 128px;
+  height: 128px;
+}
+
+/* Shared by every .iconbg-* class (former bgimage() mixin) */
+[class*="iconbg-"] {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+/* SOCIAL MEDIA */
+.iconbg-facebook {
+  background-image: var(--bgurl-facebook);
+}
+
+.iconbg-twitter {
+  background-image: var(--bgurl-twitter);
+}
+
+.iconbg-linkedin {
+  background-image: var(--bgurl-linkedin);
+}
+
+.iconbg-whatsapp {
+  background-image: var(--bgurl-whatsapp);
+}
+
+.iconbg-reddit {
+  background-image: var(--bgurl-reddit);
+}
+
+.iconbg-contact {
+  background-image: var(--bgurl-contact);
+}
+
+/* GLOBAL */
+.iconbg-logo {
+  background-image: var(--bgurl-logo);
+}
+
+.iconbg-battery {
+  background-image: var(--bgurl-battery);
+}
+
+.iconbg-close {
+  background-image: var(--bgurl-close);
+}
+
+.iconbg-connection {
+  background-image: var(--bgurl-connection);
+}
+
+.iconbg-hardware {
+  background-image: var(--bgurl-hardware);
+}
+
+.iconbg-info {
+  background-image: var(--bgurl-info);
+}
+
+.iconbg-location {
+  background-image: var(--bgurl-location);
+}
+
+.iconbg-menu {
+  background-image: var(--bgurl-menu);
+}
+
+.iconbg-project {
+  background-image: var(--bgurl-project);
+}
+
+.iconbg-share {
+  background-image: var(--bgurl-share);
+}
+
+.iconbg-resolution {
+  background-image: var(--bgurl-resolution);
+}
+
+.iconbg-orientation {
+  background-image: var(--bgurl-orientation);
+}
+
+.iconbg-darkmode {
+  background-image: var(--bgurl-darkmode);
+}
+
+.iconbg-lang {
+  background-image: var(--bgurl-lang);
+}
+
+.iconbg-ram {
+  background-image: var(--bgurl-ram);
+}
+
+.iconbg-cpu {
+  background-image: var(--bgurl-cpu);
+}
+
+.iconbg-gpu {
+  background-image: var(--bgurl-gpu);
+}
+
+.iconbg-ip {
+  background-image: var(--bgurl-ip);
+}
+
+.iconbg-telco {
+  background-image: var(--bgurl-telco);
+}
+
+.iconbg-exit {
+  background-image: var(--bgurl-exit);
+}
+
+/* DEVICES */
+.iconbg-devices {
+  background-image: var(--bgurl-devices);
+}
+
+.iconbg-mobileAndroid {
+  background-image: var(--bgurl-mobileAndroid);
+}
+
+/* OS */
+.iconbg-os {
+  background-image: var(--bgurl-os);
+}
+
+.iconbg-windows {
+  background-image: var(--bgurl-windows);
+}
+
+/* BROWSER */
+.iconbg-browser {
+  background-image: var(--bgurl-browser);
+}
+
+.iconbg-firefox {
+  background-image: var(--bgurl-firefox);
+}
+
+
+/* FINGERPRINTING CARDS */
+.iconbg-fingerprint {
+  background-image: var(--bgurl-fingerprint);
+}
+
+.iconbg-timezone {
+  background-image: var(--bgurl-timezone);
+}
+
+.iconbg-locale {
+  background-image: var(--bgurl-locale);
+}
+
+.iconbg-display {
+  background-image: var(--bgurl-display);
+}
+
+.iconbg-preferences {
+  background-image: var(--bgurl-preferences);
+}
+
+.iconbg-input {
+  background-image: var(--bgurl-input);
+}
+
+.iconbg-keyboard {
+  background-image: var(--bgurl-keyboard);
+}
+
+.iconbg-canvas {
+  background-image: var(--bgurl-canvas);
+}
+
+.iconbg-audio {
+  background-image: var(--bgurl-audio);
+}
+
+.iconbg-fonts {
+  background-image: var(--bgurl-fonts);
+}
+
+.iconbg-voices {
+  background-image: var(--bgurl-voices);
+}
+
+.iconbg-incognito {
+  background-image: var(--bgurl-incognito);
+}
+
+.iconbg-adblock {
+  background-image: var(--bgurl-adblock);
+}
+
+.iconbg-signals {
+  background-image: var(--bgurl-signals);
+}
+
+.iconbg-navigation {
+  background-image: var(--bgurl-navigation);
+}
+
+.iconbg-behaviour {
+  background-image: var(--bgurl-behaviour);
+}

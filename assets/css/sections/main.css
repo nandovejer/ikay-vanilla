@@ -1,0 +1,123 @@
+.main {
+  margin-top: 100px;
+  margin-bottom: calc(var(--space-m) * 2);
+
+  .card {
+    margin-bottom: var(--space-m);
+  }
+}
+
+.main__title {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--space-m);
+}
+
+.area {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  padding: var(--space-m);
+  max-width: var(--container-width);
+  margin: 0 auto;
+
+  &.area--full {
+    background-color: var(--whitepure);
+    color: var(--black);
+    max-width: 100%;
+    box-shadow: inset 0 6px 8px rgb(192 192 192 / 0.2);
+    background-image: linear-gradient(
+      to bottom,
+      var(--whitepure) 80%,
+      var(--white)
+    );
+
+    .area__article {
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 980px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.area__title {
+  width: 100%;
+  margin: 0;
+  padding: var(--space-m) 0;
+  padding-top: 0;
+  display: block;
+
+  &::after {
+    content: "";
+    width: 50%;
+    height: 2px;
+    display: block;
+    background-image: linear-gradient(to right, transparent, transparent);
+    transition: all 1s linear;
+  }
+
+  &.focus,
+  &:focus {
+    outline: none;
+
+    &::after {
+      background-image: linear-gradient(to right, gold, transparent);
+    }
+  }
+}
+
+@media (min-width: 980px) {
+  .area--info .card {
+    &:nth-child(2) {
+      max-width: calc(66% - 10px);
+    }
+
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      max-width: calc(33% - 10px);
+    }
+
+    &:nth-child(7) {
+      max-width: 100%;
+    }
+  }
+
+  .area--software .card {
+    max-width: calc(50% - 10px);
+  }
+
+  .area--connection .card {
+    &:nth-child(3n),
+    &:nth-child(4n) {
+      max-width: calc(50% - 10px);
+    }
+  }
+
+  .area--hardware .card {
+    &:nth-child(2),
+    &:nth-child(3) {
+      max-width: calc(50% - 10px);
+    }
+  }
+}
+
+/* New sections: two columns on desktop */
+@media (min-width: 980px) {
+  .area--grid .card {
+    max-width: calc(50% - 10px);
+  }
+
+  .area--fingerprints .card {
+    &:nth-child(4),
+    &:nth-child(5) {
+      max-width: calc(50% - 10px);
+    }
+  }
+}
