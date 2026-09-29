@@ -113,3 +113,4 @@ The language is the one chosen in the menu (saved in `localStorage`) or else the
 ## Browser support
 
 Current versions of Chrome, Edge, Firefox and Safari: ES modules, top-level `await` and CSS nesting.
+# ikay-vanilla
