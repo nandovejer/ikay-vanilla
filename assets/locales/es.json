@@ -509,15 +509,39 @@
   "summary": {
     "eyebrow": "Sin pedir permisos. No hacen falta.",
     "title": "Tu expediente, hasta ahora",
-    "points": "datos que tu navegador ha contado",
+    "points": "compartidos",
     "of": "de {0}",
     "permissions": "permisos pedidos",
     "blocked": "Bien hecho: {0} puntos a favor de tu privacidad.",
-    "highlights": "Lo más jugoso",
     "count": "{0} de {1} encontrados",
     "countLabel": "{0} de {1} datos leídos",
     "note": "Todo se calcula dentro de tu navegador. Solo tu IP viaja a ipapi.co (para la ubicación) y el mapa se carga desde Google.",
-    "private": "puntos a favor de tu privacidad"
+    "private": "a tu favor",
+    "intro": "Esto es lo que cualquier web puede apuntar sobre ti en unos segundos, sin pedirte permiso:",
+    "outro": "Abajo te explico cada dato.",
+    "label": {
+      "fingerprint": "Tu código",
+      "location": "Ubicación",
+      "telco": "Compañía",
+      "ip": "Dirección IP",
+      "device": "Aparato",
+      "os": "Sistema",
+      "browser": "Navegador",
+      "screen": "Pantalla",
+      "lang": "Idioma",
+      "timezone": "Zona horaria",
+      "ram": "Memoria",
+      "cpu": "Procesador",
+      "gpu": "Tarjeta gráfica",
+      "fonts": "Tipos de letra",
+      "voices": "Voces de lectura",
+      "incognito": "Modo privado",
+      "adblock": "Bloqueador",
+      "signals": "No rastrear",
+      "exit": "Visitas aquí",
+      "behaviour": "Tiempo en esta página",
+      "motion": "Movimiento"
+    }
   },
   "sections": {
     "id": "Un código construido con todo lo de abajo. Sin cookies.",
@@ -538,5 +562,24 @@
     "light": "Claro",
     "dark": "Oscuro",
     "change": "Aspecto: {0}. Cambiar"
+  },
+  "motion": {
+    "title": "Sensores de movimiento",
+    "sentence": "Tu móvil está inclinado {0} y está {1}.",
+    "level": {
+      "still": "quieto",
+      "little": "moviéndose un poco",
+      "lot": "moviéndose mucho"
+    },
+    "protected": "Tu dispositivo {0} sensores de movimiento que una web pueda leer.",
+    "protectedVerb": "no tiene",
+    "protectedIos": "Tu iPhone {0} que las webs vean cómo mueves el móvil sin preguntarte.",
+    "protectedIosVerb": "no deja",
+    "plain": "Con estos sensores una web puede saber si caminas, vas en un vehículo o sostienes el móvil en la mano. Y se ha demostrado que los pequeños errores de calibración de cada sensor sirven para reconocer tu aparato.",
+    "modalinfo": {
+      "title": "Sensores de movimiento",
+      "description": "<p>Móviles y tablets tienen giroscopio (lo rápido que gira el aparato) y acelerómetro (cómo acelera, gravedad incluida). En Android cualquier web puede leerlos sin preguntar. En iPhone y iPad, Apple te pregunta antes, y esta página nunca lo pide.</p><p>Además de revelar cómo te mueves, los pequeños errores de calibración de fábrica de cada sensor cambian de un aparato a otro, así que sirven como una huella más.</p>",
+      "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/es/docs/Web/API/DeviceMotionEvent'>Más info sobre DeviceMotionEvent</a>"
+    }
   }
 }

@@ -244,6 +244,7 @@
 
         <section class="summary js-summary" aria-labelledby="summaryTitle">
           <h2 id="summaryTitle" class="summary__title" data-i18n="summary.title"></h2>
+          <p class="summary__intro" data-i18n="summary.intro"></p>
           <dl class="summary__stats">
             <div class="summary__stat">
               <dt data-i18n="summary.points"></dt>
@@ -261,11 +262,10 @@
               <dd><span class="summary__number">0</span></dd>
             </div>
           </dl>
-          <div class="summary__glance">
-            <h3 class="summary__subtitle" data-i18n="summary.highlights"></h3>
-            <ul class="summary__highlights js-summary-highlights"></ul>
-          </div>
+          <!-- rows filled live by summary.js: status · label · value, link to the card -->
+          <ul class="summary__rows js-summary-highlights"></ul>
           <p class="summary__blocked js-summary-blocked" hidden></p>
+          <p class="summary__outro" data-i18n="summary.outro"></p>
           <p class="summary__note" data-i18n="summary.note"></p>
         </section>
       </div>
@@ -391,7 +391,7 @@
         <div class="bento js-cards"></div>
       </section>
 
-      <section class="area" data-cards="behaviour" aria-labelledby="areaBehaviour">
+      <section class="area" data-cards="behaviour motion" aria-labelledby="areaBehaviour">
         <header class="area__head">
           <span class="area__icon" aria-hidden="true"><span class="iconbg iconbg-behaviour"></span></span>
           <div class="area__heading">
@@ -706,6 +706,41 @@
           <span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span>
           <p class="card__leadText" data-i18n="behaviour.plain"></p>
         </div>
+        <div class="card__noSupport">
+          <h3 class="card__protected js-card-protected"></h3>
+          <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
+        </div>
+      </article>
+    </template>
+
+    <!-- CARD MOTION (gyroscope + accelerometer, detectMotion.js) -->
+    <template id="tpl-card-motion">
+      <article class="js-card js-card-motion card card--motion" data-state="pending">
+        <header class="card__head">
+          <span class="card__status">
+            <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-status"></span></span>
+            <span class="card__statusText js-card-status"></span>
+          </span>
+          <button type="button" class="card__more js-card-more">
+            <span aria-hidden="true">?</span>
+          </button>
+        </header>
+        <h3 class="card__sentence" data-sentence="motion.sentence">
+          <strong class="card__value js-apiValue-motion js-card-value" data-skeleton>…</strong>
+          <strong class="card__value js-motion-level">…</strong>
+        </h3>
+        <div class="motion">
+          <canvas class="motion__scope js-motion-scope" aria-hidden="true"></canvas>
+          <div class="motion__tilt" aria-hidden="true"><span class="motion__phone js-motion-phone"></span></div>
+        </div>
+        <div class="card__lead">
+          <span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span>
+          <p class="card__leadText" data-i18n="motion.plain"></p>
+        </div>
+        <details class="card__proof">
+          <summary data-i18n="main.proof"></summary>
+          <ul class="card__api js-card-detail"></ul>
+        </details>
         <div class="card__noSupport">
           <h3 class="card__protected js-card-protected"></h3>
           <p class="card__noSupport__description" data-i18n="main.noSupport"></p>

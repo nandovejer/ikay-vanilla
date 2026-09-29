@@ -509,15 +509,39 @@
   "summary": {
     "eyebrow": "No permissions asked. None needed.",
     "title": "Your file, so far",
-    "points": "data points your browser gave away",
+    "points": "shared",
     "of": "of {0}",
     "permissions": "permissions asked",
     "blocked": "Well done: {0} points in favour of your privacy.",
-    "highlights": "The headlines",
     "count": "{0} of {1} found",
     "countLabel": "{0} of {1} data points read",
     "note": "Everything is worked out inside your browser. Only your IP goes to ipapi.co (for the location), and the map is loaded from Google.",
-    "private": "points in favour of your privacy"
+    "private": "in your favour",
+    "intro": "This is what any website can jot down about you in a few seconds, without asking:",
+    "outro": "Below, I explain every piece of data.",
+    "label": {
+      "fingerprint": "Your code",
+      "location": "Location",
+      "telco": "Internet company",
+      "ip": "IP address",
+      "device": "Device",
+      "os": "System",
+      "browser": "Browser",
+      "screen": "Screen",
+      "lang": "Language",
+      "timezone": "Time zone",
+      "ram": "Memory",
+      "cpu": "Processor",
+      "gpu": "Graphics card",
+      "fonts": "Typefaces",
+      "voices": "Reading voices",
+      "incognito": "Private browsing",
+      "adblock": "Ad blocker",
+      "signals": "Don't track me",
+      "exit": "Visits here",
+      "behaviour": "Time on this page",
+      "motion": "Movement"
+    }
   },
   "sections": {
     "id": "One code built from everything below. No cookies involved.",
@@ -538,5 +562,24 @@
     "light": "Light",
     "dark": "Dark",
     "change": "Look: {0}. Change"
+  },
+  "motion": {
+    "title": "Motion sensors",
+    "sentence": "Your phone is tilted {0} and it is {1}.",
+    "level": {
+      "still": "still",
+      "little": "moving a little",
+      "lot": "moving a lot"
+    },
+    "protected": "Your device {0} motion sensors a website can read.",
+    "protectedVerb": "has no",
+    "protectedIos": "Your iPhone {0} websites see how you move it without asking you first.",
+    "protectedIosVerb": "doesn't let",
+    "plain": "With these sensors a website can tell whether you are walking, riding in a vehicle or holding the phone in your hand. Researchers have also shown that the tiny calibration errors of each sensor can recognise your device.",
+    "modalinfo": {
+      "title": "Motion sensors",
+      "description": "<p>Phones and tablets have a gyroscope (how fast the device turns) and an accelerometer (how it speeds up, gravity included). On Android any website can read them without asking. On iPhone and iPad, Apple asks you first, and this page never asks.</p><p>Besides telling how you move, the tiny factory calibration errors of each sensor are different from device to device, so they can be used as one more fingerprint.</p>",
+      "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent'>More info about DeviceMotionEvent</a>"
+    }
   }
 }

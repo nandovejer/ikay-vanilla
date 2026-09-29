@@ -457,7 +457,7 @@
   }
 
   :is(.card__sentence, .card__description, .card__proof, .card__visits, .battery,
-    .card__canvas, .behaviour, .card__map, .card__listIntro, .card__api--visible) {
+    .card__canvas, .behaviour, .motion, .card__map, .card__listIntro, .card__api--visible) {
     display: none;
   }
 
@@ -706,4 +706,46 @@
   .behaviour__stats {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+/* MOTION: a small oscilloscope of the rotation speed + a tilting phone */
+.card.card--motion {
+  grid-column: 1 / -1;
+}
+
+.motion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-m);
+  margin-block-start: var(--space-2xs);
+}
+
+.motion__scope {
+  inline-size: 100%;
+  block-size: 5.5rem;
+  border-block: 1px solid var(--rule);
+  background-image: linear-gradient(var(--border) 1px, transparent 1px);
+  background-size: 100% 25%;
+  /* read by detectMotion.js: line = color, peaks = caret-color */
+  color: var(--text);
+  caret-color: var(--accent-fill);
+}
+
+.motion__tilt {
+  display: grid;
+  place-items: center;
+  inline-size: 5.5rem;
+  block-size: 5.5rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: 50%;
+}
+
+.motion__phone {
+  inline-size: 1.9rem;
+  block-size: 3.3rem;
+  border: 2px solid var(--rule);
+  border-radius: 0.45rem;
+  box-shadow: inset 0 -6px 0 -4px var(--rule);
+  transition: rotate 200ms var(--ease);
 }

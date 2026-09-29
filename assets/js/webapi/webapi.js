@@ -19,6 +19,7 @@ import detectAdblock from "./detectAdblock.js";
 import detectSignals from "./detectSignals.js";
 import detectNavigation from "./detectNavigation.js";
 import behaviour from "./behaviour.js";
+import detectMotion from "./detectMotion.js";
 import fingerprintID from "./fingerprintID.js";
 import { t } from "../i18n.js";
 import { noSupport, setHTML, setText, renderDetail, renderList } from "../modules/dom.js";
@@ -62,6 +63,7 @@ const DETECTORS = {
   adblock: detectAdblock,
   signals: detectSignals,
   navigation: detectNavigation,
+  motion: detectMotion,
 };
 
 const webapi = {

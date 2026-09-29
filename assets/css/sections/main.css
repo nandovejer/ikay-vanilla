@@ -113,33 +113,46 @@
 }
 
 /* ============================================================
-   SUMMARY: "your file, so far"
+   SUMMARY: "your file, so far". A dense case-file sheet, narrower than
+   the reading column on purpose: a contrast with the airy chapters.
    ============================================================ */
 .summary {
+  container: summary / inline-size;
   display: grid;
-  gap: var(--space-l);
+  gap: var(--space-s);
+  max-inline-size: 40rem;
   margin-block-start: var(--space-l);
-  padding-block-start: var(--space-m);
-  border-block-start: 4px solid var(--rule);
+  padding: var(--space-m) clamp(1rem, 0.6rem + 2vw, 1.75rem);
+  border: 1.5px solid var(--rule);
+  border-block-start-width: 6px;
+  border-radius: var(--radius-s);
+  background-color: var(--surface);
 }
 
 .summary__title {
-  font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
-  font-weight: 650;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.5rem, 1.25rem + 1.1vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.summary__intro {
+  font-size: var(--step-0);
+  line-height: 1.5;
 }
 
 .summary__stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding-block: var(--space-2xs);
+  border-block: 1px solid var(--rule);
 }
 
 .summary__stat {
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
-  gap: 0.35rem;
-  padding-inline: var(--space-s);
+  gap: 0.15rem;
+  padding-inline: var(--space-xs);
   border-inline-start: 1px solid var(--border-strong);
 
   &:first-child {
@@ -148,8 +161,8 @@
   }
 
   dt {
-    font-size: var(--step--1);
-    line-height: 1.35;
+    font-size: 0.8125rem;
+    line-height: 1.3;
     color: var(--text-muted);
   }
 
@@ -157,82 +170,120 @@
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0.35rem;
+    gap: 0.3rem;
   }
 }
 
 /* numbers are data: the mono voice */
 .summary__number {
   font-family: var(--font-mono);
-  font-size: clamp(2.25rem, 1.7rem + 2.4vw, 3.5rem);
+  font-size: clamp(1.6rem, 1.3rem + 1.4vw, 2.25rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
+  color: var(--accent);
 }
 
 .summary__of {
-  font-size: var(--step--1);
+  font-size: 0.8125rem;
   color: var(--text-muted);
 }
 
-/* what your browser protected: the visitor's score */
+.summary__stat--private .summary__number {
+  color: var(--text-muted);
+}
+
 .summary__stat--private[data-win="true"] .summary__number {
   color: var(--success);
 }
 
-/* "0 permissions asked": the ironic one */
 .summary__stat--zero .summary__number {
+  color: var(--text);
+}
+
+/* the rows: status · label · value, two columns when there is room */
+.summary__rows {
+  display: grid;
+  column-gap: var(--space-m);
+}
+
+@container summary (min-width: 32rem) {
+  .summary__rows {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.summary__row {
+  border-block-end: 1px dotted var(--border-strong);
+}
+
+.summary__link {
+  display: grid;
+  grid-template-columns: 1.1rem minmax(0, 1fr);
+  column-gap: 0.45rem;
+  align-items: baseline;
+  padding-block: 0.4rem;
+  color: var(--text);
+  font-weight: 400;
+  text-decoration: none;
+
+  &:hover .summary__rowValue {
+    text-decoration: underline 1px;
+    text-underline-offset: 0.2em;
+  }
+}
+
+.summary__icon {
+  grid-row: span 3;
+  align-self: start;
+  inline-size: 1rem;
+  block-size: 1rem;
+  margin-block-start: 0.15rem;
   color: var(--accent);
 }
 
-.summary__subtitle {
-  margin-block-end: var(--space-2xs);
-  font-size: var(--step-1);
-  font-weight: 600;
+.summary__row[data-state="good"] .summary__icon {
+  --icon: var(--bgurl-shield-check);
+
+  color: var(--success);
 }
 
-/* the headlines as rows of a register, not chips */
-.summary__chip {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 0.1rem 1rem;
-  padding-block: var(--space-xs);
-  border-block-start: 1px dotted var(--border-strong);
+.summary__row[data-state="pending"] .summary__icon {
+  --icon: var(--bgurl-pending);
 
-  &:first-child {
-    border-block-start: 1px solid var(--rule);
-  }
-}
-
-@container main (min-width: 34rem) {
-  .summary__chip {
-    grid-template-columns: minmax(9rem, 14rem) minmax(0, 1fr);
-
-    .summary__chipLabel {
-      grid-row: span 2;
-      padding-block-start: 0.2rem;
-    }
-  }
-}
-
-.summary__chipLabel {
-  font-size: var(--step--1);
   color: var(--text-muted);
 }
 
-.summary__chipValue {
-  justify-self: start;
+.summary__rowLabel {
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  color: var(--text-muted);
+}
+
+.summary__rowValue {
   font-family: var(--font-mono);
-  font-size: var(--step-0);
+  font-size: 0.9375rem;
   font-weight: 700;
   line-height: 1.35;
   overflow-wrap: anywhere;
+  /* dir="auto" keeps latin values LTR; they still align with the page */
+  text-align: match-parent;
 }
 
-.summary__chipExtra {
-  font-size: var(--step--1);
-  line-height: 1.4;
+.summary__row[data-state="good"] .summary__rowValue {
+  color: var(--success);
+}
+
+.summary__row[data-state="pending"] .summary__rowValue {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.summary__rowExtra {
+  font-size: 0.8125rem;
+  line-height: 1.35;
   color: var(--text-muted);
 
   &:empty {
@@ -240,42 +291,20 @@
   }
 }
 
-.summary__chip[data-state="pending"] .summary__chipValue {
-  inline-size: 12ch;
-  border-radius: var(--radius-s);
-  color: transparent;
-  background: linear-gradient(
-      90deg,
-      var(--surface-2) 30%,
-      var(--surface-3) 50%,
-      var(--surface-2) 70%
-    )
-    0 0 / 300% 100%;
-  animation: shimmer 1.4s linear infinite;
-}
-
-.summary__chip[data-state="blocked"] .summary__chipValue {
-  color: var(--success);
-
-  &::before {
-    content: "✓ ";
-  }
-}
-
 .summary__blocked {
-  font-size: var(--step-0);
+  font-size: var(--step--1);
   font-weight: 650;
   color: var(--success);
+}
 
-  &::before {
-    content: "✓ ";
-  }
+.summary__outro {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-style: italic;
 }
 
 .summary__note {
-  max-inline-size: var(--measure);
-  font-size: var(--step--1);
-  font-style: italic;
+  font-size: 0.8125rem;
   color: var(--text-muted);
 }
 

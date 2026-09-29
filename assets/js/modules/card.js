@@ -12,6 +12,7 @@ const CUSTOM = [
   "fingerprint",
   "canvas",
   "behaviour",
+  "motion",
 ];
 
 /** Texts that mean "nothing here yet" in the templates */
@@ -49,17 +50,27 @@ const midSentence = (text) =>
  * "Your screen measures {0} pixels." -> text, <strong>value</strong>, text.
  * Texts are text nodes: values are never turned into HTML here.
  */
-const sentence = (paragraph, key, value = paragraph.querySelector("strong")) => {
-  const [before = "", after = ""] = t(key).split("{0}");
+const sentence = (paragraph, key) => {
+  // {0}, {1}... are the <strong> values, in order
+  const values = [...paragraph.querySelectorAll("strong")];
+  const parts = t(key).split(/\{\d\}/);
   const wrap = (text) => {
     const span = document.createElement("span");
     span.className = "card__sentenceText";
     span.textContent = text;
     return span;
   };
-  // numbers and latin text stay left to right inside arabic sentences
-  value.setAttribute("dir", "auto");
-  paragraph.replaceChildren(wrap(before), value, wrap(after));
+  const nodes = [];
+  parts.forEach((text, index) => {
+    nodes.push(wrap(text));
+    const value = values[index];
+    if (value && index < parts.length - 1) {
+      // numbers and latin text stay left to right inside arabic sentences
+      value.setAttribute("dir", "auto");
+      nodes.push(value);
+    }
+  });
+  paragraph.replaceChildren(...nodes);
 };
 
 const card = {
@@ -91,6 +102,9 @@ const card = {
   },
   /** Sentences, status and the "protected" line, for every kind of card */
   prepare(fragment, type) {
+    // anchor for the rows of the summary sheet
+    const article = fragment.querySelector(".js-card");
+    if (article) article.id = `card-${type}`;
     fragment.querySelectorAll("[data-sentence]").forEach((paragraph) => {
       sentence(paragraph, paragraph.dataset.sentence);
     });
