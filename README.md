@@ -1,8 +1,6 @@
 # IKAY · Browser fingerprint (vanilla)
 
-> **Versión moderna de [IKAY](https://github.com/nandovejer/ikay)**, el proyecto original. Mismo propósito, reescrito en HTML, CSS y JavaScript nativos: sin npm, sin bundler, sin preprocesadores y sin dependencias.
->
-> **Modern version of [IKAY](https://github.com/nandovejer/ikay)**, the original project. Same purpose, rewritten in plain HTML, CSS and JavaScript: no npm, no bundler, no preprocessors, no dependencies.
+> **The modern version of [IKAY](https://github.com/nandovejer/ikay)**, the original project. Same purpose, rewritten in plain HTML, CSS and JavaScript: no npm, no bundler, no preprocessors and no dependencies.
 
 **DEMO: https://nandovejer.github.io/ikay-vanilla/**
 
@@ -10,16 +8,16 @@
 
 Hi, I'm Nando Muñoz. IKAY is a tool to visualize, identify and manage your browser fingerprint. It shows a dashboard with part of the information you hand over to a website every time you visit it, **without asking for a single permission**, and explains in plain language what each piece of data means for you.
 
-Este repositorio conserva la idea original porque me gusta ver cómo hemos evolucionado generando código a mano. El original sigue en [nandovejer/ikay](https://github.com/nandovejer/ikay) (Webpack, SCSS y `ua-parser-js`); aquí está la misma herramienta con la plataforma web de 2026.
+This repository keeps the original idea because I like to see how we have evolved writing code by hand. The original still lives at [nandovejer/ikay](https://github.com/nandovejer/ikay) (Webpack, SCSS and `ua-parser-js`); this is the same tool built with the 2026 web platform.
 
 ## What it is
 
 IKAY reads 33 pieces of data that any website gets from a browser with its default settings, and presents them like a dossier a website keeps on you:
 
-- **A sentence per data point**, with the value in bold: "Tu pantalla mide **1920 × 1080 píxeles**."
-- **A status on every card**: 🛡 _Protegido_ (green) when your browser keeps that data to itself, ⚠ _No protegido_ (red) when it hands it over.
+- **A sentence per data point**, with the value in bold: "Your screen is **1920 × 1080 pixels**."
+- **A status on every card**: 🛡 _Protected_ (green) when your browser keeps that data to itself, ⚠ _Not protected_ (red) when it hands it over.
 - **"What it means for you"** in everyday words, and the technical detail folded away for the curious.
-- **A summary sheet** ("Tu expediente, hasta ahora") with the data found so far and how many are shared, in your favour, and how many permissions were asked (always 0).
+- **A summary sheet** ("Your file, so far") with the data found so far and how many are shared, in your favour, and how many permissions were asked (always 0).
 - **"Your ID"**: one hash that mixes every stable piece of data. It survives cookies and incognito mode, and it is computed again on every visit; nothing is stored or sent.
 
 ### What it shows
@@ -46,7 +44,7 @@ Motion sensors never trigger a permission prompt: Android shares them freely, iO
 - **Type:** Fraunces for headings, Inter Tight for reading and Fira Code for every value found.
 - **Themes:** Auto (follows your system), Light and Dark, remembered and applied before first paint. The "Dark mode" card keeps reporting the system setting.
 - **Accessible:** WCAG 2.2 AA contrast, keyboard navigation, `prefers-reduced-motion`, native `<dialog>` and Popover, and logical properties so Arabic (RTL) needs no special cases.
-- **Languages:** Español, English and العربية.
+- **Languages:** Spanish, English and Arabic (right-to-left).
 
 ## Run it
 
