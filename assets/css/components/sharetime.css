@@ -11,10 +11,10 @@
   min-inline-size: 3.25rem;
   min-block-size: 3.25rem;
   padding-inline: 1rem;
-  border: 1px solid color-mix(in oklch, var(--on-gold) 12%, transparent);
+  border: 1.5px solid var(--on-accent);
   border-radius: var(--radius-full);
-  background-color: var(--gold);
-  color: var(--on-gold);
+  background-color: var(--accent-fill);
+  color: var(--on-accent);
   font-weight: 650;
   box-shadow: var(--shadow-2);
   cursor: pointer;
@@ -29,7 +29,7 @@
   }
 
   &:hover {
-    background-color: var(--gold-strong);
+    background-color: var(--accent-fill-strong);
     translate: 0 -2px;
     box-shadow: var(--shadow-3);
   }

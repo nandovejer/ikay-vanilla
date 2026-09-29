@@ -9,9 +9,9 @@
   max-block-size: min(42rem, 100dvh - 2rem);
   padding: 0;
   overflow: auto;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  background-color: var(--surface);
+  border: 1.5px solid var(--rule);
+  border-radius: var(--radius-l);
+  background-color: var(--bg);
   color: var(--text);
   box-shadow: var(--shadow-3);
   opacity: 0;
@@ -36,8 +36,7 @@
   }
 
   &[open]::backdrop {
-    background-color: oklch(0.18 0.01 80 / 0.5);
-    backdrop-filter: blur(3px);
+    background-color: oklch(0.18 0.01 80 / 0.55);
   }
 }
 

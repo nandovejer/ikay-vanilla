@@ -1,4 +1,4 @@
-/* Reading progress: a thin gold line, never blocks the page */
+/* Reading progress: a thin accent line, never blocks the page */
 .loadingPage {
   position: fixed;
   inset-block-start: 0;
@@ -24,6 +24,6 @@ body.loadingEnable .loadingPage {
   block-size: 100%;
   border-start-end-radius: 3px;
   border-end-end-radius: 3px;
-  background-color: var(--gold-strong);
+  background-color: var(--accent-fill-strong);
   transition: inline-size 300ms var(--ease);
 }

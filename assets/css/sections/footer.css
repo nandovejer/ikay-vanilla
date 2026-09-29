@@ -7,11 +7,12 @@
   color-scheme: dark;
 
   a {
-    color: var(--gold);
+    color: var(--accent-on-ink);
   }
 
   .eyebrow {
-    color: var(--gold);
+    font-family: var(--font-mono);
+    color: var(--accent-on-ink);
   }
 
   p {
@@ -67,8 +68,8 @@
   block-size: 2.75rem;
   margin-block-end: var(--space-2xs);
   border-radius: 50%;
-  background-color: var(--gold);
-  color: var(--on-gold);
+  background-color: var(--accent-fill);
+  color: var(--on-accent);
 
   .iconbg {
     inline-size: 1.6rem;

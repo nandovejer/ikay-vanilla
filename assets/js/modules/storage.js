@@ -4,7 +4,7 @@
  * access is guarded.
  */
 const PREFIX = "ikay-";
-const TYPES = ["sessionLang", "visited"];
+const TYPES = ["sessionLang", "visited", "theme"];
 
 const isValid = (type) => {
   if (!TYPES.includes(type)) {

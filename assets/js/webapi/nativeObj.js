@@ -11,7 +11,7 @@ import detectCPU from "./detectCPU.js";
 import detectGPU from "./detectGPU.js";
 import detectExit from "./detectExit.js";
 import { escapeHTML } from "../modules/dom.js";
-import { t, langLabel } from "../i18n.js";
+import { t, langLabel, formatNumber } from "../i18n.js";
 // import detectPlugins from "./detectPlugins.js";
 
 /**
@@ -39,7 +39,11 @@ const nativeObj = async () => {
     // in plain words; the raw code stays for "Your ID" and the details
     lang: safe(langLabel(navigator.language)),
     langCode: navigator.language,
-    screen: `${screen.width}x${screen.height}px ${screen.colorDepth}bits/pixel`,
+    screen: `${formatNumber(screen.width)} × ${formatNumber(screen.height)}`,
+    screenDetail: [
+      ["screen.width x screen.height", `${screen.width}x${screen.height}px`],
+      ["screen.colorDepth", `${screen.colorDepth} bits/pixel`],
+    ],
     orientation,
     datetime: new Date().toLocaleTimeString(),
     datetoday: date.today("longDate"),
@@ -51,6 +55,12 @@ const nativeObj = async () => {
     exit: detectExit.init(),
     // plugins: detectPlugins(), // TODO - Plugins not work
     kept,
+    // raw values for "Your ID": they must not change with the page language
+    stable: {
+      lang: navigator.language,
+      screen: `${screen.width}x${screen.height}x${screen.colorDepth}`,
+      ram: navigator.deviceMemory,
+    },
   };
 };
 

@@ -2,11 +2,11 @@
  * SETTINGS - design tokens
  *
  * Concept: "the file a website keeps on you". An editorial dossier:
- * paper and ink, numbered chapters and entries, the IKAY gold used as a
- * highlighter marker (never as big boxes), a rubber stamp for the wins.
+ * paper and ink, numbered chapters and entries, an alarm crimson used as a
+ * highlighter marker (never as big boxes), a small stamp for the wins.
  * - Type: Fraunces (display, headings), Inter Tight (reading),
  *   Fira Code (the data: every value found about you).
- * - Colour restraint: warm paper + near-black ink, ONE accent (gold),
+ * - Colour restraint: warm paper + near-black ink, ONE accent (alarm crimson),
  *   ONE success tone for wins. No decorative gradients, no glass.
  * - Light and dark are first class: light-dark() pairs, dark = dark paper.
  *
@@ -25,7 +25,9 @@
   --font-body: "Inter Tight", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI",
     Roboto, sans-serif;
   --font-display: "Fraunces", "Noto Sans Arabic", Georgia, "Times New Roman", serif;
-  --font-mono: "Fira Code", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  /* Fira Code has no Arabic: Noto Sans Arabic draws those letters joined */
+  --font-mono: "Fira Code", "Noto Sans Arabic", ui-monospace, "SFMono-Regular", Menlo, Consolas,
+    monospace;
 
   /* Fluid scale: 360px -> 1280px */
   /* Body is 17-18px: written for everyone, not only for techies */
@@ -53,10 +55,10 @@
   --gutter: clamp(1rem, 0.6rem + 2vw, 2rem);
 
   /* # SHAPE */
-  --radius-s: 0.5rem;
-  --radius-m: 0.75rem;
-  --radius-l: 1.125rem;
-  --radius-xl: 1.5rem;
+  --radius-s: 0.25rem;
+  --radius-m: 0.4rem;
+  --radius-l: 0.6rem;
+  --radius-xl: 0.8rem;
   --radius-full: 999px;
 
   /* # LAYOUT */
@@ -71,9 +73,16 @@
   --dur: 180ms;
 
   /* # COLOURS (oklch) */
-  --gold: oklch(0.86 0.165 90);
-  --gold-strong: oklch(0.8 0.165 82);
-  --on-gold: oklch(0.22 0.03 75);
+  /*
+   * ONE accent: an alarm red with a crimson touch. "Something about you leaked".
+   *   --accent-fill  filled surfaces (logo disc, share button, stamps)
+   *   --on-accent    text/icons on --accent-fill (>= 4.5:1)
+   *   --accent       accent as TEXT on paper (>= 4.5:1)
+   *   --marker       highlighter stroke behind ink text
+   */
+  --accent-fill: light-dark(oklch(0.55 0.22 24), oklch(0.7 0.18 24));
+  --accent-fill-strong: light-dark(oklch(0.49 0.21 24), oklch(0.76 0.17 24));
+  --on-accent: light-dark(oklch(1 0 0), oklch(0.17 0.02 24));
 
   /* paper and ink */
   --bg: light-dark(oklch(0.972 0.012 88), oklch(0.185 0.01 75));
@@ -87,36 +96,38 @@
   --text: light-dark(oklch(0.21 0.015 70), oklch(0.94 0.008 88));
   --text-muted: light-dark(oklch(0.44 0.016 70), oklch(0.77 0.012 85));
 
-  /* gold as text needs a darker ink on paper (>= 4.5:1) */
-  --accent: light-dark(oklch(0.49 0.1 72), oklch(0.86 0.15 90));
-  --accent-soft: light-dark(oklch(0.94 0.06 95), oklch(0.3 0.05 85));
-  --accent-line: light-dark(oklch(0.8 0.12 88), oklch(0.52 0.1 86));
-  --icon-tile: light-dark(oklch(0.93 0.07 95), oklch(0.3 0.05 85));
-  --icon-ink: light-dark(oklch(0.3 0.03 75), oklch(0.88 0.14 90));
+  --accent: light-dark(oklch(0.5 0.2 24), oklch(0.76 0.16 24));
+  --accent-soft: light-dark(oklch(0.92 0.05 24), oklch(0.27 0.06 24));
+  --accent-line: light-dark(oklch(0.78 0.12 24), oklch(0.52 0.15 24));
+  --icon-tile: var(--accent-soft);
+  --icon-ink: light-dark(oklch(0.3 0.03 75), oklch(0.88 0.02 85));
 
-  /* the highlighter: behind dark ink in light, softer under light ink in dark */
-  --marker: light-dark(oklch(0.88 0.16 92), oklch(0.55 0.12 85 / 0.75));
+  /* the highlighter: light tint behind dark ink, deeper tint under light ink */
+  --marker: light-dark(oklch(0.89 0.07 24), oklch(0.42 0.13 24 / 0.85));
 
-  --success: light-dark(oklch(0.46 0.1 158), oklch(0.8 0.12 158));
-  --success-soft: light-dark(oklch(0.95 0.035 158), oklch(0.27 0.04 160));
-  --success-marker: light-dark(oklch(0.87 0.1 158), oklch(0.45 0.09 160 / 0.8));
+  /* safe / win: on the blue-teal side, far from the alarm hue */
+  --success: light-dark(oklch(0.46 0.09 190), oklch(0.82 0.1 190));
+  --success-soft: light-dark(oklch(0.95 0.03 190), oklch(0.27 0.04 195));
+  --success-marker: light-dark(oklch(0.87 0.07 190), oklch(0.42 0.08 195 / 0.85));
   --warning: light-dark(oklch(0.5 0.13 60), oklch(0.83 0.13 70));
 
-  --focus: light-dark(oklch(0.3 0.03 70), oklch(0.88 0.16 90));
+  --focus: light-dark(oklch(0.3 0.03 70), oklch(0.8 0.15 24));
 
   /* ink band (footer), dark in both themes */
   --ink: oklch(0.2 0.012 72);
   --on-ink: oklch(0.94 0.008 88);
   --on-ink-muted: oklch(0.79 0.01 85);
+  --accent-on-ink: oklch(0.8 0.13 24);
 
   /* # DEPTH: paper does not float; only overlays get shadows */
   --shadow-1: none;
   --shadow-2: 0 1px 0 oklch(0.2 0.02 70 / 0.06);
   --shadow-3: 0 2px 6px oklch(0.1 0.02 70 / 0.12), 0 30px 60px -20px oklch(0.1 0.02 70 / 0.35);
 
-  /* Live behaviour map (read by behaviour.js, plain values on purpose) */
-  --behaviour-move: oklch(0.3 0.02 70 / 0.4);
-  --behaviour-click: oklch(0.72 0.18 60 / 0.9);
+  /* Live behaviour map (read by behaviour.js; registered below as <color>
+     so getComputedStyle gives a resolved colour for each theme) */
+  --behaviour-move: light-dark(oklch(0.3 0.02 70 / 0.4), oklch(0.9 0.01 90 / 0.4));
+  --behaviour-click: light-dark(oklch(0.55 0.22 24 / 0.9), oklch(0.7 0.18 24 / 0.95));
 
   /* # BACKGROUND URL - Default */
   --bgurl-logo: url("../../images/svg/logo.svg");
@@ -142,6 +153,16 @@
   --bgurl-ip: url("../../images/svg/ip.svg");
   --bgurl-telco: url("../../images/svg/telco.svg");
   --bgurl-exit: url("../../images/svg/exit.svg");
+
+  /* # BACKGROUND URL - Card status */
+  --bgurl-warning: url("../../images/svg/warning.svg");
+  --bgurl-shield-check: url("../../images/svg/shield-check.svg");
+  --bgurl-pending: url("../../images/svg/pending.svg");
+
+  /* # BACKGROUND URL - Theme */
+  --bgurl-sun: url("../../images/svg/sun.svg");
+  --bgurl-moon: url("../../images/svg/moon.svg");
+  --bgurl-theme-auto: url("../../images/svg/theme-auto.svg");
 
   /* # BACKGROUND URL - Social Media */
   --bgurl-facebook: url("../../images/svg/facebook.svg");
@@ -181,9 +202,23 @@
   --bgurl-behaviour: url("../../images/svg/behaviour.svg");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --behaviour-move: oklch(0.9 0.01 90 / 0.35);
-    --behaviour-click: oklch(0.86 0.165 90 / 0.9);
-  }
+/* The visitor's choice (theme.js); no attribute = follow the system */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@property --behaviour-move {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(51 51 51 / 0.4);
+}
+
+@property --behaviour-click {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(214 46 58 / 0.9);
 }

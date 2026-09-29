@@ -14,8 +14,8 @@ const detectLocale = {
     const languages = preferred.join(", ");
 
     return {
-      value: `${langLabel(date.locale)} · ${example}`,
-      note: t("locale.type.languages", listLabel(preferred.map(langLabel))),
+      value: langLabel(date.locale),
+      note: `${t("locale.type.example", example)} ${t("locale.type.languages", listLabel(preferred.map(langLabel)))}`,
       detail: [
         ["navigator.languages", languages],
         ["resolvedOptions().locale", date.locale],

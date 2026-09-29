@@ -5,7 +5,7 @@ html {
   scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  accent-color: var(--gold-strong);
+  accent-color: var(--accent-fill-strong);
 }
 
 body {
@@ -26,8 +26,9 @@ h4 {
   font-family: var(--font-display);
   line-height: var(--leading-tight);
   font-weight: 650;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
   text-wrap: balance;
+  font-optical-sizing: auto;
 }
 
 p,
@@ -62,14 +63,14 @@ samp {
   border-radius: var(--radius-s);
 }
 
-/* Headings reached from the menu: no ring, but a gold mark */
+/* Headings reached from the menu: no ring, but an accent mark */
 [tabindex="-1"]:focus {
   outline: none;
 }
 
 ::selection {
-  background-color: var(--gold);
-  color: var(--on-gold);
+  background-color: var(--accent-fill);
+  color: var(--on-accent);
 }
 
 /* Small reusable bits */
@@ -79,19 +80,17 @@ samp {
   color: var(--accent);
 }
 
+/* a label stamped next to a title ("Estimate") */
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.35em;
-  padding: 0.1em 0.6em;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--accent-line);
-  background-color: var(--accent-soft);
-  color: var(--text);
-  font-size: var(--step--2);
+  padding: 0.05em 0.5em;
+  border: 1.5px solid currentColor;
+  border-radius: var(--radius-s);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  vertical-align: 0.1em;
 }
 
 .skiplink {
@@ -101,8 +100,8 @@ samp {
   z-index: 100;
   padding: var(--space-2xs) var(--space-s);
   border-radius: var(--radius-m);
-  background-color: var(--gold);
-  color: var(--on-gold);
+  background-color: var(--accent-fill);
+  color: var(--on-accent);
   translate: 0 -200%;
 
   &:focus-visible {

@@ -84,17 +84,18 @@ export const langName = (code) => {
 };
 
 /**
- * A language or locale code in plain words, in the language of the page:
- * "es-US" -> "Spanish (United States)" | "Español (Estados Unidos)".
- * Falls back to the code itself.
+ * A language or locale code in plain words, in the language of the page,
+ * ready to go inside a sentence (no capitals in Spanish, no brackets):
+ * "en-US" -> "inglés de Estados Unidos" | "English (United States)";
+ * "ar" -> "árabe". Falls back to the code itself.
  */
 export const langLabel = (code) => {
   try {
-    const name = new Intl.DisplayNames([lang], {
-      type: "language",
-      languageDisplay: "standard",
-    }).of(code);
-    return name ? name.charAt(0).toLocaleUpperCase(lang) + name.slice(1) : code;
+    const locale = new Intl.Locale(code);
+    const name = new Intl.DisplayNames([lang], { type: "language" }).of(locale.language);
+    if (!locale.region) return name ?? code;
+    const region = new Intl.DisplayNames([lang], { type: "region" }).of(locale.region);
+    return t("global.langRegion", name, region);
   } catch {
     return code;
   }
@@ -106,6 +107,16 @@ export const listLabel = (items) => {
     return new Intl.ListFormat(lang, { type: "conjunction" }).format(items);
   } catch {
     return items.join(", ");
+  }
+};
+
+/** Numbers in the format of the page language: 1920 -> "1920", 1234567 -> "1.234.567" */
+export const formatNumber = (value, options) => {
+  try {
+    // latin digits, like the rest of the data (IPs, codes, versions)
+    return new Intl.NumberFormat(lang, { numberingSystem: "latn", ...options }).format(value);
+  } catch {
+    return String(value);
   }
 };
 

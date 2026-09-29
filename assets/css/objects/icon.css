@@ -216,3 +216,33 @@
 .iconbg-behaviour {
   --icon: var(--bgurl-behaviour);
 }
+
+/* CARD STATUS: leaked (warning), protected or good news (shield), pending */
+.iconbg-warning {
+  --icon: var(--bgurl-warning);
+}
+
+.iconbg-shield-check {
+  --icon: var(--bgurl-shield-check);
+}
+
+.iconbg-pending {
+  --icon: var(--bgurl-pending);
+}
+
+.iconbg-status {
+  --icon: var(--bgurl-warning);
+}
+
+/* THEME */
+.iconbg-sun {
+  --icon: var(--bgurl-sun);
+}
+
+.iconbg-moon {
+  --icon: var(--bgurl-moon);
+}
+
+.iconbg-theme-auto {
+  --icon: var(--bgurl-theme-auto);
+}

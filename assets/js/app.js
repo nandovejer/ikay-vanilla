@@ -8,10 +8,12 @@ import prepareHTML from "./modules/prepareHTML.js";
 import navMenu from "./modules/navMenu.js";
 import card from "./modules/card.js";
 import sharetime from "./modules/sharetime.js";
+import theme from "./modules/theme.js";
 import webapi from "./webapi/webapi.js";
 
 document.getElementById("nojs")?.remove();
 prepareHTML.init();
+theme.init();
 navMenu.init();
 card.init();
 sharetime.init();

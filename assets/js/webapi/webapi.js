@@ -20,6 +20,7 @@ import detectSignals from "./detectSignals.js";
 import detectNavigation from "./detectNavigation.js";
 import behaviour from "./behaviour.js";
 import fingerprintID from "./fingerprintID.js";
+import { t } from "../i18n.js";
 import { noSupport, setHTML, setText, renderDetail, renderList } from "../modules/dom.js";
 
 const NATIVE_KEYS = [
@@ -94,7 +95,7 @@ const webapi = {
     ]);
     const components = {};
     NATIVE_STABLE.forEach((key) => {
-      components[key] = key === "lang" ? nativeData.langCode : nativeData[key];
+      components[key] = nativeData.stable?.[key] ?? nativeData[key];
     });
     Object.keys(DETECTORS).forEach((type, index) => {
       if (results[index]?.fingerprint) components[type] = results[index].fingerprint;
@@ -136,9 +137,12 @@ const webapi = {
         setHTML(`.js-apiValue-${key}`, data[key]);
       }
     });
+    // The card reads the SYSTEM preference, whatever look the visitor picks here
+    if (data.darkmode !== undefined) setText(".js-apiDetail-darkmode", t("darkmode.systemNote"));
     // Values that could not be worked out are shown as protected
     noSupport(...(data.kept ?? []));
-    // The raw language codes, for the curious
+    // The raw values, for the curious
+    renderDetail(document.querySelector(".js-card-screen .js-card-detail"), data.screenDetail);
     renderDetail(document.querySelector(".js-card-lang .js-card-detail"), [
       ["navigator.language", data.langCode],
       ["navigator.languages", (navigator.languages ?? []).join(", ")],

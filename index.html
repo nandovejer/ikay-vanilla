@@ -7,10 +7,17 @@
       name="description"
       content="IKAY: dashboard about your digital fingerprint" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#faf8f2" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#16150f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f8f4ec" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1712" media="(prefers-color-scheme: dark)" />
     <title>Tu navegador dice...</title>
     <link rel="icon" href="favicon.ico" />
+    <!-- Theme chosen by the visitor, applied before the first paint (no flash) -->
+    <script>
+      try {
+        const theme = localStorage.getItem("ikay-theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -73,6 +80,9 @@
             <span class="header__description" data-i18n="header.description"></span>
           </span>
         </a>
+        <button type="button" class="header__btnTheme js-theme-cycle">
+          <span class="iconbg iconbg-theme-auto js-theme-icon" aria-hidden="true"></span>
+        </button>
         <button
           type="button"
           class="header__btnMenu js-bntMenu"
@@ -187,12 +197,25 @@
           </li>
         </ul>
 
+        <!-- THEME: Auto / Light / Dark (theme.js) -->
+        <div class="nav__lang nav__theme" role="group" aria-labelledby="navThemeLabel">
+          <span id="navThemeLabel" class="nav__lang__label" data-i18n="theme.label"></span>
+          <div class="nav__lang__options js-theme-options"></div>
+        </div>
+
         <!-- CHOICE LANG: buttons filled by choiceLang.js -->
         <div class="nav__lang" role="group" aria-labelledby="navLangLabel">
           <span id="navLangLabel" class="nav__lang__label" data-i18n="global.language"></span>
           <div class="nav__lang__options js-choiceLang"></div>
         </div>
       </nav>
+    </template>
+
+    <template id="tpl-theme-btn">
+      <button type="button" class="nav__lang__btn nav__theme__btn js-theme-btn">
+        <span class="iconbg" aria-hidden="true"></span>
+        <span class="nav__lang__name"></span>
+      </button>
     </template>
 
     <template id="tpl-lang-btn">
@@ -411,32 +434,41 @@
 
     <!--
       CARD (generic). card.js sets:
-        article         -> js-card-{type} card--{type}
-        .iconbg          -> iconbg-{icon}
-        value            -> js-apiValue-{type}
-        description      -> js-apiDetail-{type}
-        list             -> filled by webapi.js ([api, value] pairs or plain items)
-        [data-i18n-card] -> {type}.title
-        [data-i18n-plain] -> {type}.plain
+        article            -> js-card-{type} card--{type}
+        [data-sentence]    -> "{type}.sentence" around the bold value: the heading
+        value (strong)     -> js-apiValue-{type}
+        description        -> js-apiDetail-{type}
+        list               -> filled by webapi.js ([api, value] pairs or plain items)
+        [data-i18n-plain]  -> {type}.plain
+        .js-card-status    -> checking / not protected / protected (by state)
+        .js-card-protected -> "Your browser doesn't share ..." sentence
+      data-mirror="selector": copies the text of another element of the card.
     -->
     <template id="tpl-card">
       <article class="js-card card" data-state="pending">
         <header class="card__head">
-          <span class="card__icon" aria-hidden="true"><span class="iconbg"></span></span>
-          <h3 class="card__type" data-i18n-card></h3>
+          <span class="card__status">
+            <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-status"></span></span>
+            <span class="card__statusText js-card-status"></span>
+          </span>
           <button type="button" class="card__more js-card-more">
             <span aria-hidden="true">?</span>
           </button>
         </header>
-        <p class="card__value js-card-value" data-skeleton>...</p>
+        <h3 class="card__sentence" data-sentence>
+          <strong class="card__value js-card-value" data-skeleton>...</strong>
+        </h3>
         <p class="card__description js-card-description"></p>
-        <div class="card__lead"><span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span><p class="card__leadText" data-i18n-plain></p></div>
+        <div class="card__lead">
+          <span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span>
+          <p class="card__leadText" data-i18n-plain></p>
+        </div>
         <details class="card__proof">
           <summary data-i18n="main.proof"></summary>
           <ul class="card__api js-card-detail"></ul>
         </details>
         <div class="card__noSupport">
-          <span class="card__noSupport__type" data-i18n="main.noSupportTitle"></span>
+          <h3 class="card__protected js-card-protected"></h3>
           <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
         </div>
       </article>
@@ -450,17 +482,24 @@
         </div>
         <div class="card__panel">
           <header class="card__head">
-            <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-location"></span></span>
-            <h3 class="card__type" data-i18n="location.title"></h3>
+            <span class="card__status">
+              <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-status"></span></span>
+              <span class="card__statusText js-card-status"></span>
+            </span>
             <button type="button" class="card__more js-card-more">
               <span aria-hidden="true">?</span>
             </button>
           </header>
-          <p class="card__value js-apiValue-city js-card-value" data-skeleton>...</p>
+          <h3 class="card__sentence" data-sentence="location.sentence">
+            <strong class="card__value js-apiValue-city js-card-value" data-skeleton>...</strong>
+          </h3>
           <p class="card__description js-apiValue-country" data-skeleton>...</p>
-          <div class="card__lead"><span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span><p class="card__leadText" data-i18n="location.plain"></p></div>
+          <div class="card__lead">
+            <span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span>
+            <p class="card__leadText" data-i18n="location.plain"></p>
+          </div>
           <div class="card__noSupport">
-            <span class="card__noSupport__type" data-i18n="main.noSupportTitle"></span>
+            <h3 class="card__protected js-card-protected"></h3>
             <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
           </div>
         </div>
@@ -471,17 +510,25 @@
     <template id="tpl-card-exit">
       <article class="js-card js-card-exit card card--exit" data-state="pending">
         <header class="card__head">
-          <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-exit"></span></span>
-          <h3 class="card__type" data-i18n="exit.eyebrow"></h3>
+          <span class="card__status">
+            <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-status"></span></span>
+            <span class="card__statusText js-card-status"></span>
+          </span>
           <button type="button" class="card__more js-card-more">
             <span aria-hidden="true">?</span>
           </button>
         </header>
-        <p class="card__value card__value--s js-apiValue-exitTitle" data-i18n="exit.severaltimes"></p>
+        <h3 class="card__sentence" data-sentence="exit.sentence">
+          <strong class="card__value js-exit-count" data-skeleton>…</strong>
+        </h3>
+        <p class="card__description js-apiValue-exitTitle" data-i18n="exit.severaltimes"></p>
         <ul class="card__visits js-apiValue-exit js-card-value" data-skeleton></ul>
-        <div class="card__lead"><span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span><p class="card__leadText" data-i18n="exit.plain"></p></div>
+        <div class="card__lead">
+          <span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span>
+          <p class="card__leadText" data-i18n="exit.plain"></p>
+        </div>
         <div class="card__noSupport">
-          <span class="card__noSupport__type" data-i18n="main.noSupportTitle"></span>
+          <h3 class="card__protected js-card-protected"></h3>
           <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
         </div>
       </article>
@@ -491,18 +538,25 @@
     <template id="tpl-card-connection">
       <article class="js-card js-card-connection card card--connection" data-state="pending">
         <header class="card__head">
-          <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-connection"></span></span>
-          <h3 class="card__type" data-i18n="connection.title"></h3>
+          <span class="card__status">
+            <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-status"></span></span>
+            <span class="card__statusText js-card-status"></span>
+          </span>
           <span class="badge" data-i18n="main.estimate"></span>
           <button type="button" class="card__more js-card-more">
             <span aria-hidden="true">?</span>
           </button>
         </header>
-        <p class="card__value js-apiValue-connection-mbps js-card-value" data-skeleton>...</p>
+        <h3 class="card__sentence" data-sentence="connection.sentence">
+          <strong class="card__value js-apiValue-connection-mbps js-card-value" data-skeleton>...</strong>
+        </h3>
         <p class="card__description js-apiValue-connection-type"></p>
-        <div class="card__lead"><span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span><p class="card__leadText" data-i18n="connection.plain"></p></div>
+        <div class="card__lead">
+          <span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span>
+          <p class="card__leadText" data-i18n="connection.plain"></p>
+        </div>
         <div class="card__noSupport">
-          <span class="card__noSupport__type" data-i18n="main.noSupportTitle"></span>
+          <h3 class="card__protected js-card-protected"></h3>
           <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
         </div>
       </article>
@@ -512,12 +566,17 @@
     <template id="tpl-card-battery">
       <article class="js-card js-card-battery card card--battery" data-state="pending">
         <header class="card__head">
-          <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-battery"></span></span>
-          <h3 class="card__type" data-i18n="battery.title"></h3>
+          <span class="card__status">
+            <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-status"></span></span>
+            <span class="card__statusText js-card-status"></span>
+          </span>
           <button type="button" class="card__more js-card-more">
             <span aria-hidden="true">?</span>
           </button>
         </header>
+        <h3 class="card__sentence" data-sentence="battery.sentence">
+          <strong class="card__value" data-mirror=".js-battery-level" data-skeleton>-</strong>
+        </h3>
         <!-- WIDGET BATTERY (batteryAPI.js) -->
         <div class="battery">
           <div class="battery__icon" data-level="0%" aria-hidden="true"></div>
@@ -540,9 +599,12 @@
             </li>
           </ul>
         </div>
-        <div class="card__lead"><span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span><p class="card__leadText" data-i18n="battery.plain"></p></div>
+        <div class="card__lead">
+          <span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span>
+          <p class="card__leadText" data-i18n="battery.plain"></p>
+        </div>
         <div class="card__noSupport">
-          <span class="card__noSupport__type" data-i18n="main.noSupportTitle"></span>
+          <h3 class="card__protected js-card-protected"></h3>
           <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
         </div>
       </article>
@@ -552,21 +614,28 @@
     <template id="tpl-card-fingerprint">
       <article class="js-card js-card-fingerprint card card--fingerprint" data-state="pending">
         <header class="card__head">
-          <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-fingerprint"></span></span>
-          <h3 class="card__type" data-i18n="fingerprint.title"></h3>
+          <span class="card__status">
+            <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-status"></span></span>
+            <span class="card__statusText js-card-status"></span>
+          </span>
           <button type="button" class="card__more js-card-more">
             <span aria-hidden="true">?</span>
           </button>
         </header>
-        <p class="card__value card__hash js-apiValue-fingerprint js-card-value" data-skeleton>…</p>
-        <div class="card__lead"><span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span><p class="card__leadText" data-i18n="fingerprint.plain"></p></div>
+        <h3 class="card__sentence card__sentence--id" data-sentence="fingerprint.sentence">
+          <strong class="card__value card__hash js-apiValue-fingerprint js-card-value" data-skeleton>…</strong>
+        </h3>
+        <div class="card__lead">
+          <span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span>
+          <p class="card__leadText" data-i18n="fingerprint.plain"></p>
+        </div>
         <p class="card__description" data-i18n="fingerprint.type.note"></p>
         <details class="card__proof">
           <summary data-i18n="main.proof"></summary>
           <ul class="card__api js-card-detail"></ul>
         </details>
         <div class="card__noSupport">
-          <span class="card__noSupport__type" data-i18n="main.noSupportTitle"></span>
+          <h3 class="card__protected js-card-protected"></h3>
           <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
         </div>
       </article>
@@ -576,22 +645,29 @@
     <template id="tpl-card-canvas">
       <article class="js-card js-card-canvas card card--canvas" data-state="pending">
         <header class="card__head">
-          <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-canvas"></span></span>
-          <h3 class="card__type" data-i18n="canvas.title"></h3>
+          <span class="card__status">
+            <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-status"></span></span>
+            <span class="card__statusText js-card-status"></span>
+          </span>
           <button type="button" class="card__more js-card-more">
             <span aria-hidden="true">?</span>
           </button>
         </header>
         <img class="card__canvas js-canvas-image" alt="" width="280" height="64" />
-        <p class="card__value card__hash js-apiValue-canvas js-card-value" data-skeleton>…</p>
-        <div class="card__lead"><span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span><p class="card__leadText" data-i18n="canvas.plain"></p></div>
+        <h3 class="card__sentence" data-sentence="canvas.sentence">
+          <strong class="card__value card__hash js-apiValue-canvas js-card-value" data-skeleton>…</strong>
+        </h3>
         <p class="card__description" data-i18n="canvas.type.caption"></p>
+        <div class="card__lead">
+          <span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span>
+          <p class="card__leadText" data-i18n="canvas.plain"></p>
+        </div>
         <details class="card__proof">
           <summary data-i18n="main.proof"></summary>
           <ul class="card__api js-card-detail"></ul>
         </details>
         <div class="card__noSupport">
-          <span class="card__noSupport__type" data-i18n="main.noSupportTitle"></span>
+          <h3 class="card__protected js-card-protected"></h3>
           <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
         </div>
       </article>
@@ -601,12 +677,17 @@
     <template id="tpl-card-behaviour">
       <article class="js-card js-card-behaviour card card--behaviour" data-state="ready">
         <header class="card__head">
-          <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-behaviour"></span></span>
-          <h3 class="card__type" data-i18n="behaviour.title"></h3>
+          <span class="card__status">
+            <span class="card__icon" aria-hidden="true"><span class="iconbg iconbg-status"></span></span>
+            <span class="card__statusText js-card-status"></span>
+          </span>
           <button type="button" class="card__more js-card-more">
             <span aria-hidden="true">?</span>
           </button>
         </header>
+        <h3 class="card__sentence" data-sentence="behaviour.sentence">
+          <strong class="card__value" data-mirror=".js-behaviour-moves">0</strong>
+        </h3>
         <div class="behaviour">
           <div class="behaviour__screen">
             <canvas class="behaviour__map js-behaviour-map" aria-hidden="true"></canvas>
@@ -620,10 +701,13 @@
             <li><span data-i18n="behaviour.type.time"></span><b class="js-behaviour-time">0:00</b></li>
           </ul>
         </div>
-        <div class="card__lead"><span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span><p class="card__leadText" data-i18n="behaviour.plain"></p></div>
         <p class="card__description" data-i18n="behaviour.type.caption"></p>
+        <div class="card__lead">
+          <span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span>
+          <p class="card__leadText" data-i18n="behaviour.plain"></p>
+        </div>
         <div class="card__noSupport">
-          <span class="card__noSupport__type" data-i18n="main.noSupportTitle"></span>
+          <h3 class="card__protected js-card-protected"></h3>
           <p class="card__noSupport__description" data-i18n="main.noSupport"></p>
         </div>
       </article>
