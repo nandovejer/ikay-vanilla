@@ -577,27 +577,27 @@
         <h3 class="card__sentence" data-sentence="battery.sentence">
           <strong class="card__value" data-mirror=".js-battery-level" data-skeleton>-</strong>
         </h3>
-        <!-- WIDGET BATTERY (batteryAPI.js) -->
+        <!-- WIDGET BATTERY (batteryAPI.js sets --level, data-state and the texts) -->
         <div class="battery">
-          <div class="battery__icon" data-level="0%" aria-hidden="true"></div>
-          <ul class="battery__info__list">
-            <li class="battery__info__item">
-              <span class="battery__info__title" data-i18n="battery.type.mode"></span>
-              <span class="battery__info__value battery__info__value--mode js-battery-mode">-</span>
-            </li>
-            <li class="battery__info__item">
-              <span class="battery__info__title" data-i18n="battery.type.level"></span>
-              <span class="battery__info__value js-battery-level js-card-value" data-skeleton>-</span>
-            </li>
-            <li class="battery__info__item">
-              <span class="battery__info__title" data-i18n="battery.type.charged"></span>
-              <span class="battery__info__value js-battery-chargedtimme">-</span>
-            </li>
-            <li class="battery__info__item">
-              <span class="battery__info__title" data-i18n="battery.type.remaining"></span>
-              <span class="battery__info__value js-battery-dischargingtime">-</span>
-            </li>
-          </ul>
+          <div class="battery__gauge">
+            <div class="battery__icon" aria-hidden="true"><span class="battery__fill"></span></div>
+            <span class="battery__bolt iconbg iconbg-bolt" aria-hidden="true"></span>
+            <span class="battery__percent js-battery-level js-card-value" data-skeleton>-</span>
+          </div>
+          <dl class="battery__info__list">
+            <div class="battery__info__item">
+              <dt class="battery__info__title" data-i18n="battery.type.mode"></dt>
+              <dd class="battery__info__value battery__info__value--mode js-battery-mode">—</dd>
+            </div>
+            <div class="battery__info__item">
+              <dt class="battery__info__title" data-i18n="battery.type.charged"></dt>
+              <dd class="battery__info__value js-battery-chargedtimme">—</dd>
+            </div>
+            <div class="battery__info__item">
+              <dt class="battery__info__title" data-i18n="battery.type.remaining"></dt>
+              <dd class="battery__info__value js-battery-dischargingtime">—</dd>
+            </div>
+          </dl>
         </div>
         <div class="card__lead">
           <span class="card__leadLabel"><span class="iconbg iconbg-project" aria-hidden="true"></span><span data-i18n="main.meaning"></span></span>

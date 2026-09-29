@@ -259,11 +259,12 @@
   "battery": {
     "title": "بطاريتك",
     "type": {
-      "mode": "الوضع",
-      "level": "المستوى",
-      "charged": "مشحونة",
+      "mode": "الآن",
+      "charged": "الوقت حتى الامتلاء",
       "remaining": "الوقت المتبقي",
-      "charging": "جارٍ الشحن..."
+      "charging": "قيد الشحن",
+      "discharging": "تعمل على البطارية",
+      "duration": "{0} س {1} د"
     },
     "modalinfo": {
       "title": "واجهة البطارية البرمجية",
@@ -271,7 +272,9 @@
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API'>مزيد من المعلومات حول واجهة البطارية البرمجية</a>"
     },
     "plain": "مستوى بطاريتك قد يساعد على التعرف عليك بين المواقع لبضع دقائق.",
-    "sentence": "بطاريتك عند {0}."
+    "sentence": "بطاريتك عند {0}.",
+    "afterCharging": " وقيد الشحن.",
+    "afterIdle": "."
   },
   "fingerprint": {
     "title": "رمز هويتك الخفي",

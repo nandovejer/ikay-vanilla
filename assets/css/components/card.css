@@ -375,6 +375,27 @@
   }
 }
 
+/* a list that is the point of the card (typefaces): visible, bigger */
+.card__listIntro {
+  font-size: var(--step--1);
+  color: var(--text-muted);
+
+  &:has(+ .card__api:empty) {
+    display: none;
+  }
+}
+
+.card__api.card__api--visible {
+  max-block-size: none;
+  padding-inline-start: 0;
+  border-inline-start: 0;
+  font-size: var(--step-0);
+
+  li {
+    padding: 0.15rem 0.6rem;
+  }
+}
+
 /* PENDING: skeletons instead of a blocking loader */
 .card [data-skeleton] {
   inline-size: min(100%, 12ch);
@@ -436,7 +457,7 @@
   }
 
   :is(.card__sentence, .card__description, .card__proof, .card__visits, .battery,
-    .card__canvas, .behaviour, .card__map) {
+    .card__canvas, .behaviour, .card__map, .card__listIntro, .card__api--visible) {
     display: none;
   }
 

@@ -1,17 +1,16 @@
 import { noSupport } from "../modules/dom.js";
+import { t, formatNumber } from "../i18n.js";
 
-const EMOJI = {
-  energy: "⚡",
-  hight: "🤩",
-  medium: "🙃",
-  low: "😥",
-  empty: "😱",
-  charging: "🔌",
-};
+/** Low battery: painted with the alarm accent */
+const LOW = 20;
 const STATUS = ["hight", "medium", "low", "empty"];
 
-const toHours = (seconds) =>
-  seconds === Infinity ? "Infinity" : `${Math.round((100 * seconds) / 3600) / 100}h`;
+/** seconds -> "1 h 25 min", or "—" when it does not apply */
+const duration = (seconds) => {
+  if (!Number.isFinite(seconds) || seconds <= 0) return "—";
+  const minutes = Math.round(seconds / 60);
+  return t("battery.type.duration", Math.floor(minutes / 60), minutes % 60);
+};
 
 const batteryAPI = {
   /** @return {Promise<BatteryManager|undefined>} */
@@ -27,59 +26,46 @@ const batteryAPI = {
       return undefined;
     }
   },
+  /**
+   * Paint the widget. `battery` is a BatteryManager, or anything with the
+   * same shape (level, charging, chargingTime, dischargingTime, events).
+   */
   set(battery) {
     const scope = document.querySelector(".battery");
-    const icon = scope.querySelector(".battery__icon");
     const $ = (selector) => scope.querySelector(selector);
 
-    const updateStatusCSS = (status) => {
-      STATUS.forEach((item) => {
-        scope.classList.toggle(`battery--${item}`, item === status);
-      });
-    };
-
     const updateLevel = () => {
-      const level = Math.round(battery.level * 10000) / 100;
+      const level = Math.round(battery.level * 100);
       const status =
-        level >= 75 ? "hight" : level >= 45 ? "medium" : level >= 16 ? "low" : "empty";
-      icon.dataset.level = `${EMOJI[status]} ${level}%`;
-      icon.style.backgroundSize = `${level}%`;
-      $(".js-battery-level").textContent = `${level}%`;
-      updateStatusCSS(status);
+        level >= 75 ? "hight" : level >= 45 ? "medium" : level > LOW ? "low" : "empty";
+      STATUS.forEach((item) => scope.classList.toggle(`battery--${item}`, item === status));
+      scope.style.setProperty("--level", `${level}%`);
+      scope.dataset.state = level <= LOW ? "low" : "ok";
+      $(".js-battery-level").textContent = formatNumber(level / 100, { style: "percent" });
     };
 
     const updateMode = () => {
       scope.classList.toggle("battery--charging", battery.charging);
-      $(".js-battery-mode").textContent = battery.charging ? "Charging" : "Battery";
-    };
-
-    const updateDischargingTime = () => {
-      $(".js-battery-dischargingtime").textContent = battery.charging
-        ? "-"
-        : toHours(battery.dischargingTime);
-    };
-
-    const updateChargingTime = () => {
+      $(".js-battery-mode").textContent = t(
+        battery.charging ? "battery.type.charging" : "battery.type.discharging"
+      );
       $(".js-battery-chargedtimme").textContent = battery.charging
-        ? toHours(battery.chargingTime)
-        : "-";
+        ? duration(battery.chargingTime)
+        : "—";
+      $(".js-battery-dischargingtime").textContent = battery.charging
+        ? "—"
+        : duration(battery.dischargingTime);
     };
 
     // FIRST INIT
     updateLevel();
     updateMode();
-    updateDischargingTime();
-    updateChargingTime();
 
     // EVENTS
-    battery.addEventListener("chargingchange", () => {
-      updateMode();
-      updateDischargingTime();
-      updateChargingTime();
-    });
-    battery.addEventListener("levelchange", updateLevel);
-    battery.addEventListener("dischargingtimechange", updateDischargingTime);
-    battery.addEventListener("chargingtimechange", updateChargingTime);
+    battery.addEventListener?.("chargingchange", updateMode);
+    battery.addEventListener?.("levelchange", updateLevel);
+    battery.addEventListener?.("dischargingtimechange", updateMode);
+    battery.addEventListener?.("chargingtimechange", updateMode);
   },
 };
 

@@ -114,7 +114,7 @@ const card = {
         intro.className = "card__listIntro";
         intro.textContent = t("fonts.listLabel");
         const list = proof.querySelector(".js-card-detail");
-        proof.before(intro, list);
+        (fragment.querySelector(".card__lead") ?? proof).before(intro, list);
         list.classList.add("card__api--visible");
         proof.remove();
       }
@@ -217,6 +217,13 @@ const card = {
       const text = article.querySelector(el.dataset.mirror)?.textContent ?? "";
       if (el.textContent !== text) el.textContent = text;
     });
+    // "Your battery is at 82 %" + " and charging." while it charges
+    const battery = article.querySelector(".battery");
+    if (battery) {
+      const after = article.querySelector(".card__sentence .card__sentenceText:last-child");
+      const text = t(battery.classList.contains("battery--charging") ? "battery.afterCharging" : "battery.afterIdle");
+      if (after && after.textContent !== text) after.textContent = text;
+    }
     const count = article.querySelector(".js-exit-count");
     if (count) {
       const visits = article.querySelectorAll(".js-apiValue-exit li").length;

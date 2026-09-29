@@ -1,94 +1,112 @@
 /*
- * BATTERY WIDGET
- * batteryAPI.js sets: data-level on .battery__icon, its inline
- * background-size (the charge), and .battery--{hight|medium|low|empty|charging}.
+ * BATTERY WIDGET: a line drawing, like the icons.
+ * batteryAPI.js sets --level (0%..100%), data-state="ok | low",
+ * .battery--charging and the texts. It fills from the inline start, and
+ * the terminal sits on the inline end (it flips in RTL).
+ *   ink fill normally · alarm accent when low · success when charging
  */
 .battery {
-  --battery-fill: var(--accent-soft);
+  --level: 0%;
+  --fill: color-mix(in oklch, var(--text) 78%, transparent);
 
   display: grid;
   gap: var(--space-s);
-  margin-block: var(--space-3xs);
+  margin-block-start: var(--space-2xs);
 }
 
-.battery--hight {
-  --battery-fill: light-dark(oklch(0.88 0.12 150), oklch(0.46 0.1 150));
+.battery[data-state="low"] {
+  --fill: var(--accent-fill);
 }
 
-.battery--medium {
-  --battery-fill: var(--accent-soft);
+.battery.battery--charging {
+  --fill: var(--success);
 }
 
-.battery--low {
-  --battery-fill: light-dark(oklch(0.88 0.11 60), oklch(0.52 0.12 55));
-}
-
-.battery--empty {
-  --battery-fill: light-dark(oklch(0.86 0.1 25), oklch(0.5 0.14 25));
+.battery__gauge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
 }
 
 .battery__icon {
   position: relative;
-  inline-size: calc(100% - 0.6rem);
-  max-inline-size: 24rem;
-  block-size: 4.25rem;
+  flex: none;
+  inline-size: clamp(7.5rem, 6rem + 5vw, 10.5rem);
+  block-size: clamp(3rem, 2.6rem + 1.4vw, 3.75rem);
+  margin-inline-end: 0.5rem;
   padding: 4px;
-  border: 2px solid var(--text);
-  border-radius: var(--radius-m);
-  background-image: linear-gradient(var(--battery-fill), var(--battery-fill));
-  background-origin: content-box;
-  background-clip: content-box;
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 0% 100%;
-  transition: background-size 600ms var(--ease);
+  border: 2px solid var(--rule);
+  border-radius: 0.7rem;
 
-  &:dir(rtl) {
-    background-position: right center;
-  }
-
-  /* level, painted by batteryAPI.js */
-  &::before {
-    content: attr(data-level);
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    font-family: var(--font-display);
-    font-size: var(--step-2);
-    font-weight: 700;
-    color: var(--text);
-    font-variant-numeric: tabular-nums;
-  }
-
-  /* positive terminal */
+  /* terminal */
   &::after {
     content: "";
     position: absolute;
     inset-block-start: 50%;
     inset-inline-start: 100%;
     translate: 0 -50%;
-    margin-inline-start: 3px;
-    inline-size: 5px;
-    block-size: 1.5rem;
-    border-start-end-radius: 3px;
-    border-end-end-radius: 3px;
-    background-color: var(--text);
+    inline-size: 6px;
+    block-size: 38%;
+    border: 2px solid var(--rule);
+    border-inline-start: 0;
+    border-start-end-radius: 4px;
+    border-end-end-radius: 4px;
   }
 }
 
+.battery__fill {
+  display: block;
+  inline-size: var(--level);
+  block-size: 100%;
+  border-radius: 0.4rem;
+  background-color: var(--fill);
+  transition:
+    inline-size 600ms var(--ease),
+    background-color var(--dur) var(--ease);
+}
+
+.battery__bolt {
+  display: none;
+  inline-size: 1.4rem;
+  block-size: 1.4rem;
+  color: var(--success);
+}
+
+.battery--charging .battery__bolt {
+  display: inline-block;
+}
+
+.battery__percent {
+  font-family: var(--font-mono);
+  font-size: var(--step-2);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.battery[data-state="low"] .battery__percent {
+  color: var(--accent);
+}
+
+/* a calm "breathing" fill while charging, only if motion is welcome */
+@media (prefers-reduced-motion: no-preference) {
+  .battery--charging .battery__fill {
+    animation: pulse 2.4s var(--ease) infinite;
+  }
+}
+
+/* mode and times: rows with thin rules, like the other details */
 .battery__info__list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.5rem;
+  max-inline-size: 28rem;
 }
 
 .battery__info__item {
-  display: grid;
-  gap: 0.1rem;
-  padding: var(--space-xs);
-  border-radius: var(--radius-m);
-  background-color: var(--surface-2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem var(--space-s);
+  padding-block: 0.45rem;
+  border-block-start: 1px dotted var(--border-strong);
 }
 
 .battery__info__title {
@@ -98,24 +116,7 @@
 
 .battery__info__value {
   font-family: var(--font-mono);
+  font-size: var(--step--1);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
-}
-
-.battery.battery--charging .battery__icon {
-  animation: pulse 2.4s var(--ease) infinite;
-}
-
-@container card (min-width: 34rem) {
-  .battery {
-    grid-template-columns: minmax(12rem, 22rem) minmax(0, 1fr);
-    align-items: center;
-    column-gap: var(--space-l);
-  }
-}
-
-@container card (min-width: 52rem) {
-  .battery__info__list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 }

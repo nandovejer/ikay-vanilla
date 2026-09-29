@@ -246,3 +246,7 @@
 .iconbg-theme-auto {
   --icon: var(--bgurl-theme-auto);
 }
+
+.iconbg-bolt {
+  --icon: var(--bgurl-bolt);
+}

@@ -259,11 +259,12 @@
   "battery": {
     "title": "Tu batería",
     "type": {
-      "mode": "Modo",
-      "level": "Nivel",
-      "charged": "Cargado",
-      "remaining": "Tiempo restante",
-      "charging": "Cargando..."
+      "mode": "Ahora mismo",
+      "charged": "Tiempo hasta cargarse",
+      "remaining": "Tiempo que le queda",
+      "charging": "cargando",
+      "discharging": "gastando batería",
+      "duration": "{0} h {1} min"
     },
     "modalinfo": {
       "title": "API Batería",
@@ -271,7 +272,9 @@
       "moreinfo": "<a target='_blank' href='https://developer.mozilla.org/es/docs/WebAPI/Estado_de_Bateria'>Más información sobre API Batería</a>"
     },
     "plain": "El nivel de tu batería puede ayudar a reconocerte entre webs durante unos minutos.",
-    "sentence": "Tu batería está al {0}."
+    "sentence": "Tu batería está al {0}.",
+    "afterCharging": " y cargando.",
+    "afterIdle": "."
   },
   "fingerprint": {
     "title": "Tu código de identificación invisible",
