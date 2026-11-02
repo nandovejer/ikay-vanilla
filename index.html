@@ -18,7 +18,9 @@
         try {
           mode = localStorage.getItem("ikay-theme");
         } catch {}
-        if (mode !== "light" && mode !== "dark") mode = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (mode !== "light" && mode !== "dark" && mode !== "high-contrast") {
+          mode = matchMedia("(prefers-contrast: more)").matches ? "high-contrast" : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
         document.documentElement.dataset.mode = mode;
       }
     </script>
@@ -202,7 +204,7 @@
           </li>
         </ul>
 
-        <!-- THEME: Auto / Light / Dark (theme.js) -->
+        <!-- THEME: Auto / Light / Dark / High contrast (theme.js) -->
         <div class="nav__lang nav__theme" role="group" aria-labelledby="navThemeLabel">
           <span id="navThemeLabel" class="nav__lang__label" data-i18n="theme.label"></span>
           <div class="nav__lang__options js-theme-options"></div>

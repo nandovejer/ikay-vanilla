@@ -67,7 +67,7 @@
   text-overflow: ellipsis;
 }
 
-/* theme: one cycling button (Auto -> Light -> Dark), always at hand */
+/* theme: one cycling button (Auto -> Light -> Dark -> High contrast), always at hand */
 .header__btnTheme {
   display: grid;
   place-items: center;

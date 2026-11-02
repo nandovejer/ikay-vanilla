@@ -243,6 +243,10 @@
   --icon: var(--ikay-icon-moon);
 }
 
+.iconbg-contrast {
+  --icon: var(--ikay-icon-contrast);
+}
+
 .iconbg-theme-auto {
   --icon: var(--ikay-icon-theme-auto);
 }

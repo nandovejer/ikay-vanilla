@@ -623,6 +623,7 @@
     "auto": "Automatic",
     "light": "Light",
     "dark": "Dark",
+    "high-contrast": "High contrast",
     "change": "Look: {0}. Change"
   },
   "motion": {

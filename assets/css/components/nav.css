@@ -243,6 +243,11 @@
   margin-block-end: 0.15rem;
 }
 
+/* four looks (Auto, Light, Dark, High contrast): two by two */
+.nav__theme .nav__lang__options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 /* two groups (look, language) share the bottom of the menu */
 .nav__theme + .nav__lang {
   margin-block-start: 0;

@@ -204,6 +204,95 @@
 }
 
 /* -------------------------------------------------------------------------
+   HIGH CONTRAST: pure white and black, a deeper crimson (7:1 or more),
+   strong lines, and an edge where a shadow would blur
+   ------------------------------------------------------------------------- */
+
+[data-theme="ikay"][data-mode="high-contrast"] {
+  color-scheme: light;
+
+  /* Surfaces */
+  --luz-surface-page: #ffffff;
+  --luz-surface: #ffffff;
+  --luz-surface-hover: #f2f2f2;
+  --luz-surface-pressed: #e6e6e6;
+  --luz-surface-muted: #f2f2f2;
+  --luz-surface-strong: #e6e6e6;
+  --luz-scrim: rgba(3, 3, 3, 0.7);
+  --luz-surface-media: #000000;
+
+  /* Text */
+  --luz-text-primary: #000000;
+  --luz-text-secondary: #1a1a1a;
+  --luz-text-muted: #333333;
+  --luz-text-disabled: #595959;
+  --luz-text-on-fill: #ffffff;
+
+  /* Lines */
+  --luz-divider: #444444;
+  --luz-outline: #000000;
+  --luz-focus-ring: #000000;
+
+  /* Brand */
+  --luz-brand-primary: #8d0012;
+  --luz-brand-hover: #76000c;
+  --luz-brand-active: #5c010b;
+  --luz-brand-subtle: #ffecea;
+  --luz-brand-fill: #8d0012;
+  --luz-brand-fill-hover: #76000c;
+  --luz-brand-fill-active: #5c010b;
+
+  /* Dark band (footer) */
+  --luz-sidebar-bg: #000000;
+  --luz-sidebar-text: #ffffff;
+  --luz-sidebar-text-hover: #ffffff;
+  --luz-sidebar-hover: #1a1a1a;
+  --luz-sidebar-active-bg: #ffb4ae;
+  --luz-sidebar-active-text: #000000;
+  --luz-sidebar-border: rgba(255, 255, 255, 0.4);
+  --luz-sidebar-label: #d9d9d9;
+  --luz-sidebar-logo-bg: #ffb4ae;
+
+  /* Status */
+  --luz-color-success: #004845;
+  --luz-color-success-bg: #e3f6f5;
+  --luz-color-danger: #8d0012;
+  --luz-color-danger-bg: #ffdedb;
+  --luz-color-danger-fill: #8d0012;
+  --luz-color-warning: #643400;
+  --luz-color-warning-accent: #643400;
+  --luz-color-warning-bg: #fff3df;
+  --luz-color-teal-bg: #bff0ec;
+
+  /* Inputs */
+  --luz-input-bg: #ffffff;
+  --luz-input-border: #000000;
+
+  /* Extended */
+  --luz-color-teal: #004340;
+  --luz-color-purple: #4a237a;
+  --luz-color-purple-bg: #f4effe;
+  --luz-color-code: #4a237a;
+  --luz-color-info: #1a1a1a;
+  --luz-color-info-bg: #f2f2f2;
+
+  /* Code */
+  --luz-code-comment: #444444;
+  --luz-code-keyword: #000000;
+  --luz-code-name: #8d0012;
+  --luz-code-property: #4a237a;
+  --luz-code-string: #004845;
+  --luz-code-literal: #643400;
+
+  /* IKAY: the stronger hairline */
+  --ikay-border-strong: #595959;
+
+  /* Shadows: an edge instead of a blur, which a low-vision reader cannot see */
+  --luz-shadow-sm: none;
+  --luz-shadow-lg: 0 0 0 2px #000;
+}
+
+/* -------------------------------------------------------------------------
    WIDE GAMUT: the colours that do not fit in sRGB
    ------------------------------------------------------------------------- */
 
