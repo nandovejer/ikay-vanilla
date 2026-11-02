@@ -43,77 +43,35 @@
   /* The canvas fingerprint is drawn on white paper in both modes */
   --ikay-canvas-paper: #fcfaf6;
 
-  /* # ICONS - Default */
-  --ikay-icon-logo: url("../../images/svg/logo.svg");
-
-  /* # ICONS - Icons */
+  /* # ICONS: masks painted with currentColor (objects/icon.css) */
   --ikay-icon-battery: url("../../images/svg/battery.svg");
+  --ikay-icon-behaviour: url("../../images/svg/behaviour.svg");
+  --ikay-icon-bolt: url("../../images/svg/bolt.svg");
+  --ikay-icon-canvas: url("../../images/svg/canvas.svg");
   --ikay-icon-close: url("../../images/svg/close.svg");
   --ikay-icon-connection: url("../../images/svg/connection.svg");
   --ikay-icon-contact: url("../../images/svg/contact.svg");
+  --ikay-icon-contrast: url("../../images/svg/contrast.svg");
+  --ikay-icon-facebook: url("../../images/svg/facebook.svg");
+  --ikay-icon-fingerprint: url("../../images/svg/fingerprint.svg");
   --ikay-icon-hardware: url("../../images/svg/hardware.svg");
+  --ikay-icon-incognito: url("../../images/svg/incognito.svg");
   --ikay-icon-info: url("../../images/svg/info.svg");
+  --ikay-icon-linkedin: url("../../images/svg/linkedin.svg");
   --ikay-icon-location: url("../../images/svg/location.svg");
   --ikay-icon-menu: url("../../images/svg/menu.svg");
-  --ikay-icon-project: url("../../images/svg/project.svg");
-  --ikay-icon-share: url("../../images/svg/share.svg");
-  --ikay-icon-resolution: url("../../images/svg/resolution.svg");
-  --ikay-icon-orientation: url("../../images/svg/orientation.svg");
-  --ikay-icon-darkmode: url("../../images/svg/darkmode.svg");
-  --ikay-icon-lang: url("../../images/svg/lang.svg");
-  --ikay-icon-ram: url("../../images/svg/ram.svg");
-  --ikay-icon-cpu: url("../../images/svg/cpu.svg");
-  --ikay-icon-gpu: url("../../images/svg/gpu.svg");
-  --ikay-icon-ip: url("../../images/svg/ip.svg");
-  --ikay-icon-telco: url("../../images/svg/telco.svg");
-  --ikay-icon-exit: url("../../images/svg/exit.svg");
-
-  /* # ICONS - Card status */
-  --ikay-icon-warning: url("../../images/svg/warning.svg");
-  --ikay-icon-shield-check: url("../../images/svg/shield-check.svg");
-  --ikay-icon-pending: url("../../images/svg/pending.svg");
-
-  /* # ICONS - Theme */
-  --ikay-icon-sun: url("../../images/svg/sun.svg");
   --ikay-icon-moon: url("../../images/svg/moon.svg");
-  --ikay-icon-contrast: url("../../images/svg/contrast.svg");
-  --ikay-icon-theme-auto: url("../../images/svg/theme-auto.svg");
-  --ikay-icon-bolt: url("../../images/svg/bolt.svg");
-
-  /* # ICONS - Social Media */
-  --ikay-icon-facebook: url("../../images/svg/facebook.svg");
-  --ikay-icon-twitter: url("../../images/svg/twitter.svg");
-  --ikay-icon-linkedin: url("../../images/svg/linkedin.svg");
-  --ikay-icon-whatsapp: url("../../images/svg/whatsapp.svg");
-  --ikay-icon-reddit: url("../../images/svg/reddit.svg");
-
-  /* # ICONS - Icons devices */
-  --ikay-icon-devices: url("../../images/svg/devices.svg");
-  --ikay-icon-mobileAndroid: url("../../images/svg/mobileAndroid.svg");
-
-  /* # ICONS - Icons OS */
   --ikay-icon-os: url("../../images/svg/os.svg");
-  --ikay-icon-windows: url("../../images/svg/windows.svg");
-
-  /* # ICONS - Icons Browser */
-  --ikay-icon-browser: url("../../images/svg/browser.svg");
-  --ikay-icon-firefox: url("../../images/svg/firefox.svg");
-
-  /* # ICONS - Fingerprinting cards */
-  --ikay-icon-fingerprint: url("../../images/svg/fingerprint.svg");
+  --ikay-icon-pending: url("../../images/svg/pending.svg");
+  --ikay-icon-project: url("../../images/svg/project.svg");
+  --ikay-icon-reddit: url("../../images/svg/reddit.svg");
+  --ikay-icon-repo: url("../../images/svg/repo.svg");
+  --ikay-icon-share: url("../../images/svg/share.svg");
+  --ikay-icon-shield-check: url("../../images/svg/shield-check.svg");
+  --ikay-icon-sun: url("../../images/svg/sun.svg");
+  --ikay-icon-theme-auto: url("../../images/svg/theme-auto.svg");
   --ikay-icon-timezone: url("../../images/svg/timezone.svg");
-  --ikay-icon-locale: url("../../images/svg/locale.svg");
-  --ikay-icon-display: url("../../images/svg/display.svg");
-  --ikay-icon-preferences: url("../../images/svg/preferences.svg");
-  --ikay-icon-input: url("../../images/svg/input.svg");
-  --ikay-icon-keyboard: url("../../images/svg/keyboard.svg");
-  --ikay-icon-canvas: url("../../images/svg/canvas.svg");
-  --ikay-icon-audio: url("../../images/svg/audio.svg");
-  --ikay-icon-fonts: url("../../images/svg/fonts.svg");
-  --ikay-icon-voices: url("../../images/svg/voices.svg");
-  --ikay-icon-incognito: url("../../images/svg/incognito.svg");
-  --ikay-icon-adblock: url("../../images/svg/adblock.svg");
-  --ikay-icon-signals: url("../../images/svg/signals.svg");
-  --ikay-icon-navigation: url("../../images/svg/navigation.svg");
-  --ikay-icon-behaviour: url("../../images/svg/behaviour.svg");
+  --ikay-icon-twitter: url("../../images/svg/twitter.svg");
+  --ikay-icon-warning: url("../../images/svg/warning.svg");
+  --ikay-icon-whatsapp: url("../../images/svg/whatsapp.svg");
 }

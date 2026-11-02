@@ -51,7 +51,7 @@
     "title": "Estado de tus datos",
     "content1": "<p>Todos los datos que aparecen en esta web permanecen almacenados solamente en tu dispositivo, en ningún momento son enviados a ningún servidor externo, ¿por qué? porque no me interesan tus datos, me interesa tu concienciación.</p>",
     "content2": "<p>No obstante, desconozco si GitHub (el servidor donde se aloja esta web) o ipapi.co (API externa que utilizo para determinar tu ciudad, país y compañía de telefonía a partir de tu IP) generan algún tipo de almacenamiento de datos similar o ajeno al mostrado en esta web. Pero bueno, si no te preocupa compartir en facebook cada cena, momento, recuerdo o sentimiento, tampoco te preocupará la información (similar a esta) que almacenará sobre ti esa web maravillosa donde te han dicho que ves películas online de pago, pero gratis:D Permíteme un poco de ironía :)</p>",
-    "thanks": "<p>Quiero dar las gracias a <a href='https://github.com/RobinLinus'>Robin Linus</a> por su inspiración y a <a href='https://www.flaticon.com'>Flaticon</a> por aportar sus iconos</p>",
+    "thanks": "<p>Quiero dar las gracias a <a href='https://github.com/RobinLinus'>Robin Linus</a> por su inspiración, a <a href='https://github.com/nandovejer/luz'>LUZ</a> por sus tokens de diseño y sus iconos, y a <a href='https://icons.getbootstrap.com'>Bootstrap Icons</a> por las marcas de las redes</p>",
     "license": "<p><a href='https://opensource.org/licenses/MIT'>LICENCIA MIT - https://opensource.org/licenses/MIT</a>.</p>",
     "eyebrow": "Tus datos"
   },

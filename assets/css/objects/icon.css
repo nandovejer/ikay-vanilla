@@ -2,7 +2,7 @@
  * ICONS
  * Monochrome SVGs used as masks painted with currentColor, so the same
  * files work in light and dark mode and inherit the text colour.
- * .iconbg-{name} -> --bgurl-{name} (settings/variables.css)
+ * .iconbg-{name} -> --ikay-icon-{name} (settings/variables.css)
  */
 .iconbg {
   display: inline-block;
@@ -25,6 +25,7 @@
   }
 }
 
+/* SHARE */
 .iconbg-facebook {
   --icon: var(--ikay-icon-facebook);
 }
@@ -49,16 +50,25 @@
   --icon: var(--ikay-icon-contact);
 }
 
-.iconbg-logo {
-  --icon: var(--ikay-icon-logo);
+/* CHAPTERS AND MENU */
+.iconbg-fingerprint {
+  --icon: var(--ikay-icon-fingerprint);
 }
 
-.iconbg-battery {
-  --icon: var(--ikay-icon-battery);
+.iconbg-location {
+  --icon: var(--ikay-icon-location);
 }
 
-.iconbg-close {
-  --icon: var(--ikay-icon-close);
+.iconbg-project {
+  --icon: var(--ikay-icon-project);
+}
+
+.iconbg-timezone {
+  --icon: var(--ikay-icon-timezone);
+}
+
+.iconbg-os {
+  --icon: var(--ikay-icon-os);
 }
 
 .iconbg-connection {
@@ -69,167 +79,52 @@
   --icon: var(--ikay-icon-hardware);
 }
 
-.iconbg-info {
-  --icon: var(--ikay-icon-info);
-}
-
-.iconbg-location {
-  --icon: var(--ikay-icon-location);
-}
-
-.iconbg-menu {
-  --icon: var(--ikay-icon-menu);
-}
-
-.iconbg-project {
-  --icon: var(--ikay-icon-project);
-}
-
-.iconbg-share {
-  --icon: var(--ikay-icon-share);
-}
-
-.iconbg-resolution {
-  --icon: var(--ikay-icon-resolution);
-}
-
-.iconbg-orientation {
-  --icon: var(--ikay-icon-orientation);
-}
-
-.iconbg-darkmode {
-  --icon: var(--ikay-icon-darkmode);
-}
-
-.iconbg-lang {
-  --icon: var(--ikay-icon-lang);
-}
-
-.iconbg-ram {
-  --icon: var(--ikay-icon-ram);
-}
-
-.iconbg-cpu {
-  --icon: var(--ikay-icon-cpu);
-}
-
-.iconbg-gpu {
-  --icon: var(--ikay-icon-gpu);
-}
-
-.iconbg-ip {
-  --icon: var(--ikay-icon-ip);
-}
-
-.iconbg-telco {
-  --icon: var(--ikay-icon-telco);
-}
-
-.iconbg-exit {
-  --icon: var(--ikay-icon-exit);
-}
-
-.iconbg-devices {
-  --icon: var(--ikay-icon-devices);
-}
-
-.iconbg-mobileAndroid {
-  --icon: var(--ikay-icon-mobileAndroid);
-}
-
-.iconbg-os {
-  --icon: var(--ikay-icon-os);
-}
-
-.iconbg-windows {
-  --icon: var(--ikay-icon-windows);
-}
-
-.iconbg-browser {
-  --icon: var(--ikay-icon-browser);
-}
-
-.iconbg-firefox {
-  --icon: var(--ikay-icon-firefox);
-}
-
-.iconbg-fingerprint {
-  --icon: var(--ikay-icon-fingerprint);
-}
-
-.iconbg-timezone {
-  --icon: var(--ikay-icon-timezone);
-}
-
-.iconbg-locale {
-  --icon: var(--ikay-icon-locale);
-}
-
-.iconbg-display {
-  --icon: var(--ikay-icon-display);
-}
-
-.iconbg-preferences {
-  --icon: var(--ikay-icon-preferences);
-}
-
-.iconbg-input {
-  --icon: var(--ikay-icon-input);
-}
-
-.iconbg-keyboard {
-  --icon: var(--ikay-icon-keyboard);
+.iconbg-battery {
+  --icon: var(--ikay-icon-battery);
 }
 
 .iconbg-canvas {
   --icon: var(--ikay-icon-canvas);
 }
 
-.iconbg-audio {
-  --icon: var(--ikay-icon-audio);
-}
-
-.iconbg-fonts {
-  --icon: var(--ikay-icon-fonts);
-}
-
-.iconbg-voices {
-  --icon: var(--ikay-icon-voices);
-}
-
 .iconbg-incognito {
   --icon: var(--ikay-icon-incognito);
-}
-
-.iconbg-adblock {
-  --icon: var(--ikay-icon-adblock);
-}
-
-.iconbg-signals {
-  --icon: var(--ikay-icon-signals);
-}
-
-.iconbg-navigation {
-  --icon: var(--ikay-icon-navigation);
 }
 
 .iconbg-behaviour {
   --icon: var(--ikay-icon-behaviour);
 }
 
-/* CARD STATUS: leaked (warning), protected or good news (shield), pending */
-.iconbg-warning {
-  --icon: var(--ikay-icon-warning);
+.iconbg-info {
+  --icon: var(--ikay-icon-info);
 }
 
-.iconbg-shield-check {
-  --icon: var(--ikay-icon-shield-check);
+.iconbg-share {
+  --icon: var(--ikay-icon-share);
 }
 
-.iconbg-pending {
-  --icon: var(--ikay-icon-pending);
+.iconbg-repo {
+  --icon: var(--ikay-icon-repo);
 }
 
+.iconbg-close {
+  --icon: var(--ikay-icon-close);
+}
+
+.iconbg-menu {
+  --icon: var(--ikay-icon-menu);
+}
+
+.iconbg-bolt {
+  --icon: var(--ikay-icon-bolt);
+}
+
+.iconbg-logo {
+  --icon: var(--ikay-icon-fingerprint);
+}
+
+/* CARD STATUS */
+/* the status of a card: card.css and main.css swap the icon */
 .iconbg-status {
   --icon: var(--ikay-icon-warning);
 }
@@ -249,8 +144,4 @@
 
 .iconbg-theme-auto {
   --icon: var(--ikay-icon-theme-auto);
-}
-
-.iconbg-bolt {
-  --icon: var(--ikay-icon-bolt);
 }
