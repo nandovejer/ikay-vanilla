@@ -1,5 +1,6 @@
-# IKAY is a static site with no build and no dependencies:
-# everything in the repo is published, so keep local noise out.
+# IKAY is a static site with no build: everything in the repo is published,
+# so keep local noise out. LUZ is installed with npm for development and
+# copied to assets/vendor/luz/ (npm run luz:sync), which is what is served.
 
 # macOS
 .DS_Store
@@ -41,9 +42,8 @@ CLAUDE.local.md
 tmp/
 *.tmp
 
-# Just in case someone runs npx/npm tools locally
+# Installed with npm install (package-lock.json is versioned)
 node_modules/
-package-lock.json
 
 # Local secrets
 .env
