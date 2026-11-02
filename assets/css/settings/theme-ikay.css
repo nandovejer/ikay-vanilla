@@ -15,6 +15,38 @@
  */
 
 /* -------------------------------------------------------------------------
+   LUZ's knobs, set on :root as LUZ asks: type, sizes and corners.
+   Fraunces for headings, Inter Tight for reading, Fira Code for every value
+   found. Noto Sans Arabic comes in only when the page is in Arabic.
+   ------------------------------------------------------------------------- */
+
+:root {
+  --luz-font-sans: "Inter Tight", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --luz-font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --luz-font-mono: "Fira Code", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --luz-font-body: var(--luz-font-sans);
+  --luz-font-heading: var(--luz-font-serif);
+
+  /* The reading size grows with the screen, from 17px to 18px */
+  --luz-type-base: clamp(1.0625rem, 1.03rem + 0.15vw, 1.125rem);
+  --luz-text-body: var(--luz-text-base);
+
+  /* Corners */
+  --luz-radius-sm: 0.25rem;
+  --luz-radius-md: 0.4rem;
+}
+
+/* Arabic joins its letters and Fraunces, Inter Tight and Fira Code have none
+   of them: Noto Sans Arabic draws them. It is a large file, so it is only
+   named when the page is in Arabic, not for the one word "العربية" in the
+   language menu of the other pages. */
+:root:lang(ar) {
+  --luz-font-sans: "Inter Tight", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --luz-font-serif: "Fraunces", "Noto Sans Arabic", Georgia, "Times New Roman", serif;
+  --luz-font-mono: "Fira Code", "Noto Sans Arabic", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+/* -------------------------------------------------------------------------
    LIGHT: the default mode of the theme
    ------------------------------------------------------------------------- */
 
@@ -101,28 +133,12 @@
   /* Shadows: paper does not float; only overlays get one */
   --luz-shadow-sm: 0 1px 0 rgba(28, 20, 12, 0.06);
   --luz-shadow-lg: 0 2px 6px rgba(6, 3, 0, 0.12), 0 30px 60px -20px rgba(6, 3, 0, 0.35);
-
-  /* Type: Fraunces for headings, Inter Tight for reading, Fira Code for
-     every value found. Noto Sans Arabic draws the joined Arabic letters. */
-  --luz-font-sans: "Inter Tight", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --luz-font-serif: "Fraunces", "Noto Sans Arabic", Georgia, "Times New Roman", serif;
-  --luz-font-mono: "Fira Code", "Noto Sans Arabic", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  --luz-font-body: var(--luz-font-sans);
-  --luz-font-heading: var(--luz-font-serif);
-
-  /* Sizes: the reading size grows with the screen, from 17px to 18px */
-  --luz-type-base: clamp(1.0625rem, 1.03rem + 0.15vw, 1.125rem);
-  --luz-text-body: var(--luz-text-base);
-
-  /* Corners */
-  --luz-radius-sm: 0.25rem;
-  --luz-radius-md: 0.4rem;
 }
 
 /* Arabic: LUZ switches headings and running text to the system sans, because
-   its own serif has no Arabic letters. Fraunces and Inter Tight both fall
-   back to Noto Sans Arabic, so IKAY keeps its stacks. LUZ declares the font
-   on every element of an Arabic page, and so must this. */
+   its own serif has no Arabic letters. Fraunces and Inter Tight fall back to
+   Noto Sans Arabic, so IKAY keeps its stacks. LUZ declares the font on every
+   element of an Arabic page, and so must this. */
 :where(:lang(ar)) {
   --luz-font-heading: var(--luz-font-serif);
   --luz-font-body: var(--luz-font-sans);

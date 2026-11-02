@@ -24,14 +24,78 @@
         document.documentElement.dataset.mode = mode;
       }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=Inter+Tight:wght@400..700&family=Noto+Sans+Arabic:wght@400..700&display=swap"
-      rel="stylesheet" />
+    <!-- The texts of the page's language, fetched while the scripts download. Same rule as negotiate() in i18n.js -->
+    <script>
+      {
+        const langs = ["es", "en", "ar"];
+        let lang;
+        try {
+          lang = localStorage.getItem("ikay-sessionLang");
+        } catch {}
+        if (!langs.includes(lang)) {
+          const preferred = navigator.languages?.length ? navigator.languages : [navigator.language];
+          lang = preferred.map((tag) => tag.split("-")[0].toLowerCase()).find((code) => langs.includes(code)) ?? "en";
+        }
+        document.head.insertAdjacentHTML("beforeend", `<link rel="preload" href="assets/locales/${lang}.json" as="fetch" crossorigin />`);
+      }
+    </script>
+    <!-- The two fonts of the first paint: reading text and headings -->
+    <link rel="preload" href="assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="assets/vendor/luz/tokens.min.css" />
+    <link rel="stylesheet" href="assets/fonts/fonts.css" />
     <link rel="stylesheet" href="assets/css/app.css" />
+    <!-- modulepreload:start (npm run preload) -->
+    <link rel="modulepreload" href="assets/js/modules/prepareHTML.js" />
+    <link rel="modulepreload" href="assets/js/modules/navMenu.js" />
+    <link rel="modulepreload" href="assets/js/modules/card.js" />
+    <link rel="modulepreload" href="assets/js/modules/sharetime.js" />
+    <link rel="modulepreload" href="assets/js/modules/theme.js" />
+    <link rel="modulepreload" href="assets/js/webapi/webapi.js" />
+    <link rel="modulepreload" href="assets/js/modules/template.js" />
+    <link rel="modulepreload" href="assets/js/modules/loadingPage.js" />
+    <link rel="modulepreload" href="assets/js/modules/choiceLang.js" />
+    <link rel="modulepreload" href="assets/js/modules/caimodal.js" />
+    <link rel="modulepreload" href="assets/js/modules/summary.js" />
     <link rel="modulepreload" href="assets/js/i18n.js" />
+    <link rel="modulepreload" href="assets/js/modules/storage.js" />
+    <link rel="modulepreload" href="assets/js/webapi/locationAPI.js" />
+    <link rel="modulepreload" href="assets/js/webapi/nativeObj.js" />
+    <link rel="modulepreload" href="assets/js/webapi/batteryAPI.js" />
+    <link rel="modulepreload" href="assets/js/webapi/speedAPI.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectGPU.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectTimezone.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectLocale.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectDisplay.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectPreferences.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectInput.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectKeyboard.js" />
+    <link rel="modulepreload" href="assets/js/webapi/canvasFingerprint.js" />
+    <link rel="modulepreload" href="assets/js/webapi/audioFingerprint.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectFonts.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectVoices.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectIncognito.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectAdblock.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectSignals.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectNavigation.js" />
+    <link rel="modulepreload" href="assets/js/webapi/behaviour.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectMotion.js" />
+    <link rel="modulepreload" href="assets/js/webapi/fingerprintID.js" />
+    <link rel="modulepreload" href="assets/js/modules/dom.js" />
+    <link rel="modulepreload" href="assets/js/webapi/userAgent.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectOs.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectBrowser.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectDevice.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectOrientation.js" />
+    <link rel="modulepreload" href="assets/js/modules/date.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectSpeedInternet.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectDarkMode.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectRam.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectCPU.js" />
+    <link rel="modulepreload" href="assets/js/webapi/detectExit.js" />
+    <link rel="modulepreload" href="assets/js/modules/hash.js" />
+    <link rel="modulepreload" href="assets/js/webapi/isTouchDevice.js" />
+    <!-- modulepreload:end -->
     <script type="module" src="assets/js/app.js"></script>
   </head>
 

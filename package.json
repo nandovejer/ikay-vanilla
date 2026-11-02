@@ -10,7 +10,8 @@
   },
   "scripts": {
     "luz:sync": "node scripts/sync-luz.js",
-    "check": "luz-check index.html assets/css"
+    "preload": "node scripts/sync-preload.js",
+    "check": "luz-check index.html assets/css && node scripts/sync-preload.js --check"
   },
   "dependencies": {
     "@luz-ds/tokens": "0.3.0"
