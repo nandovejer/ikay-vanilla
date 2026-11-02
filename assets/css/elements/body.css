@@ -1,20 +1,20 @@
 /* ELEMENTS */
 html {
   scroll-behavior: smooth;
-  scroll-padding-block-start: calc(var(--header-h) + var(--space-s));
+  scroll-padding-block-start: calc(var(--ikay-header-h) + var(--luz-space-md));
   scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  accent-color: var(--accent-fill-strong);
+  accent-color: var(--luz-brand-fill-hover);
 }
 
 body {
   min-block-size: 100dvh;
-  font-family: var(--font-body);
-  font-size: var(--step-0);
-  line-height: var(--leading);
-  background-color: var(--bg);
-  color: var(--text);
+  font-family: var(--luz-font-body);
+  font-size: var(--luz-text-base);
+  line-height: var(--ikay-leading);
+  background-color: var(--luz-surface-page);
+  color: var(--luz-text-primary);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -23,8 +23,8 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-display);
-  line-height: var(--leading-tight);
+  font-family: var(--luz-font-heading);
+  line-height: var(--ikay-leading-tight);
   font-weight: 650;
   letter-spacing: -0.015em;
   text-wrap: balance;
@@ -38,11 +38,11 @@ dd {
 }
 
 a {
-  color: var(--accent);
+  color: var(--luz-brand-primary);
   font-weight: 600;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
-  transition: color var(--dur) var(--ease), text-decoration-color var(--dur) var(--ease);
+  transition: color var(--luz-duration-base) var(--luz-easing-standard), text-decoration-color var(--luz-duration-base) var(--luz-easing-standard);
 
   &:hover {
     text-decoration-thickness: 2px;
@@ -52,15 +52,15 @@ a {
 code,
 kbd,
 samp {
-  font-family: var(--font-mono);
+  font-family: var(--luz-font-mono);
   font-size: 0.9em;
 }
 
 /* One focus style for everything, visible on any surface */
 :focus-visible {
-  outline: 3px solid var(--focus);
+  outline: 3px solid var(--luz-focus-ring);
   outline-offset: 2px;
-  border-radius: var(--radius-s);
+  border-radius: var(--luz-radius-sm);
 }
 
 /* Headings reached from the menu: no ring, but an accent mark */
@@ -69,15 +69,15 @@ samp {
 }
 
 ::selection {
-  background-color: var(--accent-fill);
-  color: var(--on-accent);
+  background-color: var(--luz-brand-fill);
+  color: var(--luz-text-on-fill);
 }
 
 /* Small reusable bits */
 .eyebrow {
-  font-size: var(--step--1);
+  font-size: var(--luz-text-md);
   font-weight: 650;
-  color: var(--accent);
+  color: var(--luz-brand-primary);
 }
 
 /* a label stamped next to a title ("Estimate") */
@@ -86,22 +86,22 @@ samp {
   align-items: center;
   padding: 0.05em 0.5em;
   border: 1.5px solid currentColor;
-  border-radius: var(--radius-s);
-  color: var(--text-muted);
-  font-family: var(--font-mono);
+  border-radius: var(--luz-radius-sm);
+  color: var(--luz-text-secondary);
+  font-family: var(--luz-font-mono);
   font-size: 0.8125rem;
   font-weight: 600;
 }
 
 .skiplink {
   position: fixed;
-  inset-block-start: var(--space-2xs);
-  inset-inline-start: var(--space-2xs);
+  inset-block-start: var(--luz-space-xs);
+  inset-inline-start: var(--luz-space-xs);
   z-index: 100;
-  padding: var(--space-2xs) var(--space-s);
-  border-radius: var(--radius-m);
-  background-color: var(--accent-fill);
-  color: var(--on-accent);
+  padding: var(--luz-space-xs) var(--luz-space-md);
+  border-radius: var(--luz-radius-md);
+  background-color: var(--luz-brand-fill);
+  color: var(--luz-text-on-fill);
   translate: 0 -200%;
 
   &:focus-visible {
@@ -111,10 +111,10 @@ samp {
 
 #nojs {
   display: block;
-  max-inline-size: var(--measure);
-  margin: var(--space-xl) auto;
-  padding: var(--space-m);
-  font-size: var(--step-1);
+  max-inline-size: var(--ikay-measure);
+  margin: var(--ikay-space-xl) auto;
+  padding: var(--ikay-space-m);
+  font-size: var(--ikay-step-1);
 }
 
 /* Arabic is a joined script: tracking would break the letters apart */

@@ -1,0 +1,240 @@
+/*
+ * THEME: ikay
+ * The look of IKAY as a LUZ theme: warm paper, near-black ink and one alarm
+ * crimson used like a highlighter. It overrides semantic tokens only, in the
+ * three LUZ colour modes, and never touches a primitive.
+ *
+ *   <html data-theme="ikay" data-mode="light | dark | high-contrast">
+ *
+ * theme.js (and the inline script in <head>) writes data-mode: the visitor's
+ * choice, or else the system's (prefers-contrast, then prefers-color-scheme).
+ *
+ * Colours are hex, the format luz-check measures. A few crimsons, tints and
+ * highlights lie outside sRGB: the @media (color-gamut: p3) blocks at the
+ * end give them back their full colour on wide-gamut screens.
+ */
+
+/* -------------------------------------------------------------------------
+   LIGHT: the default mode of the theme
+   ------------------------------------------------------------------------- */
+
+[data-theme="ikay"],
+[data-theme="ikay"][data-mode="light"] {
+  color-scheme: light;
+
+  /* Surfaces */
+  --luz-surface-page: #f9f5ed;
+  --luz-surface: #fdfcf7;
+  --luz-surface-hover: #f1ece3;
+  --luz-surface-pressed: #e6e1d6;
+  --luz-surface-muted: #f1ece3;
+  --luz-surface-strong: #e6e1d6;
+  --luz-scrim: rgba(20, 17, 13, 0.55);
+  --luz-surface-media: #000000;
+
+  /* Text */
+  --luz-text-primary: #1d1711;
+  --luz-text-secondary: #585149;
+  --luz-text-muted: #585149;
+  --luz-text-disabled: #817970;
+  --luz-text-on-fill: #ffffff;
+
+  /* Lines */
+  --luz-divider: #d8d4ca;
+  --luz-outline: #1f1913;
+  --luz-focus-ring: #382b1d;
+
+  /* Brand */
+  --luz-brand-primary: #bb0522;
+  --luz-brand-hover: #ba001a;
+  --luz-brand-active: #ba001a;
+  --luz-brand-subtle: #ffd8d5;
+  --luz-brand-fill: #d40728;
+  --luz-brand-fill-hover: #ba001a;
+  --luz-brand-fill-active: #ba001a;
+
+  /* Dark band (footer) */
+  --luz-sidebar-bg: #191510;
+  --luz-sidebar-text: #edebe5;
+  --luz-sidebar-text-hover: #edebe5;
+  --luz-sidebar-hover: #28231e;
+  --luz-sidebar-active-bg: #ff9b95;
+  --luz-sidebar-active-text: #191510;
+  --luz-sidebar-border: rgba(255, 255, 255, 0.12);
+  --luz-sidebar-label: #bdbab3;
+  --luz-sidebar-logo-bg: #ff9b95;
+
+  /* Status */
+  --luz-color-success: #006763;
+  --luz-color-success-bg: #d9f5f3;
+  --luz-color-danger: #bb0522;
+  --luz-color-danger-bg: #ffc9c4;
+  --luz-color-danger-fill: #d40728;
+  --luz-color-warning: #974d00;
+  --luz-color-warning-accent: #974d00;
+  --luz-color-warning-bg: #fdecd1;
+  --luz-color-teal-bg: #9ee4de;
+
+  /* Inputs */
+  --luz-input-bg: #fdfcf7;
+  --luz-input-border: #1f1913;
+
+  /* Extended */
+  --luz-color-teal: #005551;
+  --luz-color-purple: #5a358c;
+  --luz-color-purple-bg: #eee7fd;
+  --luz-color-code: #5a358c;
+  --luz-color-info: #585149;
+  --luz-color-info-bg: #f1ece3;
+
+  /* Code */
+  --luz-code-comment: #585149;
+  --luz-code-keyword: #1d1711;
+  --luz-code-name: #bb0522;
+  --luz-code-property: #5a358c;
+  --luz-code-string: #006763;
+  --luz-code-literal: #974d00;
+
+  /* IKAY: the stronger hairline */
+  --ikay-border-strong: #b3ada3;
+
+  /* Shadows: paper does not float; only overlays get one */
+  --luz-shadow-sm: 0 1px 0 rgba(28, 20, 12, 0.06);
+  --luz-shadow-lg: 0 2px 6px rgba(6, 3, 0, 0.12), 0 30px 60px -20px rgba(6, 3, 0, 0.35);
+
+  /* Type: Fraunces for headings, Inter Tight for reading, Fira Code for
+     every value found. Noto Sans Arabic draws the joined Arabic letters. */
+  --luz-font-sans: "Inter Tight", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --luz-font-serif: "Fraunces", "Noto Sans Arabic", Georgia, "Times New Roman", serif;
+  --luz-font-mono: "Fira Code", "Noto Sans Arabic", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --luz-font-body: var(--luz-font-sans);
+  --luz-font-heading: var(--luz-font-serif);
+
+  /* Sizes: the reading size grows with the screen, from 17px to 18px */
+  --luz-type-base: clamp(1.0625rem, 1.03rem + 0.15vw, 1.125rem);
+  --luz-text-body: var(--luz-text-base);
+
+  /* Corners */
+  --luz-radius-sm: 0.25rem;
+  --luz-radius-md: 0.4rem;
+}
+
+/* Arabic: LUZ switches headings and running text to the system sans, because
+   its own serif has no Arabic letters. Fraunces and Inter Tight both fall
+   back to Noto Sans Arabic, so IKAY keeps its stacks. LUZ declares the font
+   on every element of an Arabic page, and so must this. */
+:where(:lang(ar)) {
+  --luz-font-heading: var(--luz-font-serif);
+  --luz-font-body: var(--luz-font-sans);
+}
+
+/* -------------------------------------------------------------------------
+   DARK: dark paper, light ink
+   ------------------------------------------------------------------------- */
+
+[data-theme="ikay"][data-mode="dark"] {
+  color-scheme: dark;
+
+  /* The text on a fill is dark here, to read on the light crimson. IKAY has
+     no media surface, so it is light too: LUZ promises that pair is readable. */
+
+  /* Surfaces */
+  --luz-surface-page: #15120e;
+  --luz-surface: #1c1914;
+  --luz-surface-hover: #25211b;
+  --luz-surface-pressed: #322d27;
+  --luz-surface-muted: #25211b;
+  --luz-surface-strong: #322d27;
+  --luz-surface-media: #edebe5;
+
+  /* Text */
+  --luz-text-primary: #edebe5;
+  --luz-text-secondary: #b8b4ac;
+  --luz-text-muted: #b8b4ac;
+  --luz-text-disabled: #857f77;
+  --luz-text-on-fill: #170c0b;
+
+  /* Lines */
+  --luz-divider: #39352f;
+  --luz-outline: #e1ded7;
+  --luz-focus-ring: #ff948e;
+
+  /* Brand */
+  --luz-brand-primary: #ff847e;
+  --luz-brand-hover: #ff807b;
+  --luz-brand-active: #ff807b;
+  --luz-brand-subtle: #3f1918;
+  --luz-brand-fill: #fa6865;
+  --luz-brand-fill-hover: #ff807b;
+  --luz-brand-fill-active: #ff807b;
+
+  /* Status */
+  --luz-color-success: #6ed9d2;
+  --luz-color-success-bg: #082c2c;
+  --luz-color-danger: #ffaba4;
+  --luz-color-danger-bg: rgba(134, 38, 40, 0.85);
+  --luz-color-danger-fill: #fa6865;
+  --luz-color-warning: #fdb862;
+  --luz-color-warning-accent: #fdb862;
+  --luz-color-warning-bg: #33230f;
+  --luz-color-teal-bg: rgba(0, 90, 91, 0.85);
+
+  /* Inputs */
+  --luz-input-bg: #1c1914;
+  --luz-input-border: #e1ded7;
+
+  /* Extended */
+  --luz-color-teal: #83e1db;
+  --luz-color-purple: #ceb6fc;
+  --luz-color-purple-bg: #2a203b;
+  --luz-color-code: #ceb6fc;
+  --luz-color-info: #b8b4ac;
+  --luz-color-info-bg: #25211b;
+
+  /* Code */
+  --luz-code-comment: #b8b4ac;
+  --luz-code-keyword: #edebe5;
+  --luz-code-name: #ff847e;
+  --luz-code-property: #ceb6fc;
+  --luz-code-string: #6ed9d2;
+  --luz-code-literal: #fdb862;
+
+  /* IKAY: the stronger hairline */
+  --ikay-border-strong: #5a544d;
+}
+
+/* -------------------------------------------------------------------------
+   WIDE GAMUT: the colours that do not fit in sRGB
+   ------------------------------------------------------------------------- */
+
+@media (color-gamut: p3) {
+  [data-theme="ikay"],
+  [data-theme="ikay"][data-mode="light"] {
+    --luz-brand-hover: oklch(0.49 0.21 24);
+    --luz-brand-active: oklch(0.49 0.21 24);
+    --luz-brand-subtle: oklch(0.92 0.05 24);
+    --luz-brand-fill-hover: oklch(0.49 0.21 24);
+    --luz-brand-fill-active: oklch(0.49 0.21 24);
+    --luz-sidebar-active-bg: oklch(0.8 0.13 24);
+    --luz-sidebar-logo-bg: oklch(0.8 0.13 24);
+    --luz-color-success: oklch(0.46 0.09 190);
+    --luz-color-danger-bg: oklch(0.89 0.07 24);
+    --luz-color-warning: oklch(0.5 0.13 60);
+    --luz-color-warning-accent: oklch(0.5 0.13 60);
+    --luz-color-teal: oklch(0.4 0.08 190);
+    --luz-code-string: oklch(0.46 0.09 190);
+    --luz-code-literal: oklch(0.5 0.13 60);
+  }
+
+  [data-theme="ikay"][data-mode="dark"] {
+    --luz-focus-ring: oklch(0.8 0.15 24);
+    --luz-brand-primary: oklch(0.76 0.16 24);
+    --luz-brand-hover: oklch(0.76 0.17 24);
+    --luz-brand-active: oklch(0.76 0.17 24);
+    --luz-brand-fill-hover: oklch(0.76 0.17 24);
+    --luz-brand-fill-active: oklch(0.76 0.17 24);
+    --luz-color-danger: oklch(0.84 0.12 24);
+    --luz-color-teal-bg: oklch(0.42 0.08 195 / 0.85);
+    --luz-code-name: oklch(0.76 0.16 24);
+  }
+}

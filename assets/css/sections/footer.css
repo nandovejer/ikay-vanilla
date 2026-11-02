@@ -1,35 +1,34 @@
-/* FOOTER: ink band, dark in both themes */
+/* FOOTER: ink band. The element carries data-mode="dark", so it is dark in every mode */
 .footer {
-  padding: var(--space-xl) var(--gutter) calc(var(--space-xl) + 4rem);
-  border-block-start: 1px solid var(--border);
-  background-color: var(--ink);
-  color: var(--on-ink);
-  color-scheme: dark;
+  padding: var(--ikay-space-xl) var(--ikay-gutter) calc(var(--ikay-space-xl) + var(--luz-space-3xl));
+  border-block-start: 1px solid var(--luz-divider);
+  background-color: var(--luz-sidebar-bg);
+  color: var(--luz-sidebar-text);
 
   a {
-    color: var(--accent-on-ink);
+    color: var(--luz-sidebar-active-bg);
   }
 
   .eyebrow {
-    font-family: var(--font-mono);
-    color: var(--accent-on-ink);
+    font-family: var(--luz-font-mono);
+    color: var(--luz-sidebar-active-bg);
   }
 
   p {
-    max-inline-size: var(--measure);
+    max-inline-size: var(--ikay-measure);
     margin-block-end: 0.75em;
-    color: var(--on-ink-muted);
+    color: var(--luz-sidebar-label);
   }
 
   @media (min-width: 70em) {
-    margin-inline-start: var(--sidebar-w);
+    margin-inline-start: var(--ikay-sidebar-w);
   }
 }
 
 .footer__inner {
   display: grid;
-  gap: var(--space-l);
-  max-inline-size: var(--content-max);
+  gap: var(--ikay-space-l);
+  max-inline-size: var(--ikay-content-max);
   margin-inline: auto;
 
   @media (min-width: 60em) {
@@ -39,18 +38,18 @@
 }
 
 .footer__title {
-  margin-block: 0.25rem 0.75rem;
-  font-size: var(--step-3);
-  color: var(--on-ink);
+  margin-block: var(--luz-space-2xs) var(--luz-space-sm);
+  font-size: var(--ikay-step-3);
+  color: var(--luz-sidebar-text);
 }
 
 .footer__article--legal {
   display: grid;
-  gap: var(--space-2xs);
-  padding: var(--space-m);
-  border: 1px solid oklch(1 0 0 / 0.12);
-  border-radius: var(--radius-l);
-  font-size: var(--step--1);
+  gap: var(--luz-space-xs);
+  padding: var(--ikay-space-m);
+  border: 1px solid var(--luz-sidebar-border);
+  border-radius: var(--ikay-radius-l);
+  font-size: var(--luz-text-md);
 
   p {
     margin: 0;
@@ -66,10 +65,10 @@
   place-items: center;
   inline-size: 2.75rem;
   block-size: 2.75rem;
-  margin-block-end: var(--space-2xs);
+  margin-block-end: var(--luz-space-xs);
   border-radius: 50%;
-  background-color: var(--accent-fill);
-  color: var(--on-accent);
+  background-color: var(--luz-brand-fill);
+  color: var(--luz-text-on-fill);
 
   .iconbg {
     inline-size: 1.6rem;

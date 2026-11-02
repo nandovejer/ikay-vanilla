@@ -1,9 +1,10 @@
 /**
  * Theme: Auto (follows the system) · Light · Dark.
- * - <html data-theme="light|dark"> forces a scheme; no attribute = auto.
- *   The css switches color-scheme, and every light-dark() token follows.
+ * - <html data-theme="ikay"> is the LUZ theme; <html data-mode="light|dark">
+ *   is the colour mode in use. In Auto, the mode is the system's, and it
+ *   follows the system while the page is open.
  * - The choice is kept in localStorage ("ikay-theme"); a tiny inline script
- *   in <head> applies it before the first paint.
+ *   in <head> applies the mode before the first paint.
  * - The "Dark mode" card keeps reading the SYSTEM preference, on purpose.
  */
 import template from "./template.js";
@@ -22,6 +23,10 @@ const current = () => {
   return MODES.includes(saved) ? saved : "auto";
 };
 
+const systemDark = matchMedia("(prefers-color-scheme: dark)");
+/** The colour mode to paint: the choice, or else the system's */
+const resolve = (mode) => (mode === "auto" ? (systemDark.matches ? "dark" : "light") : mode);
+
 const theme = {
   init() {
     const cycle = document.querySelector(".js-theme-cycle");
@@ -30,7 +35,7 @@ const theme = {
     options?.replaceChildren(
       ...MODES.map((mode) => {
         const button = template("tpl-theme-btn").firstElementChild;
-        button.dataset.theme = mode;
+        button.dataset.choice = mode;
         button.querySelector(".iconbg").classList.add(`iconbg-${ICONS[mode]}`);
         button.querySelector(".nav__lang__name").textContent = t(`theme.${mode}`);
         button.addEventListener("click", () => theme.set(mode));
@@ -42,6 +47,9 @@ const theme = {
       theme.set(next);
     });
     theme.paint(current());
+    systemDark.addEventListener("change", () => {
+      if (current() === "auto") theme.paint("auto");
+    });
   },
   /** Save and apply, with a soft cross-fade where supported */
   set(mode) {
@@ -54,9 +62,7 @@ const theme = {
     }
   },
   paint(mode) {
-    const root = document.documentElement;
-    if (mode === "auto") delete root.dataset.theme;
-    else root.dataset.theme = mode;
+    document.documentElement.dataset.mode = resolve(mode);
 
     // browser chrome colour
     document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
@@ -74,7 +80,7 @@ const theme = {
       icon.className = `iconbg iconbg-${ICONS[mode]} js-theme-icon`;
     }
     document.querySelectorAll(".js-theme-btn").forEach((button) => {
-      button.setAttribute("aria-pressed", String(button.dataset.theme === mode));
+      button.setAttribute("aria-pressed", String(button.dataset.choice === mode));
     });
   },
 };

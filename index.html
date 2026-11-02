@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="ikay">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,12 +11,16 @@
     <meta name="theme-color" content="#1a1712" media="(prefers-color-scheme: dark)" />
     <title>Tu navegador dice...</title>
     <link rel="icon" href="favicon.ico" />
-    <!-- Theme chosen by the visitor, applied before the first paint (no flash) -->
+    <!-- Colour mode: the visitor's choice, or else the system's. Applied before the first paint (no flash) -->
     <script>
-      try {
-        const theme = localStorage.getItem("ikay-theme");
-        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
-      } catch {}
+      {
+        let mode;
+        try {
+          mode = localStorage.getItem("ikay-theme");
+        } catch {}
+        if (mode !== "light" && mode !== "dark") mode = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.mode = mode;
+      }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,7 +51,7 @@
     <!-- APP CONTENT -->
     <header id="appHeader" class="header"></header>
     <main id="appMain" class="main" tabindex="-1"></main>
-    <footer id="appFooter" class="footer"></footer>
+    <footer id="appFooter" class="footer" data-theme="ikay" data-mode="dark"></footer>
 
     <!-- CARD MODAL (<dialog>) -->
     <div id="caimodal"></div>

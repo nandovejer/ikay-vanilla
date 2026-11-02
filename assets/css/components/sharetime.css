@@ -1,27 +1,27 @@
 /* SHARE: floating action + fallback list (inside the modal) */
 .sharetime__btn {
   position: fixed;
-  inset-block-end: max(var(--space-s), env(safe-area-inset-bottom));
-  inset-inline-end: max(var(--space-s), env(safe-area-inset-right));
+  inset-block-end: max(var(--luz-space-md), env(safe-area-inset-bottom));
+  inset-inline-end: max(var(--luz-space-md), env(safe-area-inset-right));
   z-index: 30;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--luz-space-xs);
   min-inline-size: 3.25rem;
   min-block-size: 3.25rem;
-  padding-inline: 1rem;
-  border: 1.5px solid var(--on-accent);
-  border-radius: var(--radius-full);
-  background-color: var(--accent-fill);
-  color: var(--on-accent);
+  padding-inline: var(--luz-space-md);
+  border: 1.5px solid var(--luz-text-on-fill);
+  border-radius: var(--luz-radius-full);
+  background-color: var(--luz-brand-fill);
+  color: var(--luz-text-on-fill);
   font-weight: 650;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--luz-shadow-sm);
   cursor: pointer;
   transition:
-    background-color var(--dur) var(--ease),
-    translate var(--dur) var(--ease),
-    box-shadow var(--dur) var(--ease);
+    background-color var(--luz-duration-base) var(--luz-easing-standard),
+    translate var(--luz-duration-base) var(--luz-easing-standard),
+    box-shadow var(--luz-duration-base) var(--luz-easing-standard);
 
   .iconbg {
     inline-size: 1.15rem;
@@ -29,9 +29,9 @@
   }
 
   &:hover {
-    background-color: var(--accent-fill-strong);
+    background-color: var(--luz-brand-fill-hover);
     translate: 0 -2px;
-    box-shadow: var(--shadow-3);
+    box-shadow: var(--luz-shadow-lg);
   }
 }
 
@@ -61,20 +61,20 @@
 .shareTimeList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
-  gap: 0.5rem;
+  gap: var(--luz-space-xs);
 }
 
 .shareTimeList__item__link {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  min-block-size: var(--target);
-  padding: 0.5rem 0.8rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-m);
-  color: var(--text);
+  min-block-size: var(--luz-control-lg);
+  padding: var(--luz-space-xs) 0.8rem;
+  border: 1px solid var(--luz-divider);
+  border-radius: var(--luz-radius-md);
+  color: var(--luz-text-primary);
   text-decoration: none;
-  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  transition: background-color var(--luz-duration-base) var(--luz-easing-standard), border-color var(--luz-duration-base) var(--luz-easing-standard);
 
   .iconbg {
     inline-size: 1.25rem;
@@ -82,7 +82,7 @@
   }
 
   &:hover {
-    background-color: var(--surface-2);
-    border-color: var(--border-strong);
+    background-color: var(--luz-surface-muted);
+    border-color: var(--ikay-border-strong);
   }
 }

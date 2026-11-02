@@ -26,227 +26,227 @@
 }
 
 .iconbg-facebook {
-  --icon: var(--bgurl-facebook);
+  --icon: var(--ikay-icon-facebook);
 }
 
 .iconbg-twitter {
-  --icon: var(--bgurl-twitter);
+  --icon: var(--ikay-icon-twitter);
 }
 
 .iconbg-linkedin {
-  --icon: var(--bgurl-linkedin);
+  --icon: var(--ikay-icon-linkedin);
 }
 
 .iconbg-whatsapp {
-  --icon: var(--bgurl-whatsapp);
+  --icon: var(--ikay-icon-whatsapp);
 }
 
 .iconbg-reddit {
-  --icon: var(--bgurl-reddit);
+  --icon: var(--ikay-icon-reddit);
 }
 
 .iconbg-contact {
-  --icon: var(--bgurl-contact);
+  --icon: var(--ikay-icon-contact);
 }
 
 .iconbg-logo {
-  --icon: var(--bgurl-logo);
+  --icon: var(--ikay-icon-logo);
 }
 
 .iconbg-battery {
-  --icon: var(--bgurl-battery);
+  --icon: var(--ikay-icon-battery);
 }
 
 .iconbg-close {
-  --icon: var(--bgurl-close);
+  --icon: var(--ikay-icon-close);
 }
 
 .iconbg-connection {
-  --icon: var(--bgurl-connection);
+  --icon: var(--ikay-icon-connection);
 }
 
 .iconbg-hardware {
-  --icon: var(--bgurl-hardware);
+  --icon: var(--ikay-icon-hardware);
 }
 
 .iconbg-info {
-  --icon: var(--bgurl-info);
+  --icon: var(--ikay-icon-info);
 }
 
 .iconbg-location {
-  --icon: var(--bgurl-location);
+  --icon: var(--ikay-icon-location);
 }
 
 .iconbg-menu {
-  --icon: var(--bgurl-menu);
+  --icon: var(--ikay-icon-menu);
 }
 
 .iconbg-project {
-  --icon: var(--bgurl-project);
+  --icon: var(--ikay-icon-project);
 }
 
 .iconbg-share {
-  --icon: var(--bgurl-share);
+  --icon: var(--ikay-icon-share);
 }
 
 .iconbg-resolution {
-  --icon: var(--bgurl-resolution);
+  --icon: var(--ikay-icon-resolution);
 }
 
 .iconbg-orientation {
-  --icon: var(--bgurl-orientation);
+  --icon: var(--ikay-icon-orientation);
 }
 
 .iconbg-darkmode {
-  --icon: var(--bgurl-darkmode);
+  --icon: var(--ikay-icon-darkmode);
 }
 
 .iconbg-lang {
-  --icon: var(--bgurl-lang);
+  --icon: var(--ikay-icon-lang);
 }
 
 .iconbg-ram {
-  --icon: var(--bgurl-ram);
+  --icon: var(--ikay-icon-ram);
 }
 
 .iconbg-cpu {
-  --icon: var(--bgurl-cpu);
+  --icon: var(--ikay-icon-cpu);
 }
 
 .iconbg-gpu {
-  --icon: var(--bgurl-gpu);
+  --icon: var(--ikay-icon-gpu);
 }
 
 .iconbg-ip {
-  --icon: var(--bgurl-ip);
+  --icon: var(--ikay-icon-ip);
 }
 
 .iconbg-telco {
-  --icon: var(--bgurl-telco);
+  --icon: var(--ikay-icon-telco);
 }
 
 .iconbg-exit {
-  --icon: var(--bgurl-exit);
+  --icon: var(--ikay-icon-exit);
 }
 
 .iconbg-devices {
-  --icon: var(--bgurl-devices);
+  --icon: var(--ikay-icon-devices);
 }
 
 .iconbg-mobileAndroid {
-  --icon: var(--bgurl-mobileAndroid);
+  --icon: var(--ikay-icon-mobileAndroid);
 }
 
 .iconbg-os {
-  --icon: var(--bgurl-os);
+  --icon: var(--ikay-icon-os);
 }
 
 .iconbg-windows {
-  --icon: var(--bgurl-windows);
+  --icon: var(--ikay-icon-windows);
 }
 
 .iconbg-browser {
-  --icon: var(--bgurl-browser);
+  --icon: var(--ikay-icon-browser);
 }
 
 .iconbg-firefox {
-  --icon: var(--bgurl-firefox);
+  --icon: var(--ikay-icon-firefox);
 }
 
 .iconbg-fingerprint {
-  --icon: var(--bgurl-fingerprint);
+  --icon: var(--ikay-icon-fingerprint);
 }
 
 .iconbg-timezone {
-  --icon: var(--bgurl-timezone);
+  --icon: var(--ikay-icon-timezone);
 }
 
 .iconbg-locale {
-  --icon: var(--bgurl-locale);
+  --icon: var(--ikay-icon-locale);
 }
 
 .iconbg-display {
-  --icon: var(--bgurl-display);
+  --icon: var(--ikay-icon-display);
 }
 
 .iconbg-preferences {
-  --icon: var(--bgurl-preferences);
+  --icon: var(--ikay-icon-preferences);
 }
 
 .iconbg-input {
-  --icon: var(--bgurl-input);
+  --icon: var(--ikay-icon-input);
 }
 
 .iconbg-keyboard {
-  --icon: var(--bgurl-keyboard);
+  --icon: var(--ikay-icon-keyboard);
 }
 
 .iconbg-canvas {
-  --icon: var(--bgurl-canvas);
+  --icon: var(--ikay-icon-canvas);
 }
 
 .iconbg-audio {
-  --icon: var(--bgurl-audio);
+  --icon: var(--ikay-icon-audio);
 }
 
 .iconbg-fonts {
-  --icon: var(--bgurl-fonts);
+  --icon: var(--ikay-icon-fonts);
 }
 
 .iconbg-voices {
-  --icon: var(--bgurl-voices);
+  --icon: var(--ikay-icon-voices);
 }
 
 .iconbg-incognito {
-  --icon: var(--bgurl-incognito);
+  --icon: var(--ikay-icon-incognito);
 }
 
 .iconbg-adblock {
-  --icon: var(--bgurl-adblock);
+  --icon: var(--ikay-icon-adblock);
 }
 
 .iconbg-signals {
-  --icon: var(--bgurl-signals);
+  --icon: var(--ikay-icon-signals);
 }
 
 .iconbg-navigation {
-  --icon: var(--bgurl-navigation);
+  --icon: var(--ikay-icon-navigation);
 }
 
 .iconbg-behaviour {
-  --icon: var(--bgurl-behaviour);
+  --icon: var(--ikay-icon-behaviour);
 }
 
 /* CARD STATUS: leaked (warning), protected or good news (shield), pending */
 .iconbg-warning {
-  --icon: var(--bgurl-warning);
+  --icon: var(--ikay-icon-warning);
 }
 
 .iconbg-shield-check {
-  --icon: var(--bgurl-shield-check);
+  --icon: var(--ikay-icon-shield-check);
 }
 
 .iconbg-pending {
-  --icon: var(--bgurl-pending);
+  --icon: var(--ikay-icon-pending);
 }
 
 .iconbg-status {
-  --icon: var(--bgurl-warning);
+  --icon: var(--ikay-icon-warning);
 }
 
 /* THEME */
 .iconbg-sun {
-  --icon: var(--bgurl-sun);
+  --icon: var(--ikay-icon-sun);
 }
 
 .iconbg-moon {
-  --icon: var(--bgurl-moon);
+  --icon: var(--ikay-icon-moon);
 }
 
 .iconbg-theme-auto {
-  --icon: var(--bgurl-theme-auto);
+  --icon: var(--ikay-icon-theme-auto);
 }
 
 .iconbg-bolt {
-  --icon: var(--bgurl-bolt);
+  --icon: var(--ikay-icon-bolt);
 }
