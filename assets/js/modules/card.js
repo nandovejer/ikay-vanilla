@@ -230,7 +230,7 @@ const card = {
   sync(article) {
     // each typeface name written in its own typeface (our own list of names)
     article.querySelectorAll(".card__api--visible li:not([style])").forEach((item) => {
-      item.style.fontFamily = `"${item.textContent}", var(--font-body)`;
+      item.style.fontFamily = `"${item.textContent}", var(--luz-font-body)`;
     });
     article.querySelectorAll("[data-mirror]").forEach((el) => {
       const text = article.querySelector(el.dataset.mirror)?.textContent ?? "";

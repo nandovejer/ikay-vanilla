@@ -1,0 +1,22 @@
+{
+  "name": "ikay-vanilla",
+  "version": "1.0.0",
+  "private": true,
+  "description": "IKAY: your browser fingerprint, shown in plain language. Plain HTML, CSS and JavaScript on LUZ.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "luz:sync": "node scripts/sync-luz.js",
+    "preload": "node scripts/sync-preload.js",
+    "check": "luz-check index.html assets/css && node scripts/sync-preload.js --check"
+  },
+  "dependencies": {
+    "@luz-ds/tokens": "0.3.0"
+  },
+  "devDependencies": {
+    "@luz-ds/check": "0.3.0"
+  }
+}

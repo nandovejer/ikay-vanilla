@@ -2,7 +2,7 @@
  * ICONS
  * Monochrome SVGs used as masks painted with currentColor, so the same
  * files work in light and dark mode and inherit the text colour.
- * .iconbg-{name} -> --bgurl-{name} (settings/variables.css)
+ * .iconbg-{name} -> --ikay-icon-{name} (settings/variables.css)
  */
 .iconbg {
   display: inline-block;
@@ -25,228 +25,123 @@
   }
 }
 
+/* SHARE */
 .iconbg-facebook {
-  --icon: var(--bgurl-facebook);
+  --icon: var(--ikay-icon-facebook);
 }
 
 .iconbg-twitter {
-  --icon: var(--bgurl-twitter);
+  --icon: var(--ikay-icon-twitter);
 }
 
 .iconbg-linkedin {
-  --icon: var(--bgurl-linkedin);
+  --icon: var(--ikay-icon-linkedin);
 }
 
 .iconbg-whatsapp {
-  --icon: var(--bgurl-whatsapp);
+  --icon: var(--ikay-icon-whatsapp);
 }
 
 .iconbg-reddit {
-  --icon: var(--bgurl-reddit);
+  --icon: var(--ikay-icon-reddit);
 }
 
 .iconbg-contact {
-  --icon: var(--bgurl-contact);
+  --icon: var(--ikay-icon-contact);
 }
 
-.iconbg-logo {
-  --icon: var(--bgurl-logo);
-}
-
-.iconbg-battery {
-  --icon: var(--bgurl-battery);
-}
-
-.iconbg-close {
-  --icon: var(--bgurl-close);
-}
-
-.iconbg-connection {
-  --icon: var(--bgurl-connection);
-}
-
-.iconbg-hardware {
-  --icon: var(--bgurl-hardware);
-}
-
-.iconbg-info {
-  --icon: var(--bgurl-info);
+/* CHAPTERS AND MENU */
+.iconbg-fingerprint {
+  --icon: var(--ikay-icon-fingerprint);
 }
 
 .iconbg-location {
-  --icon: var(--bgurl-location);
-}
-
-.iconbg-menu {
-  --icon: var(--bgurl-menu);
+  --icon: var(--ikay-icon-location);
 }
 
 .iconbg-project {
-  --icon: var(--bgurl-project);
-}
-
-.iconbg-share {
-  --icon: var(--bgurl-share);
-}
-
-.iconbg-resolution {
-  --icon: var(--bgurl-resolution);
-}
-
-.iconbg-orientation {
-  --icon: var(--bgurl-orientation);
-}
-
-.iconbg-darkmode {
-  --icon: var(--bgurl-darkmode);
-}
-
-.iconbg-lang {
-  --icon: var(--bgurl-lang);
-}
-
-.iconbg-ram {
-  --icon: var(--bgurl-ram);
-}
-
-.iconbg-cpu {
-  --icon: var(--bgurl-cpu);
-}
-
-.iconbg-gpu {
-  --icon: var(--bgurl-gpu);
-}
-
-.iconbg-ip {
-  --icon: var(--bgurl-ip);
-}
-
-.iconbg-telco {
-  --icon: var(--bgurl-telco);
-}
-
-.iconbg-exit {
-  --icon: var(--bgurl-exit);
-}
-
-.iconbg-devices {
-  --icon: var(--bgurl-devices);
-}
-
-.iconbg-mobileAndroid {
-  --icon: var(--bgurl-mobileAndroid);
-}
-
-.iconbg-os {
-  --icon: var(--bgurl-os);
-}
-
-.iconbg-windows {
-  --icon: var(--bgurl-windows);
-}
-
-.iconbg-browser {
-  --icon: var(--bgurl-browser);
-}
-
-.iconbg-firefox {
-  --icon: var(--bgurl-firefox);
-}
-
-.iconbg-fingerprint {
-  --icon: var(--bgurl-fingerprint);
+  --icon: var(--ikay-icon-project);
 }
 
 .iconbg-timezone {
-  --icon: var(--bgurl-timezone);
+  --icon: var(--ikay-icon-timezone);
 }
 
-.iconbg-locale {
-  --icon: var(--bgurl-locale);
+.iconbg-os {
+  --icon: var(--ikay-icon-os);
 }
 
-.iconbg-display {
-  --icon: var(--bgurl-display);
+.iconbg-connection {
+  --icon: var(--ikay-icon-connection);
 }
 
-.iconbg-preferences {
-  --icon: var(--bgurl-preferences);
+.iconbg-hardware {
+  --icon: var(--ikay-icon-hardware);
 }
 
-.iconbg-input {
-  --icon: var(--bgurl-input);
-}
-
-.iconbg-keyboard {
-  --icon: var(--bgurl-keyboard);
+.iconbg-battery {
+  --icon: var(--ikay-icon-battery);
 }
 
 .iconbg-canvas {
-  --icon: var(--bgurl-canvas);
-}
-
-.iconbg-audio {
-  --icon: var(--bgurl-audio);
-}
-
-.iconbg-fonts {
-  --icon: var(--bgurl-fonts);
-}
-
-.iconbg-voices {
-  --icon: var(--bgurl-voices);
+  --icon: var(--ikay-icon-canvas);
 }
 
 .iconbg-incognito {
-  --icon: var(--bgurl-incognito);
-}
-
-.iconbg-adblock {
-  --icon: var(--bgurl-adblock);
-}
-
-.iconbg-signals {
-  --icon: var(--bgurl-signals);
-}
-
-.iconbg-navigation {
-  --icon: var(--bgurl-navigation);
+  --icon: var(--ikay-icon-incognito);
 }
 
 .iconbg-behaviour {
-  --icon: var(--bgurl-behaviour);
+  --icon: var(--ikay-icon-behaviour);
 }
 
-/* CARD STATUS: leaked (warning), protected or good news (shield), pending */
-.iconbg-warning {
-  --icon: var(--bgurl-warning);
+.iconbg-info {
+  --icon: var(--ikay-icon-info);
 }
 
-.iconbg-shield-check {
-  --icon: var(--bgurl-shield-check);
+.iconbg-share {
+  --icon: var(--ikay-icon-share);
 }
 
-.iconbg-pending {
-  --icon: var(--bgurl-pending);
+.iconbg-repo {
+  --icon: var(--ikay-icon-repo);
 }
 
+.iconbg-close {
+  --icon: var(--ikay-icon-close);
+}
+
+.iconbg-menu {
+  --icon: var(--ikay-icon-menu);
+}
+
+.iconbg-bolt {
+  --icon: var(--ikay-icon-bolt);
+}
+
+.iconbg-logo {
+  --icon: var(--ikay-icon-fingerprint);
+}
+
+/* CARD STATUS */
+/* the status of a card: card.css and main.css swap the icon */
 .iconbg-status {
-  --icon: var(--bgurl-warning);
+  --icon: var(--ikay-icon-warning);
 }
 
 /* THEME */
 .iconbg-sun {
-  --icon: var(--bgurl-sun);
+  --icon: var(--ikay-icon-sun);
 }
 
 .iconbg-moon {
-  --icon: var(--bgurl-moon);
+  --icon: var(--ikay-icon-moon);
+}
+
+.iconbg-contrast {
+  --icon: var(--ikay-icon-contrast);
 }
 
 .iconbg-theme-auto {
-  --icon: var(--bgurl-theme-auto);
-}
-
-.iconbg-bolt {
-  --icon: var(--bgurl-bolt);
+  --icon: var(--ikay-icon-theme-auto);
 }

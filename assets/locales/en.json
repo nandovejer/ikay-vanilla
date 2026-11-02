@@ -51,7 +51,7 @@
     "title": "The state of your data",
     "content1": "<p>All the data shown on this website is stored on your device only, and is never sent to any external server. Why? Because I'm not interested in your data, I'm interested in your awareness.</p>",
     "content2": "<p>That said, I don't know whether GitHub (the server hosting this website) or ipapi.co (the external API I use to work out your city, country and telecom operator from your IP) store data similar to the one shown here, or any other kind. But hey, if you don't mind sharing every dinner, moment, memory or feeling on Facebook, you probably won't mind the information (much like this) collected about you by that wonderful website where they told you that you can watch paid movies online, but for free :D Allow me a little irony :)</p>",
-    "thanks": "<p>I want to thank <a href='https://github.com/RobinLinus'>Robin Linus</a> for the inspiration, and <a href='https://www.flaticon.com'>Flaticon</a> for their icons</p>",
+    "thanks": "<p>I want to thank <a href='https://github.com/RobinLinus'>Robin Linus</a> for the inspiration, <a href='https://github.com/nandovejer/luz'>LUZ</a> for its design tokens and icons, and <a href='https://icons.getbootstrap.com'>Bootstrap Icons</a> for the brand marks</p>",
     "license": "<p><a href='https://opensource.org/licenses/MIT'>MIT LICENSE - https://opensource.org/licenses/MIT</a>.</p>",
     "eyebrow": "Your data"
   },
@@ -623,6 +623,7 @@
     "auto": "Automatic",
     "light": "Light",
     "dark": "Dark",
+    "high-contrast": "High contrast",
     "change": "Look: {0}. Change"
   },
   "motion": {

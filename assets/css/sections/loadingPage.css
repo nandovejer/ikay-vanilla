@@ -7,7 +7,7 @@
   block-size: 3px;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 400ms var(--ease) 300ms;
+  transition: opacity 400ms var(--luz-easing-standard) 300ms;
 }
 
 body.loadingEnable .loadingPage {
@@ -24,6 +24,6 @@ body.loadingEnable .loadingPage {
   block-size: 100%;
   border-start-end-radius: 3px;
   border-end-end-radius: 3px;
-  background-color: var(--accent-fill-strong);
-  transition: inline-size 300ms var(--ease);
+  background-color: var(--luz-brand-fill-hover);
+  transition: inline-size 300ms var(--luz-easing-standard);
 }

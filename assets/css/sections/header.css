@@ -10,11 +10,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-s);
-  block-size: var(--header-h);
-  padding-inline: var(--gutter);
-  border-block-end: 1px solid var(--rule);
-  background-color: var(--bg);
+  gap: var(--luz-space-md);
+  block-size: var(--ikay-header-h);
+  padding-inline: var(--ikay-gutter);
+  border-block-end: 1px solid var(--luz-outline);
+  background-color: var(--luz-surface-page);
 }
 
 .header__linkHome {
@@ -22,10 +22,10 @@
   align-items: center;
   gap: 0.7rem;
   min-inline-size: 0;
-  min-block-size: var(--target);
-  color: var(--text);
+  min-block-size: var(--luz-control-lg);
+  color: var(--luz-text-primary);
   text-decoration: none;
-  border-radius: var(--radius-m);
+  border-radius: var(--luz-radius-md);
 }
 
 .header__logo {
@@ -35,9 +35,9 @@
   inline-size: 2.5rem;
   block-size: 2.5rem;
   border-radius: 50%;
-  background-color: var(--accent-fill);
-  color: var(--on-accent);
-  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--on-accent) 12%, transparent);
+  background-color: var(--luz-brand-fill);
+  color: var(--luz-text-on-fill);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--luz-text-on-fill) 12%, transparent);
 
   .iconbg {
     inline-size: 1.55rem;
@@ -52,36 +52,36 @@
 }
 
 .header__h1 {
-  font-family: var(--font-display);
-  font-size: var(--step-1);
+  font-family: var(--luz-font-heading);
+  font-size: var(--ikay-step-1);
   font-weight: 800;
   letter-spacing: 0.02em;
 }
 
 .header__description {
   overflow: hidden;
-  font-size: var(--step--2);
+  font-size: var(--luz-text-sm);
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--luz-text-secondary);
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-/* theme: one cycling button (Auto -> Light -> Dark), always at hand */
+/* theme: one cycling button (Auto -> Light -> Dark -> High contrast), always at hand */
 .header__btnTheme {
   display: grid;
   place-items: center;
   flex: none;
-  inline-size: var(--target);
-  block-size: var(--target);
+  inline-size: var(--luz-control-lg);
+  block-size: var(--luz-control-lg);
   margin-inline-start: auto;
   padding: 0;
-  border: 1.5px solid var(--rule);
+  border: 1.5px solid var(--luz-outline);
   border-radius: 50%;
-  background-color: var(--bg);
-  color: var(--text);
+  background-color: var(--luz-surface-page);
+  color: var(--luz-text-primary);
   cursor: pointer;
-  transition: background-color var(--dur) var(--ease);
+  transition: background-color var(--luz-duration-base) var(--luz-easing-standard);
 
   .iconbg {
     inline-size: 1.2rem;
@@ -89,7 +89,7 @@
   }
 
   &:hover {
-    background-color: var(--surface-2);
+    background-color: var(--luz-surface-muted);
   }
 }
 
@@ -97,30 +97,23 @@
   display: grid;
   place-items: center;
   flex: none;
-  inline-size: var(--target);
-  block-size: var(--target);
+  inline-size: var(--luz-control-lg);
+  block-size: var(--luz-control-lg);
   padding: 0;
-  border: 1.5px solid var(--rule);
-  border-radius: var(--radius-m);
-  background-color: var(--bg);
-  color: var(--text);
+  border: 1.5px solid var(--luz-outline);
+  border-radius: var(--luz-radius-md);
+  background-color: var(--luz-surface-page);
+  color: var(--luz-text-primary);
   cursor: pointer;
-  transition: background-color var(--dur) var(--ease);
+  transition: background-color var(--luz-duration-base) var(--luz-easing-standard);
 
-  /* three lines drawn in css: the classic, most recognisable menu icon */
   .iconbg-menu {
-    inline-size: 1.15rem;
-    block-size: 0.9rem;
-    background:
-      linear-gradient(currentColor 0 0) top / 100% 2px no-repeat,
-      linear-gradient(currentColor 0 0) center / 100% 2px no-repeat,
-      linear-gradient(currentColor 0 0) bottom / 100% 2px no-repeat;
-    -webkit-mask: none;
-    mask: none;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
   }
 
   &:hover {
-    background-color: var(--surface-2);
+    background-color: var(--luz-surface-muted);
   }
 
   @media (min-width: 70em) {

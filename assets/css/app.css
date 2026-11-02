@@ -1,11 +1,15 @@
 /*
  * IKAY - styles
+ * Built on the LUZ tokens (assets/vendor/luz/tokens.min.css, loaded before
+ * this file): the `ikay` theme sets them, the components use them.
  * Plain CSS, no preprocessor: custom properties, native nesting,
  * cascade layers and container queries. ITCSS order kept as layers.
+ * The layers of LUZ (luz.*) come first, so every layer below wins over them.
  */
 @layer settings, generic, elements, objects, components, sections, utilities;
 
 /* SETTINGS */
+@import url("settings/theme-ikay.css") layer(settings);
 @import url("settings/variables.css") layer(settings);
 
 /* GENERIC */

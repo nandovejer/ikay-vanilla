@@ -32,19 +32,20 @@ const behaviour = {
     };
     new ResizeObserver(resize).observe(canvas);
 
-    // Dot colours come from the css (--behaviour-move / --behaviour-click),
-    // so the map follows the light or dark theme
+    // Dot colours are LUZ tokens, so the map follows the active mode
     const color = (name, fallback) =>
       getComputedStyle(canvas).getPropertyValue(name).trim() || fallback;
 
     // Your screen in miniature: the position inside the viewport
-    const dot = (event, radius, fill) => {
+    const dot = (event, radius, fill, alpha) => {
       const x = (event.clientX / innerWidth) * canvas.width;
       const y = (event.clientY / innerHeight) * canvas.height;
+      ctx.globalAlpha = alpha;
       ctx.fillStyle = fill;
       ctx.beginPath();
       ctx.arc(x, y, radius * devicePixelRatio, 0, Math.PI * 2);
       ctx.fill();
+      ctx.globalAlpha = 1;
     };
 
     let pending = false;
@@ -55,7 +56,7 @@ const behaviour = {
         if (pending) return;
         pending = true;
         requestAnimationFrame(() => {
-          dot(event, 3, color("--behaviour-move", "rgb(51 51 51 / 0.35)"));
+          dot(event, 3, color("--luz-text-primary", "#333"), 0.4);
           pending = false;
         });
       },
@@ -63,7 +64,7 @@ const behaviour = {
     );
     window.addEventListener("pointerdown", (event) => {
       state.clicks++;
-      dot(event, 6, color("--behaviour-click", "rgb(255 140 0 / 0.8)"));
+      dot(event, 6, color("--luz-brand-fill", "#d62e3a"), 0.9);
     });
     window.addEventListener("keydown", () => state.keys++);
     document.addEventListener("visibilitychange", () => {

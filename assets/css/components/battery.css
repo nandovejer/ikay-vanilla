@@ -7,25 +7,25 @@
  */
 .battery {
   --level: 0%;
-  --fill: color-mix(in oklch, var(--text) 78%, transparent);
+  --fill: color-mix(in oklch, var(--luz-text-primary) 78%, transparent);
 
   display: grid;
-  gap: var(--space-s);
-  margin-block-start: var(--space-2xs);
+  gap: var(--luz-space-md);
+  margin-block-start: var(--luz-space-xs);
 }
 
 .battery[data-state="low"] {
-  --fill: var(--accent-fill);
+  --fill: var(--luz-brand-fill);
 }
 
 .battery.battery--charging {
-  --fill: var(--success);
+  --fill: var(--luz-color-success);
 }
 
 .battery__gauge {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: var(--luz-space-sm);
 }
 
 .battery__icon {
@@ -33,9 +33,9 @@
   flex: none;
   inline-size: clamp(7.5rem, 6rem + 5vw, 10.5rem);
   block-size: clamp(3rem, 2.6rem + 1.4vw, 3.75rem);
-  margin-inline-end: 0.5rem;
+  margin-inline-end: var(--luz-space-xs);
   padding: 4px;
-  border: 2px solid var(--rule);
+  border: 2px solid var(--luz-outline);
   border-radius: 0.7rem;
 
   /* terminal */
@@ -47,7 +47,7 @@
     translate: 0 -50%;
     inline-size: 6px;
     block-size: 38%;
-    border: 2px solid var(--rule);
+    border: 2px solid var(--luz-outline);
     border-inline-start: 0;
     border-start-end-radius: 4px;
     border-end-end-radius: 4px;
@@ -61,15 +61,15 @@
   border-radius: 0.4rem;
   background-color: var(--fill);
   transition:
-    inline-size 600ms var(--ease),
-    background-color var(--dur) var(--ease);
+    inline-size 600ms var(--luz-easing-standard),
+    background-color var(--luz-duration-base) var(--luz-easing-standard);
 }
 
 .battery__bolt {
   display: none;
   inline-size: 1.4rem;
   block-size: 1.4rem;
-  color: var(--success);
+  color: var(--luz-color-success);
 }
 
 .battery--charging .battery__bolt {
@@ -77,20 +77,20 @@
 }
 
 .battery__percent {
-  font-family: var(--font-mono);
-  font-size: var(--step-2);
+  font-family: var(--luz-font-mono);
+  font-size: var(--ikay-step-2);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
 
 .battery[data-state="low"] .battery__percent {
-  color: var(--accent);
+  color: var(--luz-brand-primary);
 }
 
 /* a calm "breathing" fill while charging, only if motion is welcome */
 @media (prefers-reduced-motion: no-preference) {
   .battery--charging .battery__fill {
-    animation: pulse 2.4s var(--ease) infinite;
+    animation: pulse 2.4s var(--luz-easing-standard) infinite;
   }
 }
 
@@ -104,19 +104,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 0.25rem var(--space-s);
+  gap: var(--luz-space-2xs) var(--luz-space-md);
   padding-block: 0.45rem;
-  border-block-start: 1px dotted var(--border-strong);
+  border-block-start: 1px dotted var(--ikay-border-strong);
 }
 
 .battery__info__title {
-  font-size: var(--step--1);
-  color: var(--text-muted);
+  font-size: var(--luz-text-md);
+  color: var(--luz-text-secondary);
 }
 
 .battery__info__value {
-  font-family: var(--font-mono);
-  font-size: var(--step--1);
+  font-family: var(--luz-font-mono);
+  font-size: var(--luz-text-md);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
 }

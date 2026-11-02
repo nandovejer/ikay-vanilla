@@ -1,17 +1,13 @@
 /*
- * SETTINGS - design tokens
+ * SETTINGS - IKAY's own tokens
  *
- * Concept: "the file a website keeps on you". An editorial dossier:
- * paper and ink, numbered chapters and entries, an alarm crimson used as a
- * highlighter marker (never as big boxes), a small stamp for the wins.
- * - Type: Fraunces (display, headings), Inter Tight (reading),
- *   Fira Code (the data: every value found about you).
- * - Colour restraint: warm paper + near-black ink, ONE accent (alarm crimson),
- *   ONE success tone for wins. No decorative gradients, no glass.
- * - Light and dark are first class: light-dark() pairs, dark = dark paper.
+ * Colours, fonts, corners, shadows, motion and the reading size are LUZ
+ * tokens (--luz-*): the theme `ikay` sets them in theme-ikay.css, and the
+ * components use them directly. What is here is what LUZ has no token for:
+ * the fluid type and space steps, the layout measures and the icon files.
  *
  * Breakpoints (media queries cannot read custom properties):
- *   40em   bigger header / share label
+ *   40em   bigger header / share label  (= --luz-mq-sm, 640px)
  *   70em   the menu becomes a fixed sidebar
  * Components adapt to their own width with container queries.
  *
@@ -19,207 +15,63 @@
  * below resolve the same wherever the var() is used.
  */
 :root {
-  color-scheme: light dark;
+  /* # TYPE: fluid steps, 360px -> 1280px. The reading size is --luz-text-base. */
+  --ikay-step-1: clamp(1.2rem, 1.12rem + 0.35vw, 1.4rem);
+  --ikay-step-2: clamp(1.45rem, 1.3rem + 0.65vw, 1.85rem);
+  --ikay-step-3: clamp(1.75rem, 1.5rem + 1.1vw, 2.4rem);
 
-  /* # TYPOGRAPHY */
-  --font-body: "Inter Tight", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI",
-    Roboto, sans-serif;
-  --font-display: "Fraunces", "Noto Sans Arabic", Georgia, "Times New Roman", serif;
-  /* Fira Code has no Arabic: Noto Sans Arabic draws those letters joined */
-  --font-mono: "Fira Code", "Noto Sans Arabic", ui-monospace, "SFMono-Regular", Menlo, Consolas,
-    monospace;
+  --ikay-leading: 1.6;
+  --ikay-leading-tight: 1.2;
+  --ikay-measure: 62ch;
 
-  /* Fluid scale: 360px -> 1280px */
-  /* Body is 17-18px: written for everyone, not only for techies */
-  --step--2: clamp(0.8125rem, 0.8rem + 0.08vw, 0.875rem);
-  --step--1: clamp(0.9375rem, 0.92rem + 0.1vw, 1rem);
-  --step-0: clamp(1.0625rem, 1.03rem + 0.15vw, 1.125rem);
-  --step-1: clamp(1.2rem, 1.12rem + 0.35vw, 1.4rem);
-  --step-2: clamp(1.45rem, 1.3rem + 0.65vw, 1.85rem);
-  --step-3: clamp(1.75rem, 1.5rem + 1.1vw, 2.4rem);
-  --step-4: clamp(2.2rem, 1.8rem + 2vw, 3.4rem);
-
-  --leading: 1.6;
-  --leading-tight: 1.2;
-  --measure: 62ch;
-
-  /* # SPACING */
-  --space-3xs: 0.25rem;
-  --space-2xs: 0.5rem;
-  --space-xs: 0.75rem;
-  --space-s: 1rem;
-  --space-m: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
-  --space-l: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
-  --space-xl: clamp(2.5rem, 1.9rem + 2.6vw, 4.5rem);
-  --space-2xl: clamp(3.5rem, 2.6rem + 3.6vw, 6rem);
-  --gutter: clamp(1rem, 0.6rem + 2vw, 2rem);
+  /* # SPACE: from --luz-space-md (1rem) up, they grow with the screen */
+  --ikay-space-m: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+  --ikay-space-l: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+  --ikay-space-xl: clamp(2.5rem, 1.9rem + 2.6vw, 4.5rem);
+  --ikay-space-2xl: clamp(3.5rem, 2.6rem + 3.6vw, 6rem);
+  --ikay-gutter: clamp(1rem, 0.6rem + 2vw, 2rem);
 
   /* # SHAPE */
-  --radius-s: 0.25rem;
-  --radius-m: 0.4rem;
-  --radius-l: 0.6rem;
-  --radius-xl: 0.8rem;
-  --radius-full: 999px;
+  --ikay-radius-l: 0.6rem;
 
   /* # LAYOUT */
-  --header-h: 4rem;
-  --sidebar-w: 17rem;
+  --ikay-header-h: 4rem;
+  --ikay-sidebar-w: 17rem;
   /* one comfortable reading column */
-  --content-max: 46rem;
-  --target: 2.75rem; /* 44px */
+  --ikay-content-max: 46rem;
 
-  /* # MOTION */
-  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-  --dur: 180ms;
+  /* The canvas fingerprint is drawn on white paper in both modes */
+  --ikay-canvas-paper: #fcfaf6;
 
-  /* # COLOURS (oklch) */
-  /*
-   * ONE accent: an alarm red with a crimson touch. "Something about you leaked".
-   *   --accent-fill  filled surfaces (logo disc, share button, stamps)
-   *   --on-accent    text/icons on --accent-fill (>= 4.5:1)
-   *   --accent       accent as TEXT on paper (>= 4.5:1)
-   *   --marker       highlighter stroke behind ink text
-   */
-  --accent-fill: light-dark(oklch(0.55 0.22 24), oklch(0.7 0.18 24));
-  --accent-fill-strong: light-dark(oklch(0.49 0.21 24), oklch(0.76 0.17 24));
-  --on-accent: light-dark(oklch(1 0 0), oklch(0.17 0.02 24));
-
-  /* paper and ink */
-  --bg: light-dark(oklch(0.972 0.012 88), oklch(0.185 0.01 75));
-  --surface: light-dark(oklch(0.99 0.006 88), oklch(0.215 0.011 75));
-  --surface-2: light-dark(oklch(0.945 0.014 88), oklch(0.25 0.012 75));
-  --surface-3: light-dark(oklch(0.91 0.016 88), oklch(0.3 0.013 75));
-  --border: light-dark(oklch(0.87 0.014 85), oklch(0.33 0.012 75));
-  --border-strong: light-dark(oklch(0.75 0.016 80), oklch(0.45 0.014 75));
-  --rule: light-dark(oklch(0.22 0.015 70), oklch(0.9 0.01 85));
-
-  --text: light-dark(oklch(0.21 0.015 70), oklch(0.94 0.008 88));
-  --text-muted: light-dark(oklch(0.44 0.016 70), oklch(0.77 0.012 85));
-
-  --accent: light-dark(oklch(0.5 0.2 24), oklch(0.76 0.16 24));
-  --accent-soft: light-dark(oklch(0.92 0.05 24), oklch(0.27 0.06 24));
-  --accent-line: light-dark(oklch(0.78 0.12 24), oklch(0.52 0.15 24));
-  --icon-tile: var(--accent-soft);
-  --icon-ink: light-dark(oklch(0.3 0.03 75), oklch(0.88 0.02 85));
-
-  /* the highlighter: light tint behind dark ink, deeper tint under light ink */
-  --marker: light-dark(oklch(0.89 0.07 24), oklch(0.42 0.13 24 / 0.85));
-
-  /* safe / win: on the blue-teal side, far from the alarm hue */
-  --success: light-dark(oklch(0.46 0.09 190), oklch(0.82 0.1 190));
-  --success-soft: light-dark(oklch(0.95 0.03 190), oklch(0.27 0.04 195));
-  --success-marker: light-dark(oklch(0.87 0.07 190), oklch(0.42 0.08 195 / 0.85));
-  --warning: light-dark(oklch(0.5 0.13 60), oklch(0.83 0.13 70));
-
-  --focus: light-dark(oklch(0.3 0.03 70), oklch(0.8 0.15 24));
-
-  /* ink band (footer), dark in both themes */
-  --ink: oklch(0.2 0.012 72);
-  --on-ink: oklch(0.94 0.008 88);
-  --on-ink-muted: oklch(0.79 0.01 85);
-  --accent-on-ink: oklch(0.8 0.13 24);
-
-  /* # DEPTH: paper does not float; only overlays get shadows */
-  --shadow-1: none;
-  --shadow-2: 0 1px 0 oklch(0.2 0.02 70 / 0.06);
-  --shadow-3: 0 2px 6px oklch(0.1 0.02 70 / 0.12), 0 30px 60px -20px oklch(0.1 0.02 70 / 0.35);
-
-  /* Live behaviour map (read by behaviour.js; registered below as <color>
-     so getComputedStyle gives a resolved colour for each theme) */
-  --behaviour-move: light-dark(oklch(0.3 0.02 70 / 0.4), oklch(0.9 0.01 90 / 0.4));
-  --behaviour-click: light-dark(oklch(0.55 0.22 24 / 0.9), oklch(0.7 0.18 24 / 0.95));
-
-  /* # BACKGROUND URL - Default */
-  --bgurl-logo: url("../../images/svg/logo.svg");
-
-  /* # BACKGROUND URL - Icons */
-  --bgurl-battery: url("../../images/svg/battery.svg");
-  --bgurl-close: url("../../images/svg/close.svg");
-  --bgurl-connection: url("../../images/svg/connection.svg");
-  --bgurl-contact: url("../../images/svg/contact.svg");
-  --bgurl-hardware: url("../../images/svg/hardware.svg");
-  --bgurl-info: url("../../images/svg/info.svg");
-  --bgurl-location: url("../../images/svg/location.svg");
-  --bgurl-menu: url("../../images/svg/menu.svg");
-  --bgurl-project: url("../../images/svg/project.svg");
-  --bgurl-share: url("../../images/svg/share.svg");
-  --bgurl-resolution: url("../../images/svg/resolution.svg");
-  --bgurl-orientation: url("../../images/svg/orientation.svg");
-  --bgurl-darkmode: url("../../images/svg/darkmode.svg");
-  --bgurl-lang: url("../../images/svg/lang.svg");
-  --bgurl-ram: url("../../images/svg/ram.svg");
-  --bgurl-cpu: url("../../images/svg/cpu.svg");
-  --bgurl-gpu: url("../../images/svg/gpu.svg");
-  --bgurl-ip: url("../../images/svg/ip.svg");
-  --bgurl-telco: url("../../images/svg/telco.svg");
-  --bgurl-exit: url("../../images/svg/exit.svg");
-
-  /* # BACKGROUND URL - Card status */
-  --bgurl-warning: url("../../images/svg/warning.svg");
-  --bgurl-shield-check: url("../../images/svg/shield-check.svg");
-  --bgurl-pending: url("../../images/svg/pending.svg");
-
-  /* # BACKGROUND URL - Theme */
-  --bgurl-sun: url("../../images/svg/sun.svg");
-  --bgurl-moon: url("../../images/svg/moon.svg");
-  --bgurl-theme-auto: url("../../images/svg/theme-auto.svg");
-  --bgurl-bolt: url("../../images/svg/bolt.svg");
-
-  /* # BACKGROUND URL - Social Media */
-  --bgurl-facebook: url("../../images/svg/facebook.svg");
-  --bgurl-twitter: url("../../images/svg/twitter.svg");
-  --bgurl-linkedin: url("../../images/svg/linkedin.svg");
-  --bgurl-whatsapp: url("../../images/svg/whatsapp.svg");
-  --bgurl-reddit: url("../../images/svg/reddit.svg");
-
-  /* # BACKGROUND URL - Icons devices */
-  --bgurl-devices: url("../../images/svg/devices.svg");
-  --bgurl-mobileAndroid: url("../../images/svg/mobileAndroid.svg");
-
-  /* # BACKGROUND URL - Icons OS */
-  --bgurl-os: url("../../images/svg/os.svg");
-  --bgurl-windows: url("../../images/svg/windows.svg");
-
-  /* # BACKGROUND URL - Icons Browser */
-  --bgurl-browser: url("../../images/svg/browser.svg");
-  --bgurl-firefox: url("../../images/svg/firefox.svg");
-
-  /* # BACKGROUND URL - Fingerprinting cards */
-  --bgurl-fingerprint: url("../../images/svg/fingerprint.svg");
-  --bgurl-timezone: url("../../images/svg/timezone.svg");
-  --bgurl-locale: url("../../images/svg/locale.svg");
-  --bgurl-display: url("../../images/svg/display.svg");
-  --bgurl-preferences: url("../../images/svg/preferences.svg");
-  --bgurl-input: url("../../images/svg/input.svg");
-  --bgurl-keyboard: url("../../images/svg/keyboard.svg");
-  --bgurl-canvas: url("../../images/svg/canvas.svg");
-  --bgurl-audio: url("../../images/svg/audio.svg");
-  --bgurl-fonts: url("../../images/svg/fonts.svg");
-  --bgurl-voices: url("../../images/svg/voices.svg");
-  --bgurl-incognito: url("../../images/svg/incognito.svg");
-  --bgurl-adblock: url("../../images/svg/adblock.svg");
-  --bgurl-signals: url("../../images/svg/signals.svg");
-  --bgurl-navigation: url("../../images/svg/navigation.svg");
-  --bgurl-behaviour: url("../../images/svg/behaviour.svg");
-}
-
-/* The visitor's choice (theme.js); no attribute = follow the system */
-:root[data-theme="light"] {
-  color-scheme: light;
-}
-
-:root[data-theme="dark"] {
-  color-scheme: dark;
-}
-
-@property --behaviour-move {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: rgb(51 51 51 / 0.4);
-}
-
-@property --behaviour-click {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: rgb(214 46 58 / 0.9);
+  /* # ICONS: masks painted with currentColor (objects/icon.css) */
+  --ikay-icon-battery: url("../../images/svg/battery.svg");
+  --ikay-icon-behaviour: url("../../images/svg/behaviour.svg");
+  --ikay-icon-bolt: url("../../images/svg/bolt.svg");
+  --ikay-icon-canvas: url("../../images/svg/canvas.svg");
+  --ikay-icon-close: url("../../images/svg/close.svg");
+  --ikay-icon-connection: url("../../images/svg/connection.svg");
+  --ikay-icon-contact: url("../../images/svg/contact.svg");
+  --ikay-icon-contrast: url("../../images/svg/contrast.svg");
+  --ikay-icon-facebook: url("../../images/svg/facebook.svg");
+  --ikay-icon-fingerprint: url("../../images/svg/fingerprint.svg");
+  --ikay-icon-hardware: url("../../images/svg/hardware.svg");
+  --ikay-icon-incognito: url("../../images/svg/incognito.svg");
+  --ikay-icon-info: url("../../images/svg/info.svg");
+  --ikay-icon-linkedin: url("../../images/svg/linkedin.svg");
+  --ikay-icon-location: url("../../images/svg/location.svg");
+  --ikay-icon-menu: url("../../images/svg/menu.svg");
+  --ikay-icon-moon: url("../../images/svg/moon.svg");
+  --ikay-icon-os: url("../../images/svg/os.svg");
+  --ikay-icon-pending: url("../../images/svg/pending.svg");
+  --ikay-icon-project: url("../../images/svg/project.svg");
+  --ikay-icon-reddit: url("../../images/svg/reddit.svg");
+  --ikay-icon-repo: url("../../images/svg/repo.svg");
+  --ikay-icon-share: url("../../images/svg/share.svg");
+  --ikay-icon-shield-check: url("../../images/svg/shield-check.svg");
+  --ikay-icon-sun: url("../../images/svg/sun.svg");
+  --ikay-icon-theme-auto: url("../../images/svg/theme-auto.svg");
+  --ikay-icon-timezone: url("../../images/svg/timezone.svg");
+  --ikay-icon-twitter: url("../../images/svg/twitter.svg");
+  --ikay-icon-warning: url("../../images/svg/warning.svg");
+  --ikay-icon-whatsapp: url("../../images/svg/whatsapp.svg");
 }
